@@ -18,6 +18,8 @@
 		E5159B2C26480CC90031AEB0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5159B2B26480CC90031AEB0 /* Coordinator.swift */; };
 		E5159B2E26480D820031AEB0 /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5159B2D26480D820031AEB0 /* SplashCoordinator.swift */; };
 		E5159B31264810830031AEB0 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5159B30264810830031AEB0 /* StoryboardInstantiable.swift */; };
+		E53418FA26487D270066072C /* SignUpScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E53418F926487D270066072C /* SignUpScreen.storyboard */; };
+		E53418FC26487DF90066072C /* SignUpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53418FB26487DF90066072C /* SignUpScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		E5159B2B26480CC90031AEB0 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E5159B2D26480D820031AEB0 /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 		E5159B30264810830031AEB0 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
+		E53418F926487D270066072C /* SignUpScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpScreen.storyboard; sourceTree = "<group>"; };
+		E53418FB26487DF90066072C /* SignUpScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		E5159B1D264806450031AEB0 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E5159B322648175D0031AEB0 /* SignUp */,
 				E5159B22264808090031AEB0 /* Splash */,
 			);
 			path = Screens;
@@ -128,6 +133,15 @@
 				E5159B30264810830031AEB0 /* StoryboardInstantiable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E5159B322648175D0031AEB0 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				E53418F926487D270066072C /* SignUpScreen.storyboard */,
+				E53418FB26487DF90066072C /* SignUpScreenViewController.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E53418FA26487D270066072C /* SignUpScreen.storyboard in Resources */,
 				E5159B162647FF990031AEB0 /* LaunchScreen.storyboard in Resources */,
 				E5159B24264808710031AEB0 /* SplashScreen.storyboard in Resources */,
 				E5159B132647FF990031AEB0 /* Assets.xcassets in Resources */,
@@ -208,6 +223,7 @@
 				E5159B2E26480D820031AEB0 /* SplashCoordinator.swift in Sources */,
 				E5159B0A2647FF960031AEB0 /* AppDelegate.swift in Sources */,
 				E5159B31264810830031AEB0 /* StoryboardInstantiable.swift in Sources */,
+				E53418FC26487DF90066072C /* SignUpScreenViewController.swift in Sources */,
 				E5159B0C2647FF960031AEB0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

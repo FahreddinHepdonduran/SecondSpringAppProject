@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign Up Screen View Controller-->
+        <scene sceneID="gIV-f0-lMz">
+            <objects>
+                <viewController storyboardIdentifier="SignUpScreenViewController" id="Nfo-Dv-BLa" customClass="SignUpScreenViewController" customModule="SecondSpringApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ig0-3L-890">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="IBz-jx-m9U">
+                                <rect key="frame" x="40" y="679" width="334" height="133"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03t-6Z-hs4">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="fe1-e8-pHf"/>
+                                        </constraints>
+                                        <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="loginButtonTapped:" destination="Nfo-Dv-BLa" eventType="touchUpInside" id="mTP-b2-dJA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFe-xO-dzx">
+                                        <rect key="frame" x="0.0" y="83" width="334" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="QYZ-vK-xv0"/>
+                                        </constraints>
+                                        <state key="normal" title="SignUp"/>
+                                        <connections>
+                                            <action selector="signUpButtonTapped:" destination="Nfo-Dv-BLa" eventType="touchUpInside" id="wUd-aC-8If"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="IBz-jx-m9U" firstAttribute="leading" secondItem="Qlf-R6-Mkv" secondAttribute="leading" constant="40" id="04Z-rk-6kc"/>
+                            <constraint firstItem="Qlf-R6-Mkv" firstAttribute="bottom" secondItem="IBz-jx-m9U" secondAttribute="bottom" constant="50" id="JmQ-Cx-XUn"/>
+                            <constraint firstItem="Qlf-R6-Mkv" firstAttribute="trailing" secondItem="IBz-jx-m9U" secondAttribute="trailing" constant="40" id="sh8-PO-AII"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qlf-R6-Mkv"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="03t-6Z-hs4" id="4vR-aU-2mO"/>
+                        <outlet property="signUpButton" destination="GFe-xO-dzx" id="J4j-a1-dT1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9EB-YY-rBF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="145" y="141"/>
+        </scene>
+    </scenes>
+</document>
