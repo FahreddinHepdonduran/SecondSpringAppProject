@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash Screen View Controller-->
+        <scene sceneID="uIu-G2-oEv">
+            <objects>
+                <viewController id="mdu-6D-pG1" customClass="SplashScreenViewController" customModule="SecondSpringApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w4e-qs-oa2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="MGY-CD-xeY">
+                                <rect key="frame" x="62" y="313.5" width="290" height="269"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MGY-CD-xeY" firstAttribute="centerX" secondItem="w4e-qs-oa2" secondAttribute="centerX" id="6Ka-Uu-lzP"/>
+                            <constraint firstItem="MGY-CD-xeY" firstAttribute="centerY" secondItem="w4e-qs-oa2" secondAttribute="centerY" id="aCU-FU-gK5"/>
+                            <constraint firstItem="MGY-CD-xeY" firstAttribute="width" secondItem="w4e-qs-oa2" secondAttribute="width" multiplier="0.7" id="wMo-bB-amz"/>
+                            <constraint firstItem="MGY-CD-xeY" firstAttribute="height" secondItem="w4e-qs-oa2" secondAttribute="height" multiplier="0.3" id="zqS-Sf-SIG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2s7-Sm-gmH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8c8-tb-Tgz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="145" y="-92"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo" width="1436" height="1661"/>
+    </resources>
+</document>

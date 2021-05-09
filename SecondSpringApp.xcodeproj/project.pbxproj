@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		E5159B0A2647FF960031AEB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5159B092647FF960031AEB0 /* AppDelegate.swift */; };
 		E5159B0C2647FF960031AEB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5159B0B2647FF960031AEB0 /* SceneDelegate.swift */; };
-		E5159B0E2647FF960031AEB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5159B0D2647FF960031AEB0 /* ViewController.swift */; };
-		E5159B112647FF960031AEB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5159B0F2647FF960031AEB0 /* Main.storyboard */; };
+		E5159B0E2647FF960031AEB0 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5159B0D2647FF960031AEB0 /* SplashScreenViewController.swift */; };
 		E5159B132647FF990031AEB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5159B122647FF990031AEB0 /* Assets.xcassets */; };
 		E5159B162647FF990031AEB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5159B142647FF990031AEB0 /* LaunchScreen.storyboard */; };
+		E5159B24264808710031AEB0 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5159B23264808710031AEB0 /* SplashScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E5159B062647FF950031AEB0 /* SecondSpringApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecondSpringApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5159B092647FF960031AEB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5159B0B2647FF960031AEB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E5159B0D2647FF960031AEB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E5159B102647FF960031AEB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E5159B0D2647FF960031AEB0 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		E5159B122647FF990031AEB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5159B152647FF990031AEB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5159B172647FF990031AEB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5159B23264808710031AEB0 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,39 @@
 		E5159B082647FF950031AEB0 /* SecondSpringApp */ = {
 			isa = PBXGroup;
 			children = (
-				E5159B092647FF960031AEB0 /* AppDelegate.swift */,
-				E5159B0B2647FF960031AEB0 /* SceneDelegate.swift */,
-				E5159B0D2647FF960031AEB0 /* ViewController.swift */,
-				E5159B0F2647FF960031AEB0 /* Main.storyboard */,
+				E5159B21264807310031AEB0 /* AppDelegate */,
 				E5159B122647FF990031AEB0 /* Assets.xcassets */,
-				E5159B142647FF990031AEB0 /* LaunchScreen.storyboard */,
 				E5159B172647FF990031AEB0 /* Info.plist */,
+				E5159B142647FF990031AEB0 /* LaunchScreen.storyboard */,
+				E5159B1D264806450031AEB0 /* Screens */,
 			);
 			path = SecondSpringApp;
+			sourceTree = "<group>";
+		};
+		E5159B1D264806450031AEB0 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				E5159B22264808090031AEB0 /* Splash */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		E5159B21264807310031AEB0 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				E5159B092647FF960031AEB0 /* AppDelegate.swift */,
+				E5159B0B2647FF960031AEB0 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		E5159B22264808090031AEB0 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				E5159B0D2647FF960031AEB0 /* SplashScreenViewController.swift */,
+				E5159B23264808710031AEB0 /* SplashScreen.storyboard */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,8 +150,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5159B162647FF990031AEB0 /* LaunchScreen.storyboard in Resources */,
+				E5159B24264808710031AEB0 /* SplashScreen.storyboard in Resources */,
 				E5159B132647FF990031AEB0 /* Assets.xcassets in Resources */,
-				E5159B112647FF960031AEB0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5159B0E2647FF960031AEB0 /* ViewController.swift in Sources */,
+				E5159B0E2647FF960031AEB0 /* SplashScreenViewController.swift in Sources */,
 				E5159B0A2647FF960031AEB0 /* AppDelegate.swift in Sources */,
 				E5159B0C2647FF960031AEB0 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +171,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E5159B0F2647FF960031AEB0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E5159B102647FF960031AEB0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E5159B142647FF990031AEB0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -284,8 +300,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6J3M2T865K;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SecondSpringApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -293,6 +309,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fh.SecondSpringApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,8 +319,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6J3M2T865K;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SecondSpringApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -311,6 +328,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fh.SecondSpringApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
