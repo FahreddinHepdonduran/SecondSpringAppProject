@@ -8,13 +8,29 @@
 
 import UIKit
 
-class SplashScreenViewController: UIViewController {
+protocol SplashScreenViewControllerDelegate: class {
+  func changeRootForLoginState(loginState: LoginState)
+}
+
+final class SplashScreenViewController: UIViewController {
+  
+  private weak var  delegate: SplashScreenViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-
-
+  
+  
+  
 }
 
+extension SplashScreenViewController: StoryboardInstantiable {
+  
+  class func instantiate(delegate: SplashScreenViewControllerDelegate) -> SplashScreenViewController {
+    let viewController = instanceFromStoryboard()
+    viewController.delegate = delegate
+    return viewController
+  }
+  
+}
