@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let appDelegateRouter = AppDelegateRouter(window: self.window!)
     let splashCoordinator = SplashCoordinator(router: appDelegateRouter)
     
-    splashCoordinator.present(animated: true, onDismissed: nil)
+    splashCoordinator.present(animated: false, onDismissed: nil)
   }
   
   func sceneDidDisconnect(_ scene: UIScene) {
