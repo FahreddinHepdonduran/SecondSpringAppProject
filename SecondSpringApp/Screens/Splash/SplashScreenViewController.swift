@@ -15,13 +15,20 @@ protocol SplashScreenViewControllerDelegate: class {
 final class SplashScreenViewController: UIViewController {
   
   private weak var  delegate: SplashScreenViewControllerDelegate?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
   
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+  }
   
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    perform(#selector(changeRoot), with: nil, afterDelay: 5.0)
+  }
+  
+  @objc private func changeRoot() {
+    delegate?.changeRootForLoginState(loginState: .loggedIn)
+  }
   
 }
 

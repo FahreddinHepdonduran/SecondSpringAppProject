@@ -19,10 +19,26 @@ final class SplashCoordinator: Coordinator {
   }
   
   func present(animated: Bool, onDismissed: (() -> Void)?) {
-    let viewController = SplashScreenViewController.instanceFromStoryboard()
+    let viewController = SplashScreenViewController.instantiate(delegate: self)
     router.present(viewController,
                    animated: animated,
                    onDismissed: onDismissed)
+  }
+  
+}
+
+extension SplashCoordinator: SplashScreenViewControllerDelegate {
+  
+  func changeRootForLoginState(loginState: LoginState) {
+    
+    if loginState == .loggedIn {
+      let viewController = SignUpScreenViewController.instanceFromStoryboard()
+      let navigationController = UINavigationController(rootViewController: viewController)
+      let navigationRouter = NavigationRouter(navigationController: navigationController)
+      let signUpCoordinator = SignUpCoordinator(router: navigationRouter)
+      signUpCoordinator.present(animated: true, onDismissed: nil)
+    }
+    
   }
   
 }
