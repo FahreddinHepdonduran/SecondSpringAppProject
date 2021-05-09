@@ -10,7 +10,7 @@
         <!--Splash Screen View Controller-->
         <scene sceneID="uIu-G2-oEv">
             <objects>
-                <viewController id="mdu-6D-pG1" customClass="SplashScreenViewController" customModule="SecondSpringApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashScreenViewController" id="mdu-6D-pG1" customClass="SplashScreenViewController" customModule="SecondSpringApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w4e-qs-oa2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
