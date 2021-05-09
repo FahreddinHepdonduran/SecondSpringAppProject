@@ -20,6 +20,7 @@
 		E5159B31264810830031AEB0 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5159B30264810830031AEB0 /* StoryboardInstantiable.swift */; };
 		E53418FA26487D270066072C /* SignUpScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E53418F926487D270066072C /* SignUpScreen.storyboard */; };
 		E53418FC26487DF90066072C /* SignUpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53418FB26487DF90066072C /* SignUpScreenViewController.swift */; };
+		E53418FF264881590066072C /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53418FE264881590066072C /* LoginState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		E5159B30264810830031AEB0 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		E53418F926487D270066072C /* SignUpScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpScreen.storyboard; sourceTree = "<group>"; };
 		E53418FB26487DF90066072C /* SignUpScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenViewController.swift; sourceTree = "<group>"; };
+		E53418FE264881590066072C /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		E5159B082647FF950031AEB0 /* SecondSpringApp */ = {
 			isa = PBXGroup;
 			children = (
+				E53418FD2648813E0066072C /* Enumerations */,
 				E5159B21264807310031AEB0 /* AppDelegate */,
 				E5159B122647FF990031AEB0 /* Assets.xcassets */,
 				E5159B2626480BEB0031AEB0 /* Coordinators */,
@@ -142,6 +145,14 @@
 				E53418FB26487DF90066072C /* SignUpScreenViewController.swift */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		E53418FD2648813E0066072C /* Enumerations */ = {
+			isa = PBXGroup;
+			children = (
+				E53418FE264881590066072C /* LoginState.swift */,
+			);
+			path = Enumerations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +232,7 @@
 				E5159B2C26480CC90031AEB0 /* Coordinator.swift in Sources */,
 				E5159B0E2647FF960031AEB0 /* SplashScreenViewController.swift in Sources */,
 				E5159B2E26480D820031AEB0 /* SplashCoordinator.swift in Sources */,
+				E53418FF264881590066072C /* LoginState.swift in Sources */,
 				E5159B0A2647FF960031AEB0 /* AppDelegate.swift in Sources */,
 				E5159B31264810830031AEB0 /* StoryboardInstantiable.swift in Sources */,
 				E53418FC26487DF90066072C /* SignUpScreenViewController.swift in Sources */,
