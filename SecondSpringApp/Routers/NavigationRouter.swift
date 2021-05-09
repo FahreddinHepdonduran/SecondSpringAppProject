@@ -26,6 +26,10 @@ public class NavigationRouter: NSObject {
     super.init()
     navigationController.delegate = self
   }
+  
+  func changeRoot() {
+    UIApplication.changeRoot(with: navigationController)
+  }
 }
 
 // MARK: - Router
