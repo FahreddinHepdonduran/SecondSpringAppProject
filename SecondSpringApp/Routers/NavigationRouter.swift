@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 // 1
-public class NavigationRouter: NSObject {
+final class NavigationRouter: NSObject {
 
   // 2
   private let navigationController: UINavigationController
@@ -27,15 +27,11 @@ public class NavigationRouter: NSObject {
     navigationController.delegate = self
   }
   
-  func changeRoot() {
-    UIApplication.changeRoot(with: navigationController)
-  }
 }
 
 // MARK: - Router
 extension NavigationRouter: Router {
 
-  // 1
   public func present(_ viewController: UIViewController,
                       animated: Bool,
                       onDismissed: (() -> Void)?) {
@@ -68,6 +64,7 @@ extension NavigationRouter: Router {
     onDismiss()
     onDismissForViewController[viewController] = nil
   }
+  
 }
 
 // MARK: - UINavigationControllerDelegate
@@ -87,4 +84,13 @@ extension NavigationRouter: UINavigationControllerDelegate {
     }
     performOnDismissed(for: dismissedViewController)
   }
+  
+}
+
+private extension NavigationRouter {
+  
+  func changeRoot() {
+    UIApplication.changeRoot(with: navigationController)
+  }
+  
 }

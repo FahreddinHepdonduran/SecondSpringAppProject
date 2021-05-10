@@ -20,6 +20,7 @@ final class SignUpScreenViewController: UIViewController {
     }
 
   @IBAction func loginButtonTapped(_ sender: UIButton) {
+    
   }
   
   @IBAction func signUpButtonTapped(_ sender: UIButton) {
@@ -27,3 +28,5 @@ final class SignUpScreenViewController: UIViewController {
   }
   
 }
+
+extension SignUpScreenViewController: StoryboardInstantiable { }

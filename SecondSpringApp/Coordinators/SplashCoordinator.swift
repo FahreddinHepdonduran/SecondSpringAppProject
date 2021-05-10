@@ -19,26 +19,40 @@ final class SplashCoordinator: Coordinator {
   }
   
   func present(animated: Bool, onDismissed: (() -> Void)?) {
-    let viewController = SplashScreenViewController.instantiate(delegate: self)
+    let viewController = SplashScreenViewController.instanceFromStoryboard()
     router.present(viewController,
                    animated: animated,
                    onDismissed: onDismissed)
+    
+    changeRoot()
   }
   
 }
 
-extension SplashCoordinator: SplashScreenViewControllerDelegate {
+private extension SplashCoordinator {
   
-  func changeRootForLoginState(loginState: LoginState) {
-    
-    if loginState == .loggedIn {
-      let viewController = SignUpScreenViewController.instanceFromStoryboard()
-      let navigationController = UINavigationController(rootViewController: viewController)
-      let navigationRouter = NavigationRouter(navigationController: navigationController)
-      let signUpCoordinator = SignUpCoordinator(router: navigationRouter)
-      signUpCoordinator.present(animated: true, onDismissed: nil)
+  func isLoggedin() -> LoginState {
+    return .loggedIn
+  }
+  
+  func changeRoot() {
+    DispatchQueue.main.asyncAfter(deadline: .now()+5) { [weak self] in
+      
+      let state = self?.isLoggedin()
+      switch state {
+      case .loggedIn:
+        let signUpViewController = SignUpScreenViewController.instanceFromStoryboard()
+        let navigationController = UINavigationController(rootViewController: signUpViewController)
+        let navigationRouter = NavigationRouter(navigationController: navigationController)
+        let signUpCoordinator = SignUpCoordinator(router: navigationRouter)
+        signUpCoordinator.present(animated: false, onDismissed: nil)
+      case .notLoggedIn:
+        print("not login")
+      default:
+        print("")
+      }
+      
     }
-    
   }
   
 }
