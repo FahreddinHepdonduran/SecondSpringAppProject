@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol SignUpScreenViewControllerDelegate: class {
+  func loginButtonPressed()
+  func signUpButtonPressed()
+}
+
 final class SignUpScreenViewController: UIViewController {
+  
+  private weak var delegate: SignUpScreenViewControllerDelegate?
   
   @IBOutlet private weak var signUpButton: UIButton!
   @IBOutlet private weak var loginButton: UIButton!
@@ -19,13 +26,21 @@ final class SignUpScreenViewController: UIViewController {
   }
   
   @IBAction func loginButtonTapped(_ sender: UIButton) {
-    
+    delegate?.loginButtonPressed()
   }
   
   @IBAction func signUpButtonTapped(_ sender: UIButton) {
-    
+    delegate?.signUpButtonPressed()
   }
   
 }
 
-extension SignUpScreenViewController: StoryboardInstantiable { }
+extension SignUpScreenViewController: StoryboardInstantiable {
+  
+  class func instance(delegate: SignUpScreenViewControllerDelegate) -> SignUpScreenViewController {
+    let viewController = instanceFromStoryboard()
+    viewController.delegate = delegate
+    return viewController
+  }
+  
+}

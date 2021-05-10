@@ -11,16 +11,9 @@ import UIKit
 extension UIApplication {
   
   class func changeRoot(with viewController: UIViewController) {
-    let window: UIWindow
-    if #available(iOS 13, *) {
       guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
         let delegate = windowScene.delegate as? SceneDelegate,
-        let sceneWindow = delegate.window else { return }
-      window = sceneWindow
-    } else {
-      guard let appWindow = UIApplication.shared.keyWindow else { return }
-      window = appWindow
-    }
+        let window = delegate.window else { return }
     
     guard let rootViewController = window.rootViewController else {
       return
