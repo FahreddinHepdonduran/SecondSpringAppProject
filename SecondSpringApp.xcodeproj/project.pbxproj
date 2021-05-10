@@ -66,10 +66,10 @@
 		E5159B082647FF950031AEB0 /* SecondSpringApp */ = {
 			isa = PBXGroup;
 			children = (
-				E534190426488A8D0066072C /* Extensions */,
-				E53418FD2648813E0066072C /* Enumerations */,
 				E5159B21264807310031AEB0 /* AppDelegate */,
 				E5159B122647FF990031AEB0 /* Assets.xcassets */,
+				E53418FD2648813E0066072C /* Enumerations */,
+				E534190426488A8D0066072C /* Extensions */,
 				E5159B172647FF990031AEB0 /* Info.plist */,
 				E5159B142647FF990031AEB0 /* LaunchScreen.storyboard */,
 				E5159B2F264810600031AEB0 /* Protocols */,
