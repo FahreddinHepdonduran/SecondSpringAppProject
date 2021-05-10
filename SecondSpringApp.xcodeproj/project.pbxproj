@@ -18,6 +18,10 @@
 		E53418FC26487DF90066072C /* SignUpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53418FB26487DF90066072C /* SignUpScreenViewController.swift */; };
 		E53418FF264881590066072C /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53418FE264881590066072C /* LoginState.swift */; };
 		E534190626488AAF0066072C /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534190526488AAF0066072C /* UIApplication+Extensions.swift */; };
+		E5EB915A264977D700C73FFF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EB9159264977D700C73FFF /* RegisterViewController.swift */; };
+		E5EB915C2649782300C73FFF /* RegisterScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5EB915B2649782300C73FFF /* RegisterScreen.storyboard */; };
+		E5EB915E2649783600C73FFF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EB915D2649783600C73FFF /* LoginViewController.swift */; };
+		E5EB91602649785000C73FFF /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5EB915F2649785000C73FFF /* LoginScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		E53418FB26487DF90066072C /* SignUpScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenViewController.swift; sourceTree = "<group>"; };
 		E53418FE264881590066072C /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 		E534190526488AAF0066072C /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		E5EB9159264977D700C73FFF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E5EB915B2649782300C73FFF /* RegisterScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterScreen.storyboard; sourceTree = "<group>"; };
+		E5EB915D2649783600C73FFF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E5EB915F2649785000C73FFF /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,8 @@
 		E5159B1D264806450031AEB0 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E5EB9158264977B100C73FFF /* Register */,
+				E5EB9157264977A700C73FFF /* Login */,
 				E5159B322648175D0031AEB0 /* SignUp */,
 				E5159B22264808090031AEB0 /* Splash */,
 			);
@@ -136,6 +146,24 @@
 				E534190526488AAF0066072C /* UIApplication+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E5EB9157264977A700C73FFF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E5EB915D2649783600C73FFF /* LoginViewController.swift */,
+				E5EB915F2649785000C73FFF /* LoginScreen.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		E5EB9158264977B100C73FFF /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				E5EB9159264977D700C73FFF /* RegisterViewController.swift */,
+				E5EB915B2649782300C73FFF /* RegisterScreen.storyboard */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +228,8 @@
 				E5159B162647FF990031AEB0 /* LaunchScreen.storyboard in Resources */,
 				E5159B24264808710031AEB0 /* SplashScreen.storyboard in Resources */,
 				E5159B132647FF990031AEB0 /* Assets.xcassets in Resources */,
+				E5EB91602649785000C73FFF /* LoginScreen.storyboard in Resources */,
+				E5EB915C2649782300C73FFF /* RegisterScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,9 +240,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5EB915E2649783600C73FFF /* LoginViewController.swift in Sources */,
 				E5159B0E2647FF960031AEB0 /* SplashScreenViewController.swift in Sources */,
 				E534190626488AAF0066072C /* UIApplication+Extensions.swift in Sources */,
 				E53418FF264881590066072C /* LoginState.swift in Sources */,
+				E5EB915A264977D700C73FFF /* RegisterViewController.swift in Sources */,
 				E5159B0A2647FF960031AEB0 /* AppDelegate.swift in Sources */,
 				E5159B31264810830031AEB0 /* StoryboardInstantiable.swift in Sources */,
 				E53418FC26487DF90066072C /* SignUpScreenViewController.swift in Sources */,
