@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     self.window = UIWindow(windowScene: windowScene)
     
     let appDelegateRouter = AppDelegateRouter(window: self.window!)
-    let splashCoordinator = SplashCoordinator(router: appDelegateRouter)
+    let splashCoordinator = AppCoordinator(router: appDelegateRouter)
     
     splashCoordinator.present(animated: false, onDismissed: nil)
   }

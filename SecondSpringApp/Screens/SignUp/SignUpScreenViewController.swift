@@ -9,16 +9,15 @@
 import UIKit
 
 final class SignUpScreenViewController: UIViewController {
-
+  
   @IBOutlet private weak var signUpButton: UIButton!
   @IBOutlet private weak var loginButton: UIButton!
   
   override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
+    super.viewDidLoad()
+    navigationController?.navigationBar.isHidden = true
+  }
+  
   @IBAction func loginButtonTapped(_ sender: UIButton) {
     
   }

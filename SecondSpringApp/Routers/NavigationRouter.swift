@@ -27,6 +27,10 @@ final class NavigationRouter: NSObject {
     navigationController.delegate = self
   }
   
+  func changeRoot() {
+    UIApplication.changeRoot(with: navigationController)
+  }
+  
 }
 
 // MARK: - Router
@@ -87,10 +91,3 @@ extension NavigationRouter: UINavigationControllerDelegate {
   
 }
 
-private extension NavigationRouter {
-  
-  func changeRoot() {
-    UIApplication.changeRoot(with: navigationController)
-  }
-  
-}
