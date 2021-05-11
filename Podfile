@@ -8,4 +8,6 @@ target 'SecondSpringApp' do
   # Pods for SecondSpringApp
   pod 'RxSwift', '~>5.0'
   pod 'RxCocoa', '~>5.0'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
 end
