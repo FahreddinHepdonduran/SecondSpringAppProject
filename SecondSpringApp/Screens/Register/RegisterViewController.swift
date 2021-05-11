@@ -41,16 +41,35 @@ final class RegisterScreenViewController: UIViewController {
 private extension RegisterScreenViewController {
   
   func validatePassword() -> Observable<Bool> {
-    let validatePassword = passwordTextField.rx.text.orEmpty
+    let isValidPassword = passwordTextField.rx.text.orEmpty
     .throttle(.milliseconds(throttleInterval), scheduler: MainScheduler.instance)
     .map({ $0.count >= 6 })
     .share(replay: 1)
     
-    return validatePassword
+    return isValidPassword
+  }
+  
+  func validateEmail() -> Observable<Bool> {
+    let isValidEmail = emailTextField.rx.text.orEmpty
+      .throttle(.milliseconds(throttleInterval), scheduler: MainScheduler.instance)
+      .map({ $0.isValidEmail })
+      .share(replay: 1)
+    
+    return isValidEmail
+  }
+  
+  func validateAllFields() -> Observable<Bool> {
+    let validEmail = validateEmail()
+    let validPassword = validatePassword()
+    
+    let validAllFields = Observable.combineLatest(validEmail, validPassword) { $0 && $1}
+      .share(replay: 1)
+    
+    return validAllFields
   }
   
   func updateRegisterButtonState() {
-    validatePassword()
+    validateAllFields()
       .bind(to: registerButton.rx.isEnabled)
       .disposed(by: disposeBag)
   }
