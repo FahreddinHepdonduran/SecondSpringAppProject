@@ -26,6 +26,7 @@
 		E5FC4A68264AB7D5004F60AC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FC4A67264AB7D5004F60AC /* HomeViewController.swift */; };
 		E5FC4A6A264AB7E1004F60AC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5FC4A69264AB7E1004F60AC /* Home.storyboard */; };
 		E5FC4A6C264ADF03004F60AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5FC4A6B264ADF03004F60AC /* GoogleService-Info.plist */; };
+		E5FC4A6E264AE3E5004F60AC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FC4A6D264AE3E5004F60AC /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		E5FC4A67264AB7D5004F60AC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E5FC4A69264AB7E1004F60AC /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		E5FC4A6B264ADF03004F60AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E5FC4A6D264AE3E5004F60AC /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				E534190526488AAF0066072C /* UIApplication+Extensions.swift */,
+				E5FC4A6D264AE3E5004F60AC /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5EB915E2649783600C73FFF /* LoginViewController.swift in Sources */,
+				E5FC4A6E264AE3E5004F60AC /* String+Extensions.swift in Sources */,
 				E5159B0E2647FF960031AEB0 /* SplashScreenViewController.swift in Sources */,
 				E534190626488AAF0066072C /* UIApplication+Extensions.swift in Sources */,
 				E53418FF264881590066072C /* LoginState.swift in Sources */,
