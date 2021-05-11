@@ -32,7 +32,6 @@ final class LoginViewController: UIViewController {
   @IBAction func loginButtonDidTap(_ sender: UIButton) {
     let homeViewController = HomeViewController.instanceFromStoryboard()
     let navigationController = UINavigationController(rootViewController: homeViewController)
-    navigationController.title = "home"
     UIApplication.changeRoot(with: navigationController)
   }
   

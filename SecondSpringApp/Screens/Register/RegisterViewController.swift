@@ -32,7 +32,6 @@ final class RegisterScreenViewController: UIViewController {
   @IBAction func registerButtonDidTapp(_ sender: UIButton) {
     let homeViewController = HomeViewController.instanceFromStoryboard()
     let navigationController = UINavigationController(rootViewController: homeViewController)
-    navigationController.title = "home"
     UIApplication.changeRoot(with: navigationController)
   }
   
