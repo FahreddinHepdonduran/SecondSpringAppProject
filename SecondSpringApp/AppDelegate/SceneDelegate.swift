@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   
@@ -21,6 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     self.window = UIWindow(windowScene: windowScene)
     self.window?.rootViewController = SplashScreenViewController.instanceFromStoryboard()
     self.window?.makeKeyAndVisible()
+    
+    FirebaseApp.configure()
   }
   
   func sceneDidDisconnect(_ scene: UIScene) {
