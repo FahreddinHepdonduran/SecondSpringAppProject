@@ -18,6 +18,7 @@ final class SplashScreenViewController: UIViewController {
   @objc private func changeRootToSignUp() {
     let signUpViewController = SignUpScreenViewController.instanceFromStoryboard()
     let navigationController = UINavigationController(rootViewController: signUpViewController)
+    navigationController.navigationBar.isTranslucent = true
     UIApplication.changeRoot(with: navigationController)
   }
   

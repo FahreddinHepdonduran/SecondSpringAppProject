@@ -8,39 +8,30 @@
 
 import UIKit
 
-protocol SignUpScreenViewControllerDelegate: class {
-  func loginButtonPressed()
-  func signUpButtonPressed()
-}
-
 final class SignUpScreenViewController: UIViewController {
-  
-  private weak var delegate: SignUpScreenViewControllerDelegate?
   
   @IBOutlet private weak var signUpButton: UIButton!
   @IBOutlet private weak var loginButton: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     navigationController?.navigationBar.isHidden = true
   }
   
   @IBAction func loginButtonTapped(_ sender: UIButton) {
-    delegate?.loginButtonPressed()
+    let loginViewController = LoginViewController.instanceFromStoryboard()
+    navigationController?.pushViewController(loginViewController, animated: true)
   }
   
   @IBAction func signUpButtonTapped(_ sender: UIButton) {
-    delegate?.signUpButtonPressed()
+    let registerViewController = RegisterScreenViewController.instanceFromStoryboard()
+    navigationController?.pushViewController(registerViewController, animated: true)
   }
   
 }
 
-extension SignUpScreenViewController: StoryboardInstantiable {
-  
-  class func instance(delegate: SignUpScreenViewControllerDelegate) -> SignUpScreenViewController {
-    let viewController = instanceFromStoryboard()
-    viewController.delegate = delegate
-    return viewController
-  }
-  
-}
+extension SignUpScreenViewController: StoryboardInstantiable { }
