@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,8 @@
 		E5EB915C2649782300C73FFF /* RegisterScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5EB915B2649782300C73FFF /* RegisterScreen.storyboard */; };
 		E5EB915E2649783600C73FFF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EB915D2649783600C73FFF /* LoginViewController.swift */; };
 		E5EB91602649785000C73FFF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5EB915F2649785000C73FFF /* Login.storyboard */; };
+		E5FC4A68264AB7D5004F60AC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FC4A67264AB7D5004F60AC /* HomeViewController.swift */; };
+		E5FC4A6A264AB7E1004F60AC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5FC4A69264AB7E1004F60AC /* Home.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		E5EB915B2649782300C73FFF /* RegisterScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterScreen.storyboard; sourceTree = "<group>"; };
 		E5EB915D2649783600C73FFF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E5EB915F2649785000C73FFF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		E5FC4A67264AB7D5004F60AC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E5FC4A69264AB7E1004F60AC /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +70,6 @@
 				B8129B6BEC00EED6B6680908 /* Pods-SecondSpringApp.debug.xcconfig */,
 				36BDAED324232F1E4E877342 /* Pods-SecondSpringApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -114,6 +117,7 @@
 		E5159B1D264806450031AEB0 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E5FC4A66264AB7C2004F60AC /* Home */,
 				E5EB9158264977B100C73FFF /* Register */,
 				E5EB9157264977A700C73FFF /* Login */,
 				E5159B322648175D0031AEB0 /* SignUp */,
@@ -191,6 +195,15 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
+		E5FC4A66264AB7C2004F60AC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E5FC4A67264AB7D5004F60AC /* HomeViewController.swift */,
+				E5FC4A69264AB7E1004F60AC /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -251,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5FC4A6A264AB7E1004F60AC /* Home.storyboard in Resources */,
 				E53418FA26487D270066072C /* SignUpScreen.storyboard in Resources */,
 				E5159B162647FF990031AEB0 /* LaunchScreen.storyboard in Resources */,
 				E5159B24264808710031AEB0 /* SplashScreen.storyboard in Resources */,
@@ -314,6 +328,7 @@
 				E534190626488AAF0066072C /* UIApplication+Extensions.swift in Sources */,
 				E53418FF264881590066072C /* LoginState.swift in Sources */,
 				E5EB915A264977D700C73FFF /* RegisterViewController.swift in Sources */,
+				E5FC4A68264AB7D5004F60AC /* HomeViewController.swift in Sources */,
 				E5159B0A2647FF960031AEB0 /* AppDelegate.swift in Sources */,
 				E5159B31264810830031AEB0 /* StoryboardInstantiable.swift in Sources */,
 				E53418FC26487DF90066072C /* SignUpScreenViewController.swift in Sources */,

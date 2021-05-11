@@ -21,7 +21,7 @@ final class LoginViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    updateRegisterButtonState()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -29,7 +29,12 @@ final class LoginViewController: UIViewController {
     navigationController?.navigationBar.isHidden = false
   }
   
-  @IBAction func loginButtonDidTap(_ sender: UIButton) { }
+  @IBAction func loginButtonDidTap(_ sender: UIButton) {
+    let homeViewController = HomeViewController.instanceFromStoryboard()
+    let navigationController = UINavigationController(rootViewController: homeViewController)
+    navigationController.title = "home"
+    UIApplication.changeRoot(with: navigationController)
+  }
   
 }
 

@@ -29,7 +29,12 @@ final class RegisterScreenViewController: UIViewController {
     navigationController?.navigationBar.isHidden = false
   }
   
-  @IBAction func registerButtonDidTapp(_ sender: UIButton) { }
+  @IBAction func registerButtonDidTapp(_ sender: UIButton) {
+    let homeViewController = HomeViewController.instanceFromStoryboard()
+    let navigationController = UINavigationController(rootViewController: homeViewController)
+    navigationController.title = "home"
+    UIApplication.changeRoot(with: navigationController)
+  }
   
 }
 
