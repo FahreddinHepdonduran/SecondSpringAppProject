@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="q2h-vq-s68">
-                                <rect key="frame" x="40" y="144" width="334" height="270"/>
+                                <rect key="frame" x="40" y="144" width="334" height="335"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASc-DZ-noS">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="60"/>
@@ -35,8 +35,16 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2yo-BU-LYq">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9yw-6x-Ozx">
                                         <rect key="frame" x="0.0" y="155" width="334" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="dNl-A2-6Ix"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2yo-BU-LYq">
+                                        <rect key="frame" x="0.0" y="220" width="334" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="U3z-Ca-EPh"/>
                                         </constraints>
@@ -44,7 +52,7 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5QG-gu-3AA">
-                                        <rect key="frame" x="0.0" y="220" width="334" height="50"/>
+                                        <rect key="frame" x="0.0" y="285" width="334" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Vua-ff-tV1"/>
                                         </constraints>
@@ -67,6 +75,7 @@
                         <viewLayoutGuide key="safeArea" id="DtY-nK-a1l"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="9yw-6x-Ozx" id="AUH-0Q-qtD"/>
                         <outlet property="nicknameTextField" destination="giZ-vs-HfQ" id="NPL-oh-1C2"/>
                         <outlet property="passwordTextField" destination="2yo-BU-LYq" id="21E-FW-hLC"/>
                         <outlet property="registerButton" destination="5QG-gu-3AA" id="YCr-tC-l19"/>

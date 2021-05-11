@@ -13,6 +13,7 @@ import RxSwift
 final class RegisterScreenViewController: UIViewController {
   
   @IBOutlet private weak var nicknameTextField: UITextField!
+  @IBOutlet private weak var emailTextField: UITextField!
   @IBOutlet private weak var passwordTextField: UITextField!
   @IBOutlet private weak var registerButton: UIButton!
   

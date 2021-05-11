@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="bIZ-Oy-1rf">
-                                <rect key="frame" x="40" y="151" width="334" height="255"/>
+                                <rect key="frame" x="40" y="151" width="334" height="315"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73m-Jb-4g3">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="60"/>
@@ -35,8 +35,16 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LVH-VW-hAf">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L0z-6D-MRl">
                                         <rect key="frame" x="0.0" y="145" width="334" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="Adv-bM-FaR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LVH-VW-hAf">
+                                        <rect key="frame" x="0.0" y="205" width="334" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="dS3-LD-btj"/>
                                         </constraints>
@@ -44,7 +52,7 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhn-2v-i24">
-                                        <rect key="frame" x="0.0" y="205" width="334" height="50"/>
+                                        <rect key="frame" x="0.0" y="265" width="334" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="dVF-da-5yi"/>
                                         </constraints>
@@ -67,6 +75,7 @@
                         <viewLayoutGuide key="safeArea" id="kNg-96-6iG"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="L0z-6D-MRl" id="P7a-0D-Y2x"/>
                         <outlet property="loginButton" destination="Bhn-2v-i24" id="UV5-4T-66C"/>
                         <outlet property="nicknameTextField" destination="ER3-Ax-DoP" id="hJv-Yv-eFh"/>
                         <outlet property="passwordTextField" destination="LVH-VW-hAf" id="dWE-zI-TIX"/>
