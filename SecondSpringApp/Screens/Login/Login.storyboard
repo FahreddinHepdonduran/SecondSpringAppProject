@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="bIZ-Oy-1rf">
-                                <rect key="frame" x="40" y="151" width="334" height="180"/>
+                                <rect key="frame" x="40" y="151" width="334" height="255"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73m-Jb-4g3">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="60"/>
@@ -43,10 +43,22 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhn-2v-i24">
+                                        <rect key="frame" x="0.0" y="205" width="334" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="dVF-da-5yi"/>
+                                        </constraints>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginButtonDidTap:" destination="Mxb-H8-6RC" eventType="touchUpInside" id="pnh-m2-7TX"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bIZ-Oy-1rf" firstAttribute="leading" secondItem="kNg-96-6iG" secondAttribute="leading" constant="40" id="Fgo-Uh-9fH"/>
                             <constraint firstItem="kNg-96-6iG" firstAttribute="trailing" secondItem="bIZ-Oy-1rf" secondAttribute="trailing" constant="40" id="ijy-1Y-ahw"/>
@@ -55,13 +67,14 @@
                         <viewLayoutGuide key="safeArea" id="kNg-96-6iG"/>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="Bhn-2v-i24" id="UV5-4T-66C"/>
                         <outlet property="nicknameTextField" destination="ER3-Ax-DoP" id="hJv-Yv-eFh"/>
                         <outlet property="passwordTextField" destination="LVH-VW-hAf" id="dWE-zI-TIX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lDX-fI-nKi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="130"/>
+            <point key="canvasLocation" x="-397" y="38"/>
         </scene>
     </scenes>
 </document>

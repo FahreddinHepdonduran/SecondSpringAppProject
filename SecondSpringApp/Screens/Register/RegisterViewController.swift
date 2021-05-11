@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  RegisterViewController.swift
 //  SecondSpringApp
 //
 //  Created by fahreddin on 10.05.2021.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-final class LoginViewController: UIViewController {
+final class RegisterScreenViewController: UIViewController {
   
   @IBOutlet private weak var nicknameTextField: UITextField!
   @IBOutlet private weak var passwordTextField: UITextField!
-  @IBOutlet private weak var loginButton: UIButton!
+  @IBOutlet private weak var registerButton: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -24,8 +24,8 @@ final class LoginViewController: UIViewController {
     navigationController?.navigationBar.isHidden = false
   }
   
-  @IBAction func loginButtonDidTap(_ sender: UIButton) { }
+  @IBAction func registerButtonDidTapp(_ sender: UIButton) { }
   
 }
 
-extension LoginViewController: StoryboardInstantiable { }
+extension RegisterScreenViewController: StoryboardInstantiable { }
