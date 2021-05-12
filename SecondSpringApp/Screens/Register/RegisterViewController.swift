@@ -31,9 +31,19 @@ final class RegisterScreenViewController: UIViewController {
   }
   
   @IBAction func registerButtonDidTapp(_ sender: UIButton) {
-    let homeViewController = HomeViewController.instanceFromStoryboard()
-    let navigationController = UINavigationController(rootViewController: homeViewController)
-    UIApplication.changeRoot(with: navigationController)
+    let email = emailTextField.text!
+    let password = passwordTextField.text!
+    let nickname = nicknameTextField.text!
+    
+    FirebaseAuthManager.shared.signUpNewUser(email, password, nickname) { [weak self] (result) in
+      switch result {
+      case .success(let user):
+        print(user)
+        self?.navigateToHome()
+      case .failure(let error):
+        print(error)
+      }
+    }
   }
   
 }
@@ -72,6 +82,12 @@ private extension RegisterScreenViewController {
     validateAllFields()
       .bind(to: registerButton.rx.isEnabled)
       .disposed(by: disposeBag)
+  }
+  
+  func navigateToHome() {
+    let homeViewController = HomeViewController.instanceFromStoryboard()
+    let navigationController = UINavigationController(rootViewController: homeViewController)
+    UIApplication.changeRoot(with: navigationController)
   }
   
 }

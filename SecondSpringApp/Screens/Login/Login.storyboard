@@ -60,7 +60,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="loginButtonDidTap:" destination="Mxb-H8-6RC" eventType="touchUpInside" id="pnh-m2-7TX"/>
+                                            <action selector="loginButtonDidTap:" destination="Mxb-H8-6RC" eventType="touchUpInside" id="I3Q-Dl-sbz"/>
                                         </connections>
                                     </button>
                                 </subviews>

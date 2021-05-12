@@ -31,9 +31,17 @@ final class LoginViewController: UIViewController {
   }
   
   @IBAction func loginButtonDidTap(_ sender: UIButton) {
-    let homeViewController = HomeViewController.instanceFromStoryboard()
-    let navigationController = UINavigationController(rootViewController: homeViewController)
-    UIApplication.changeRoot(with: navigationController)
+    let email = emailTextField.text!
+    let password = passwordTextField.text!
+    
+    FirebaseAuthManager.shared.signInUser(email, password) { [weak self] (result) in
+      switch result {
+      case .success(_):
+        self?.navigateToHome()
+      case .failure(_):
+        print("login error")
+      }
+    }
   }
   
 }
@@ -72,6 +80,12 @@ private extension LoginViewController {
     validatePassword()
       .bind(to: loginButton.rx.isEnabled)
       .disposed(by: disposeBag)
+  }
+  
+  func navigateToHome() {
+    let homeViewController = HomeViewController.instanceFromStoryboard()
+    let navigationController = UINavigationController(rootViewController: homeViewController)
+    UIApplication.changeRoot(with: navigationController)
   }
   
 }
