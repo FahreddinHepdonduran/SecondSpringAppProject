@@ -12,7 +12,6 @@ import RxCocoa
 
 final class LoginViewController: UIViewController {
   
-  @IBOutlet private weak var nicknameTextField: UITextField!
   @IBOutlet private weak var emailTextField: UITextField!
   @IBOutlet private weak var passwordTextField: UITextField!
   @IBOutlet private weak var loginButton: UIButton!
