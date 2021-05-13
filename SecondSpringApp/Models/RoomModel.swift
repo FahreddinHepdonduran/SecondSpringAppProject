@@ -12,4 +12,10 @@ struct RoomModel: Codable {
   let id = UUID()
   let name: String
   let messageHistory: [[String:String]] = [["hasan":"merhaba grup"]]
+  
+  enum CodingKeys: CodingKey {
+    case id
+    case name
+    case messageHistory
+  }
 }
