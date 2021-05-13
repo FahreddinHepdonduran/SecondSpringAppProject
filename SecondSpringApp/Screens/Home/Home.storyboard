@@ -49,6 +49,10 @@
                                                 <constraint firstAttribute="baseline" secondItem="c2E-jj-SrI" secondAttribute="bottom" constant="10" id="xSE-3O-0IE"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="roomImageView" destination="c2E-jj-SrI" id="NPA-3P-bdO"/>
+                                            <outlet property="roomNameLabel" destination="jlu-PW-eSd" id="OBf-pR-ghm"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
