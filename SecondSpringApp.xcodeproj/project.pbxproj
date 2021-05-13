@@ -20,6 +20,7 @@
 		E53418FF264881590066072C /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53418FE264881590066072C /* LoginState.swift */; };
 		E534190626488AAF0066072C /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534190526488AAF0066072C /* UIApplication+Extensions.swift */; };
 		E58830AA264D6ABE005EFB55 /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58830A9264D6ABE005EFB55 /* RoomTableViewCell.swift */; };
+		E58830AD264D7B59005EFB55 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58830AC264D7B59005EFB55 /* RoomModel.swift */; };
 		E5D7BCB7264C09D600114998 /* FirebaseFirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7BCB6264C09D600114998 /* FirebaseFirestoreManager.swift */; };
 		E5EB915A264977D700C73FFF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EB9159264977D700C73FFF /* RegisterViewController.swift */; };
 		E5EB915C2649782300C73FFF /* RegisterScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5EB915B2649782300C73FFF /* RegisterScreen.storyboard */; };
@@ -50,6 +51,7 @@
 		E53418FE264881590066072C /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 		E534190526488AAF0066072C /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		E58830A9264D6ABE005EFB55 /* RoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; };
+		E58830AC264D7B59005EFB55 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
 		E5D7BCB6264C09D600114998 /* FirebaseFirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreManager.swift; sourceTree = "<group>"; };
 		E5EB9159264977D700C73FFF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E5EB915B2649782300C73FFF /* RegisterScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterScreen.storyboard; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				E5FC4A6B264ADF03004F60AC /* GoogleService-Info.plist */,
 				E5159B172647FF990031AEB0 /* Info.plist */,
 				E5159B142647FF990031AEB0 /* LaunchScreen.storyboard */,
+				E58830AB264D7B3D005EFB55 /* Models */,
 				E5FC4A6F264AE975004F60AC /* NetworkManager */,
 				E5159B2F264810600031AEB0 /* Protocols */,
 				E5159B1D264806450031AEB0 /* Screens */,
@@ -197,6 +200,14 @@
 				E58830A9264D6ABE005EFB55 /* RoomTableViewCell.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		E58830AB264D7B3D005EFB55 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E58830AC264D7B59005EFB55 /* RoomModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E5EB9157264977A700C73FFF /* Login */ = {
@@ -357,6 +368,7 @@
 			files = (
 				E5FC4A71264AE9AC004F60AC /* FirebaseAuthManager.swift in Sources */,
 				E5EB915E2649783600C73FFF /* LoginViewController.swift in Sources */,
+				E58830AD264D7B59005EFB55 /* RoomModel.swift in Sources */,
 				E5FC4A6E264AE3E5004F60AC /* String+Extensions.swift in Sources */,
 				E5159B0E2647FF960031AEB0 /* SplashScreenViewController.swift in Sources */,
 				E534190626488AAF0066072C /* UIApplication+Extensions.swift in Sources */,
