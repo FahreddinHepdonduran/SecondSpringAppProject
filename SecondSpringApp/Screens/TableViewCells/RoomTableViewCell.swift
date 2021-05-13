@@ -10,7 +10,17 @@ import UIKit
 
 final class RoomTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
+  @IBOutlet private weak var roomImageView: UIImageView!
+  @IBOutlet private weak var roomNameLabel: UILabel!
+  
+  var model: RoomModel? {
+    didSet {
+      guard let model = self.model else { return }
+      configure(model: model)
+    }
+  }
+  
+  override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
@@ -21,4 +31,12 @@ final class RoomTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+private extension RoomTableViewCell {
+  
+  func configure(model: RoomModel) {
+    roomNameLabel.text = model.name
+  }
+  
 }
