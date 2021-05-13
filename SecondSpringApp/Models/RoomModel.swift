@@ -9,13 +9,18 @@
 import Foundation
 
 struct RoomModel: Codable {
-  let id = UUID()
+  var id = UUID()
   let name: String
-  let messageHistory: [[String:String]] = [["hasan":"merhaba grup"]]
+  var messageHistory: [[String:String]] = [
+    ["hasan":"merhaba grup"],
+    ["hasan":"merhaba grup"],
+    ["hasan":"merhaba grup"]
+  ]
   
   enum CodingKeys: CodingKey {
     case id
     case name
     case messageHistory
   }
+  
 }

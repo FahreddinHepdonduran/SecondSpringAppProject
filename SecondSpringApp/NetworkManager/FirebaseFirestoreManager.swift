@@ -42,4 +42,14 @@ final class FirebaseFirestoreManager {
     }
   }
   
+  func getChatRooms(_ completion: @escaping([QueryDocumentSnapshot]) -> Void) {
+    firestore.collection("Rooms").getDocuments { (snapshot, error) in
+      guard let error = error else {
+        completion(snapshot!.documents)
+        return
+      }
+      print(error)
+    }
+  }
+  
 }

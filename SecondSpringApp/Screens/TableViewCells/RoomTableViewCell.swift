@@ -9,7 +9,7 @@
 import UIKit
 
 final class RoomTableViewCell: UITableViewCell {
-
+  
   @IBOutlet private weak var roomImageView: UIImageView!
   @IBOutlet private weak var roomNameLabel: UILabel!
   
@@ -21,16 +21,16 @@ final class RoomTableViewCell: UITableViewCell {
   }
   
   override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    super.awakeFromNib()
+    // Initialization code
+  }
+  
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+    selectionStyle = .none
+    // Configure the view for the selected state
+  }
+  
 }
 
 private extension RoomTableViewCell {

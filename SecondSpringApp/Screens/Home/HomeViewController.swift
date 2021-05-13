@@ -27,6 +27,8 @@ final class HomeViewController: UIViewController {
     super.viewDidLoad()
     tableViewDelegates()
     configureNavigationController()
+    fetchRooms()
+    
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -85,6 +87,22 @@ private extension HomeViewController {
       }
       
       print(error)
+    }
+  }
+  
+  func fetchRooms() {
+    FirebaseFirestoreManager.shared.getChatRooms { [weak self] (documents) in
+      for document in documents {
+        let docid = document["id"] as! String
+        let idfromstr = UUID(uuidString: docid)
+        let room = RoomModel(id: idfromstr!,
+                             name: document["name"] as! String,
+                             messageHistory: document["messageHistory"] as! [[String:String]])
+        print(room.name)
+        self?.chatRooms.append(room)
+      }
+      
+      self?.reloadTableView()
     }
   }
   
