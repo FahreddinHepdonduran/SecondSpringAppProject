@@ -21,6 +21,8 @@ final class HomeViewController: UIViewController {
     return currentUser
   }
   
+  private var chatRooms = [RoomModel]()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     tableViewDelegates()
@@ -62,14 +64,34 @@ private extension HomeViewController {
       textfield.placeholder = "Type Room Name"
     }
     
-    let action = UIAlertAction(title: "Ok", style: .default) { (_) in
+    let action = UIAlertAction(title: "Ok", style: .default) { [weak self] (_) in
       guard let textfield = alertController.textFields?.first else { return }
-      print(textfield.text!)
+      let room = RoomModel(name: textfield.text!)
+      self?.chatRooms.append(room)
+      self?.reloadTableView()
+      self?.addRoomsToFirebase(room)
     }
     
     alertController.addAction(action)
     
     present(alertController, animated: true, completion: nil)
+  }
+  
+  func addRoomsToFirebase(_ room: RoomModel) {
+    FirebaseFirestoreManager.shared.addRoom(room) { (error) in
+      guard let error = error else {
+        print("room succedded")
+        return
+      }
+      
+      print(error)
+    }
+  }
+  
+  func reloadTableView() {
+    DispatchQueue.main.async { [weak self] in
+      self?.tableView.reloadData()
+    }
   }
   
 }
@@ -79,11 +101,13 @@ extension HomeViewController: UITableViewDelegate { }
 extension HomeViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 0
+    return chatRooms.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "RoomTableViewCell") as! RoomTableViewCell
+    let roomModel = chatRooms[indexPath.row]
+    cell.model = roomModel
     return cell
   }
   

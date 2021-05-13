@@ -28,7 +28,18 @@ final class FirebaseFirestoreManager {
         completion(error)
       }
     }
-
+  }
+  
+  func addRoom(_ room: RoomModel, completion: @escaping(Error?) -> Void) {
+    firestore.collection("Rooms").addDocument(data: [
+      "id": "\(room.id)",
+      "name": room.name,
+      "messageHistory": room.messageHistory
+    ]) { (error) in
+      if let error = error {
+        completion(error)
+      }
+    }
   }
   
 }
