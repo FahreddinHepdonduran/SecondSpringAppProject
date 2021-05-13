@@ -55,7 +55,21 @@ private extension HomeViewController {
   
   @objc
   func rightBarButtonItemAction() {
+    let alertController = UIAlertController(title: "Add Room",
+                                            message: nil,
+                                            preferredStyle: .alert)
+    alertController.addTextField { (textfield) in
+      textfield.placeholder = "Type Room Name"
+    }
     
+    let action = UIAlertAction(title: "Ok", style: .default) { (_) in
+      guard let textfield = alertController.textFields?.first else { return }
+      print(textfield.text!)
+    }
+    
+    alertController.addAction(action)
+    
+    present(alertController, animated: true, completion: nil)
   }
   
 }
