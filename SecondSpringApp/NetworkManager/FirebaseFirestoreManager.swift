@@ -13,6 +13,7 @@ import FirebaseFirestore
 final class FirebaseFirestoreManager {
   
   private let firestore = Firestore.firestore()
+  private let userDefaults = UserDefaults.standard
   
   static let shared = FirebaseFirestoreManager()
   
@@ -26,8 +27,10 @@ final class FirebaseFirestoreManager {
     ]) { error in
       if let error = error {
         completion(error)
+        return
       }
     }
+    userDefaults.setValue(nickname, forKey: "nickname")
   }
   
   func addRoom(_ room: RoomModel, completion: @escaping(Error?) -> Void) {

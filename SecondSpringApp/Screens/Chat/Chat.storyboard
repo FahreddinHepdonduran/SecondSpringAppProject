@@ -59,9 +59,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type Here" translatesAutoresizingMaskIntoConstraints="NO" id="Qum-Fj-V6u">
-                                <rect key="frame" x="0.0" y="822" width="414" height="40"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Type Here" translatesAutoresizingMaskIntoConstraints="NO" id="Qum-Fj-V6u">
+                                <rect key="frame" x="0.0" y="822" width="359" height="40"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="JjC-Lf-u1b"/>
                                 </constraints>
@@ -69,22 +69,38 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6DF-os-8VH">
+                                <rect key="frame" x="359" y="822" width="55" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="UO8-FW-F1y"/>
+                                    <constraint firstAttribute="height" constant="40" id="zdH-8m-NTd"/>
+                                </constraints>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendButtonDidTap:" destination="OWL-5a-z4v" eventType="touchUpInside" id="0Jd-Xn-NMc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6DF-os-8VH" firstAttribute="leading" secondItem="Qum-Fj-V6u" secondAttribute="trailing" id="0Ec-nj-lmy"/>
                             <constraint firstAttribute="bottom" secondItem="zWA-mh-Rd1" secondAttribute="bottom" id="3c2-zR-nPi"/>
                             <constraint firstItem="Qum-Fj-V6u" firstAttribute="leading" secondItem="yTV-IG-g4e" secondAttribute="leading" id="5qV-te-vOW"/>
+                            <constraint firstItem="yTV-IG-g4e" firstAttribute="trailing" secondItem="6DF-os-8VH" secondAttribute="trailing" id="89K-jw-1oN"/>
                             <constraint firstItem="zWA-mh-Rd1" firstAttribute="leading" secondItem="yTV-IG-g4e" secondAttribute="leading" id="Nwx-DB-ARD"/>
                             <constraint firstItem="zWA-mh-Rd1" firstAttribute="top" secondItem="yTV-IG-g4e" secondAttribute="top" id="Q3C-cB-FdW"/>
                             <constraint firstItem="yTV-IG-g4e" firstAttribute="trailing" secondItem="zWA-mh-Rd1" secondAttribute="trailing" id="Vav-Ct-5rS"/>
-                            <constraint firstItem="yTV-IG-g4e" firstAttribute="trailing" secondItem="Qum-Fj-V6u" secondAttribute="trailing" id="fu1-6i-iVR"/>
+                            <constraint firstItem="6DF-os-8VH" firstAttribute="bottom" secondItem="yTV-IG-g4e" secondAttribute="bottom" id="YrE-ZW-JTV"/>
                             <constraint firstItem="Qum-Fj-V6u" firstAttribute="bottom" secondItem="yTV-IG-g4e" secondAttribute="bottom" id="gQu-3v-QNw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yTV-IG-g4e"/>
                     </view>
                     <connections>
                         <outlet property="messageEntryBottomConstraint" destination="gQu-3v-QNw" id="7xZ-DT-COh"/>
+                        <outlet property="messageEntryHeightConstraint" destination="JjC-Lf-u1b" id="SCN-t6-9fX"/>
                         <outlet property="messageEntryTextView" destination="Qum-Fj-V6u" id="Uz7-Nc-AIW"/>
+                        <outlet property="sendButton" destination="6DF-os-8VH" id="7WF-QO-Zbv"/>
+                        <outlet property="sendButtonBottomConstraint" destination="YrE-ZW-JTV" id="vrT-vj-IQR"/>
                         <outlet property="tableView" destination="zWA-mh-Rd1" id="gEl-Ix-hu3"/>
                     </connections>
                 </viewController>
