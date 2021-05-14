@@ -98,7 +98,6 @@ private extension HomeViewController {
         let room = RoomModel(id: idfromstr!,
                              name: document["name"] as! String,
                              messageHistory: document["messageHistory"] as! [[String:String]])
-        print(room.name)
         self?.chatRooms.append(room)
       }
       
@@ -114,7 +113,14 @@ private extension HomeViewController {
   
 }
 
-extension HomeViewController: UITableViewDelegate { }
+extension HomeViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let chatViewController = ChatViewController.instanceFromStoryboard()
+    chatViewController.room = chatRooms[indexPath.row]
+    navigationController?.pushViewController(chatViewController,
+                                             animated: true)
+  }
+}
 
 extension HomeViewController: UITableViewDataSource {
   
