@@ -26,6 +26,9 @@
 		E5EB915C2649782300C73FFF /* RegisterScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5EB915B2649782300C73FFF /* RegisterScreen.storyboard */; };
 		E5EB915E2649783600C73FFF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EB915D2649783600C73FFF /* LoginViewController.swift */; };
 		E5EB91602649785000C73FFF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5EB915F2649785000C73FFF /* Login.storyboard */; };
+		E5F32C62264E94F200EA3CD1 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F32C61264E94F200EA3CD1 /* ChatViewController.swift */; };
+		E5F32C64264E950B00EA3CD1 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5F32C63264E950B00EA3CD1 /* Chat.storyboard */; };
+		E5F32C66264E97C700EA3CD1 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F32C65264E97C700EA3CD1 /* ChatTableViewCell.swift */; };
 		E5FC4A68264AB7D5004F60AC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FC4A67264AB7D5004F60AC /* HomeViewController.swift */; };
 		E5FC4A6A264AB7E1004F60AC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5FC4A69264AB7E1004F60AC /* Home.storyboard */; };
 		E5FC4A6C264ADF03004F60AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5FC4A6B264ADF03004F60AC /* GoogleService-Info.plist */; };
@@ -57,6 +60,9 @@
 		E5EB915B2649782300C73FFF /* RegisterScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterScreen.storyboard; sourceTree = "<group>"; };
 		E5EB915D2649783600C73FFF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E5EB915F2649785000C73FFF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		E5F32C61264E94F200EA3CD1 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		E5F32C63264E950B00EA3CD1 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		E5F32C65264E97C700EA3CD1 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		E5FC4A67264AB7D5004F60AC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E5FC4A69264AB7E1004F60AC /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		E5FC4A6B264ADF03004F60AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -132,12 +138,13 @@
 		E5159B1D264806450031AEB0 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				E58830A8264D6A79005EFB55 /* TableViewCells */,
+				E5F32C60264E947500EA3CD1 /* Chat */,
 				E5FC4A66264AB7C2004F60AC /* Home */,
-				E5EB9158264977B100C73FFF /* Register */,
 				E5EB9157264977A700C73FFF /* Login */,
+				E5EB9158264977B100C73FFF /* Register */,
 				E5159B322648175D0031AEB0 /* SignUp */,
 				E5159B22264808090031AEB0 /* Splash */,
+				E58830A8264D6A79005EFB55 /* TableViewCells */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -198,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				E58830A9264D6ABE005EFB55 /* RoomTableViewCell.swift */,
+				E5F32C65264E97C700EA3CD1 /* ChatTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -226,6 +234,15 @@
 				E5EB915B2649782300C73FFF /* RegisterScreen.storyboard */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		E5F32C60264E947500EA3CD1 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				E5F32C61264E94F200EA3CD1 /* ChatViewController.swift */,
+				E5F32C63264E950B00EA3CD1 /* Chat.storyboard */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		E5FC4A66264AB7C2004F60AC /* Home */ = {
@@ -306,6 +323,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5F32C64264E950B00EA3CD1 /* Chat.storyboard in Resources */,
 				E5FC4A6A264AB7E1004F60AC /* Home.storyboard in Resources */,
 				E5FC4A6C264ADF03004F60AC /* GoogleService-Info.plist in Resources */,
 				E53418FA26487D270066072C /* SignUpScreen.storyboard in Resources */,
@@ -368,6 +386,7 @@
 			files = (
 				E5FC4A71264AE9AC004F60AC /* FirebaseAuthManager.swift in Sources */,
 				E5EB915E2649783600C73FFF /* LoginViewController.swift in Sources */,
+				E5F32C62264E94F200EA3CD1 /* ChatViewController.swift in Sources */,
 				E58830AD264D7B59005EFB55 /* RoomModel.swift in Sources */,
 				E5FC4A6E264AE3E5004F60AC /* String+Extensions.swift in Sources */,
 				E5159B0E2647FF960031AEB0 /* SplashScreenViewController.swift in Sources */,
@@ -377,6 +396,7 @@
 				E5FC4A68264AB7D5004F60AC /* HomeViewController.swift in Sources */,
 				E5159B0A2647FF960031AEB0 /* AppDelegate.swift in Sources */,
 				E5159B31264810830031AEB0 /* StoryboardInstantiable.swift in Sources */,
+				E5F32C66264E97C700EA3CD1 /* ChatTableViewCell.swift in Sources */,
 				E58830AA264D6ABE005EFB55 /* RoomTableViewCell.swift in Sources */,
 				E5D7BCB7264C09D600114998 /* FirebaseFirestoreManager.swift in Sources */,
 				E53418FC26487DF90066072C /* SignUpScreenViewController.swift in Sources */,
