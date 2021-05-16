@@ -31,16 +31,6 @@ final class HomeViewController: UIViewController {
     
   }
   
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    
-  }
-  
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    
-  }
-  
 }
 
 private extension HomeViewController {
@@ -114,12 +104,14 @@ private extension HomeViewController {
 }
 
 extension HomeViewController: UITableViewDelegate {
+  
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let chatViewController = ChatViewController.instanceFromStoryboard()
     chatViewController.room = chatRooms[indexPath.row]
     navigationController?.pushViewController(chatViewController,
                                              animated: true)
   }
+  
 }
 
 extension HomeViewController: UITableViewDataSource {
