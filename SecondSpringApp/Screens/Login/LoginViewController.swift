@@ -16,17 +16,14 @@ final class LoginViewController: UIViewController {
   @IBOutlet private weak var passwordTextField: UITextField!
   @IBOutlet private weak var loginButton: UIButton!
   
+  weak var delegate: PopToRootProtocolDelegate?
+  
   private let disposeBag = DisposeBag()
   private let throttleInterval = 500
   
   override func viewDidLoad() {
     super.viewDidLoad()
     updateRegisterButtonState()
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    navigationController?.navigationBar.isHidden = false
   }
   
   @IBAction func loginButtonDidTap(_ sender: UIButton) {
@@ -43,6 +40,10 @@ final class LoginViewController: UIViewController {
     }
   }
   
+  @IBAction func noAccountButtonDidTap(_ sender: UIButton) {
+    navigationController?.popToRootViewController(animated: false)
+    delegate?.didPopToRootViewController(from: Self.self)
+  }
 }
 
 private extension LoginViewController {
@@ -76,8 +77,15 @@ private extension LoginViewController {
   }
   
   func updateRegisterButtonState() {
-    validatePassword()
+    validateAllFields()
       .bind(to: loginButton.rx.isEnabled)
+      .disposed(by: disposeBag)
+    
+    validateAllFields()
+      .subscribeOn(MainScheduler.instance)
+      .subscribe(onNext: { [weak self] in
+        self?.loginButton.alpha = $0 ? 1 : 0.5
+      })
       .disposed(by: disposeBag)
   }
   

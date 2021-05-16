@@ -23,6 +23,8 @@
 		E58830AD264D7B59005EFB55 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58830AC264D7B59005EFB55 /* RoomModel.swift */; };
 		E5A1118F26516002007A0A46 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1118E26516002007A0A46 /* CustomTextField.swift */; };
 		E5A111912651676C007A0A46 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A111902651676C007A0A46 /* UITextField+Extensions.swift */; };
+		E5A11193265185CF007A0A46 /* PopToRootProtocolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A11192265185CF007A0A46 /* PopToRootProtocolDelegate.swift */; };
+		E5A111962651923D007A0A46 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A111952651923D007A0A46 /* LoginViewModel.swift */; };
 		E5D7BCB7264C09D600114998 /* FirebaseFirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7BCB6264C09D600114998 /* FirebaseFirestoreManager.swift */; };
 		E5EB915A264977D700C73FFF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EB9159264977D700C73FFF /* RegisterViewController.swift */; };
 		E5EB915C2649782300C73FFF /* RegisterScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5EB915B2649782300C73FFF /* RegisterScreen.storyboard */; };
@@ -59,6 +61,8 @@
 		E58830AC264D7B59005EFB55 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
 		E5A1118E26516002007A0A46 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E5A111902651676C007A0A46 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		E5A11192265185CF007A0A46 /* PopToRootProtocolDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopToRootProtocolDelegate.swift; sourceTree = "<group>"; };
+		E5A111952651923D007A0A46 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E5D7BCB6264C09D600114998 /* FirebaseFirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreManager.swift; sourceTree = "<group>"; };
 		E5EB9159264977D700C73FFF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E5EB915B2649782300C73FFF /* RegisterScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterScreen.storyboard; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 				E5FC4A6F264AE975004F60AC /* NetworkManager */,
 				E5159B2F264810600031AEB0 /* Protocols */,
 				E5159B1D264806450031AEB0 /* Screens */,
+				E5A1119426519217007A0A46 /* ViewModels */,
 			);
 			path = SecondSpringApp;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				E5159B30264810830031AEB0 /* StoryboardInstantiable.swift */,
+				E5A11192265185CF007A0A46 /* PopToRootProtocolDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -230,6 +236,14 @@
 				E5A1118E26516002007A0A46 /* CustomTextField.swift */,
 			);
 			path = CustomTextFields;
+			sourceTree = "<group>";
+		};
+		E5A1119426519217007A0A46 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E5A111952651923D007A0A46 /* LoginViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		E5EB9157264977A700C73FFF /* Login */ = {
@@ -416,7 +430,9 @@
 				E58830AA264D6ABE005EFB55 /* RoomTableViewCell.swift in Sources */,
 				E5D7BCB7264C09D600114998 /* FirebaseFirestoreManager.swift in Sources */,
 				E53418FC26487DF90066072C /* SignUpScreenViewController.swift in Sources */,
+				E5A11193265185CF007A0A46 /* PopToRootProtocolDelegate.swift in Sources */,
 				E5159B0C2647FF960031AEB0 /* SceneDelegate.swift in Sources */,
+				E5A111962651923D007A0A46 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,8 @@ import UIKit
 import RxCocoa
 import RxSwift
 
+
+
 final class RegisterScreenViewController: UIViewController {
   
   @IBOutlet private weak var nicknameTextField: UITextField!
@@ -17,17 +19,14 @@ final class RegisterScreenViewController: UIViewController {
   @IBOutlet private weak var passwordTextField: UITextField!
   @IBOutlet private weak var registerButton: UIButton!
   
+  weak var delegate: PopToRootProtocolDelegate?
+  
   private let disposeBag = DisposeBag()
   private let throttleInterval = 500
   
   override func viewDidLoad() {
     super.viewDidLoad()
     updateRegisterButtonState()
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    navigationController?.navigationBar.isHidden = false
   }
   
   @IBAction func registerButtonDidTapp(_ sender: UIButton) {
@@ -44,6 +43,11 @@ final class RegisterScreenViewController: UIViewController {
         print(error)
       }
     }
+  }
+  
+  @IBAction func haveAnAccountButtonDidTap(_ sender: UIButton) {
+    navigationController?.popToRootViewController(animated: false)
+    delegate?.didPopToRootViewController(from: Self.self)
   }
   
 }
@@ -81,6 +85,13 @@ private extension RegisterScreenViewController {
   func updateRegisterButtonState() {
     validateAllFields()
       .bind(to: registerButton.rx.isEnabled)
+      .disposed(by: disposeBag)
+    
+    validateAllFields()
+      .subscribeOn(MainScheduler.instance)
+      .subscribe(onNext: { [weak self] in
+        self?.registerButton.alpha = $0 ? 1 : 0.5
+      })
       .disposed(by: disposeBag)
   }
   

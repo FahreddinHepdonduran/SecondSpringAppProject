@@ -24,14 +24,30 @@ final class SignUpScreenViewController: UIViewController {
   
   @IBAction func loginButtonTapped(_ sender: UIButton) {
     let loginViewController = LoginViewController.instanceFromStoryboard()
+    loginViewController.delegate = self
     navigationController?.pushViewController(loginViewController, animated: true)
   }
   
   @IBAction func signUpButtonTapped(_ sender: UIButton) {
     let registerViewController = RegisterScreenViewController.instanceFromStoryboard()
+    registerViewController.delegate = self
     navigationController?.pushViewController(registerViewController, animated: true)
   }
   
+}
+
+extension SignUpScreenViewController: PopToRootProtocolDelegate {
+  func didPopToRootViewController(from viewController: UIViewController.Type) {
+    if viewController == LoginViewController.self {
+      let registerViewController = RegisterScreenViewController.instanceFromStoryboard()
+      registerViewController.delegate = self
+      navigationController?.pushViewController(registerViewController, animated: true)
+    } else {
+      let loginViewController = LoginViewController.instanceFromStoryboard()
+      loginViewController.delegate = self
+      navigationController?.pushViewController(loginViewController, animated: true)
+    }
+  }
 }
 
 extension SignUpScreenViewController: StoryboardInstantiable { }
