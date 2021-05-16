@@ -21,6 +21,7 @@
 		E534190626488AAF0066072C /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534190526488AAF0066072C /* UIApplication+Extensions.swift */; };
 		E58830AA264D6ABE005EFB55 /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58830A9264D6ABE005EFB55 /* RoomTableViewCell.swift */; };
 		E58830AD264D7B59005EFB55 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58830AC264D7B59005EFB55 /* RoomModel.swift */; };
+		E5A1118F26516002007A0A46 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1118E26516002007A0A46 /* CustomTextField.swift */; };
 		E5D7BCB7264C09D600114998 /* FirebaseFirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7BCB6264C09D600114998 /* FirebaseFirestoreManager.swift */; };
 		E5EB915A264977D700C73FFF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EB9159264977D700C73FFF /* RegisterViewController.swift */; };
 		E5EB915C2649782300C73FFF /* RegisterScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5EB915B2649782300C73FFF /* RegisterScreen.storyboard */; };
@@ -55,6 +56,7 @@
 		E534190526488AAF0066072C /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		E58830A9264D6ABE005EFB55 /* RoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; };
 		E58830AC264D7B59005EFB55 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
+		E5A1118E26516002007A0A46 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E5D7BCB6264C09D600114998 /* FirebaseFirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreManager.swift; sourceTree = "<group>"; };
 		E5EB9159264977D700C73FFF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E5EB915B2649782300C73FFF /* RegisterScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterScreen.storyboard; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				E5159B21264807310031AEB0 /* AppDelegate */,
 				E5159B122647FF990031AEB0 /* Assets.xcassets */,
+				E5A1118D26515FDD007A0A46 /* CustomTextFields */,
 				E53418FD2648813E0066072C /* Enumerations */,
 				E534190426488A8D0066072C /* Extensions */,
 				E5FC4A6B264ADF03004F60AC /* GoogleService-Info.plist */,
@@ -216,6 +219,14 @@
 				E58830AC264D7B59005EFB55 /* RoomModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E5A1118D26515FDD007A0A46 /* CustomTextFields */ = {
+			isa = PBXGroup;
+			children = (
+				E5A1118E26516002007A0A46 /* CustomTextField.swift */,
+			);
+			path = CustomTextFields;
 			sourceTree = "<group>";
 		};
 		E5EB9157264977A700C73FFF /* Login */ = {
@@ -392,6 +403,7 @@
 				E5159B0E2647FF960031AEB0 /* SplashScreenViewController.swift in Sources */,
 				E534190626488AAF0066072C /* UIApplication+Extensions.swift in Sources */,
 				E53418FF264881590066072C /* LoginState.swift in Sources */,
+				E5A1118F26516002007A0A46 /* CustomTextField.swift in Sources */,
 				E5EB915A264977D700C73FFF /* RegisterViewController.swift in Sources */,
 				E5FC4A68264AB7D5004F60AC /* HomeViewController.swift in Sources */,
 				E5159B0A2647FF960031AEB0 /* AppDelegate.swift in Sources */,
