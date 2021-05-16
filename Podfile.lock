@@ -212,6 +212,9 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
+  - Action (4.2.0):
+    - RxCocoa (< 7.0, >= 5.0)
+    - RxSwift (< 7.0, >= 5.0)
   - BoringSSL-GRPC (0.0.7):
     - BoringSSL-GRPC/Implementation (= 0.0.7)
     - BoringSSL-GRPC/Interface (= 0.0.7)
@@ -309,6 +312,7 @@ PODS:
   - RxSwift (5.1.2)
 
 DEPENDENCIES:
+  - Action
   - Firebase/Auth
   - Firebase/Firestore
   - RxCocoa (~> 5.0)
@@ -317,6 +321,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - abseil
+    - Action
     - BoringSSL-GRPC
     - Firebase
     - FirebaseAuth
@@ -337,6 +342,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
+  Action: 5dc2194f7a0b77857c82a677b0da655f197c005f
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   Firebase: cd2ab85eec8170dc260186159f21072ecb679ad5
   FirebaseAuth: 76aa97ecd51e20ecd21321d08474d25f5d2b7b9f
@@ -355,6 +361,6 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 1e2e1f9570186967f617e49128ed26ccf1bafc8e
 
-PODFILE CHECKSUM: 8d7a340770ae67d70a349965deeea83ac3f15045
+PODFILE CHECKSUM: 68eea59ef2cefe93f5579eda1036adacb7bcbf07
 
 COCOAPODS: 1.8.4
