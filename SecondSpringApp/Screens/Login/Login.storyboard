@@ -94,9 +94,6 @@
                                                         <integer key="value" value="30"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="loginButtonDidTap:" destination="Mxb-H8-6RC" eventType="touchUpInside" id="I3Q-Dl-sbz"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

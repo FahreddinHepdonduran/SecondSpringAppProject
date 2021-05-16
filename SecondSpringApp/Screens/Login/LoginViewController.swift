@@ -19,25 +19,44 @@ final class LoginViewController: UIViewController {
   weak var delegate: PopToRootProtocolDelegate?
   
   private let disposeBag = DisposeBag()
-  private let throttleInterval = 500
+  private let viewModel = LoginViewModel()
+  private let throttleInterval = 1
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    updateRegisterButtonState()
-  }
-  
-  @IBAction func loginButtonDidTap(_ sender: UIButton) {
-    let email = emailTextField.text!
-    let password = passwordTextField.text!
     
-    FirebaseAuthManager.shared.signInUser(email, password) { [weak self] (result) in
-      switch result {
-      case .success(_):
-        self?.navigateToHome()
-      case .failure(_):
+    emailTextField.rx.text.orEmpty
+      .throttle(.seconds(throttleInterval), scheduler: MainScheduler.instance)
+      .bind(to: viewModel.emailText)
+      .disposed(by: disposeBag)
+    
+    passwordTextField.rx.text.orEmpty
+      .throttle(.seconds(throttleInterval), scheduler: MainScheduler.instance)
+      .bind(to: viewModel.passwordText)
+      .disposed(by: disposeBag)
+    
+    viewModel.isFieldsValid
+      .bind(to: loginButton.rx.isEnabled)
+      .disposed(by: disposeBag)
+    
+    viewModel.isFieldsValid
+      .subscribeOn(MainScheduler.instance)
+      .subscribe(onNext: { [weak self] in
+        self?.loginButton.alpha = $0 ? 1 : 0.5
+      })
+      .disposed(by: disposeBag)
+    
+    loginButton.rx.tap
+      .withLatestFrom(viewModel.emailPasswordObservable)
+      .bind(to: viewModel.loginAction.inputs)
+      .disposed(by: disposeBag)
+    
+    viewModel.loginAction
+      .errors
+      .subscribe { (error) in
         print("login error")
       }
-    }
+    .disposed(by: disposeBag)
   }
   
   @IBAction func noAccountButtonDidTap(_ sender: UIButton) {
@@ -47,47 +66,6 @@ final class LoginViewController: UIViewController {
 }
 
 private extension LoginViewController {
-  
-  func validatePassword() -> Observable<Bool> {
-    let isValidPassword = passwordTextField.rx.text.orEmpty
-    .throttle(.milliseconds(throttleInterval), scheduler: MainScheduler.instance)
-    .map({ $0.count >= 6 })
-    .share(replay: 1)
-    
-    return isValidPassword
-  }
-  
-  func validateEmail() -> Observable<Bool> {
-    let isValidEmail = emailTextField.rx.text.orEmpty
-      .throttle(.milliseconds(throttleInterval), scheduler: MainScheduler.instance)
-      .map({ $0.isValidEmail })
-      .share(replay: 1)
-    
-    return isValidEmail
-  }
-  
-  func validateAllFields() -> Observable<Bool> {
-    let validEmail = validateEmail()
-    let validPassword = validatePassword()
-    
-    let validAllFields = Observable.combineLatest(validEmail, validPassword) { $0 && $1}
-      .share(replay: 1)
-    
-    return validAllFields
-  }
-  
-  func updateRegisterButtonState() {
-    validateAllFields()
-      .bind(to: loginButton.rx.isEnabled)
-      .disposed(by: disposeBag)
-    
-    validateAllFields()
-      .subscribeOn(MainScheduler.instance)
-      .subscribe(onNext: { [weak self] in
-        self?.loginButton.alpha = $0 ? 1 : 0.5
-      })
-      .disposed(by: disposeBag)
-  }
   
   func navigateToHome() {
     let homeViewController = HomeViewController.instanceFromStoryboard()
