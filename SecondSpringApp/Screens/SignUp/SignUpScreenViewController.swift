@@ -13,6 +13,8 @@ final class SignUpScreenViewController: UIViewController {
   @IBOutlet private weak var signUpButton: UIButton!
   @IBOutlet private weak var loginButton: UIButton!
   
+  var viewControllerFactory: ViewControllerFactory!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
   }
@@ -23,14 +25,22 @@ final class SignUpScreenViewController: UIViewController {
   }
   
   @IBAction func loginButtonTapped(_ sender: UIButton) {
-    let loginViewController = LoginViewController.instanceFromStoryboard()
-    loginViewController.delegate = self
-    navigationController?.pushViewController(loginViewController, animated: true)
+    presentLogin()
   }
   
   @IBAction func signUpButtonTapped(_ sender: UIButton) {
-    let registerViewController = RegisterScreenViewController.instanceFromStoryboard()
-    registerViewController.delegate = self
+    presentRegister()
+  }
+  
+  private func presentLogin() {
+    let loginViewController = viewControllerFactory.loginViewController(self,
+                                                                        viewControllerFactory)
+    navigationController?.pushViewController(loginViewController, animated: true)
+  }
+  
+  private func presentRegister() {
+    let registerViewController = viewControllerFactory.registerViewController(self,
+                                                                              viewControllerFactory)
     navigationController?.pushViewController(registerViewController, animated: true)
   }
   
@@ -39,13 +49,9 @@ final class SignUpScreenViewController: UIViewController {
 extension SignUpScreenViewController: PopToRootProtocolDelegate {
   func didPopToRootViewController(from viewController: UIViewController.Type) {
     if viewController == LoginViewController.self {
-      let registerViewController = RegisterScreenViewController.instanceFromStoryboard()
-      registerViewController.delegate = self
-      navigationController?.pushViewController(registerViewController, animated: true)
+      presentRegister()
     } else {
-      let loginViewController = LoginViewController.instanceFromStoryboard()
-      loginViewController.delegate = self
-      navigationController?.pushViewController(loginViewController, animated: true)
+      presentLogin()
     }
   }
 }

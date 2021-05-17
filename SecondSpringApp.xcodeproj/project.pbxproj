@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A2932D16FB8A491996372BC7 /* Pods_SecondSpringApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CADC7F43168CF21E8678401E /* Pods_SecondSpringApp.framework */; };
+		E50D5D2E2652B6CA009D2D92 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50D5D2D2652B6CA009D2D92 /* ViewControllerFactory.swift */; };
+		E50D5D302652BE98009D2D92 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50D5D2F2652BE98009D2D92 /* RegisterViewModel.swift */; };
 		E5159B0A2647FF960031AEB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5159B092647FF960031AEB0 /* AppDelegate.swift */; };
 		E5159B0C2647FF960031AEB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5159B0B2647FF960031AEB0 /* SceneDelegate.swift */; };
 		E5159B0E2647FF960031AEB0 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5159B0D2647FF960031AEB0 /* SplashScreenViewController.swift */; };
@@ -44,6 +46,8 @@
 		36BDAED324232F1E4E877342 /* Pods-SecondSpringApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondSpringApp.release.xcconfig"; path = "Target Support Files/Pods-SecondSpringApp/Pods-SecondSpringApp.release.xcconfig"; sourceTree = "<group>"; };
 		B8129B6BEC00EED6B6680908 /* Pods-SecondSpringApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondSpringApp.debug.xcconfig"; path = "Target Support Files/Pods-SecondSpringApp/Pods-SecondSpringApp.debug.xcconfig"; sourceTree = "<group>"; };
 		CADC7F43168CF21E8678401E /* Pods_SecondSpringApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecondSpringApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E50D5D2D2652B6CA009D2D92 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		E50D5D2F2652BE98009D2D92 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		E5159B062647FF950031AEB0 /* SecondSpringApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecondSpringApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5159B092647FF960031AEB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5159B0B2647FF960031AEB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +111,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E50D5D2C2652B656009D2D92 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				E50D5D2D2652B6CA009D2D92 /* ViewControllerFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
 		E5159AFD2647FF950031AEB0 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +145,7 @@
 				E5A1118D26515FDD007A0A46 /* CustomTextFields */,
 				E53418FD2648813E0066072C /* Enumerations */,
 				E534190426488A8D0066072C /* Extensions */,
+				E50D5D2C2652B656009D2D92 /* Factories */,
 				E5FC4A6B264ADF03004F60AC /* GoogleService-Info.plist */,
 				E5159B172647FF990031AEB0 /* Info.plist */,
 				E5159B142647FF990031AEB0 /* LaunchScreen.storyboard */,
@@ -242,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				E5A111952651923D007A0A46 /* LoginViewModel.swift */,
+				E50D5D2F2652BE98009D2D92 /* RegisterViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -433,6 +447,8 @@
 				E5A11193265185CF007A0A46 /* PopToRootProtocolDelegate.swift in Sources */,
 				E5159B0C2647FF960031AEB0 /* SceneDelegate.swift in Sources */,
 				E5A111962651923D007A0A46 /* LoginViewModel.swift in Sources */,
+				E50D5D2E2652B6CA009D2D92 /* ViewControllerFactory.swift in Sources */,
+				E50D5D302652BE98009D2D92 /* RegisterViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

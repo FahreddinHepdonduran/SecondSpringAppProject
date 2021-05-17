@@ -12,7 +12,7 @@ import Firebase
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   
   var window: UIWindow?
-  
+  private lazy var viewControllerFactory = ViewControllerFactory()
   
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -20,7 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     guard let windowScene: UIWindowScene = (scene as? UIWindowScene) else { return }
     self.window = UIWindow(windowScene: windowScene)
-    self.window?.rootViewController = SplashScreenViewController.instanceFromStoryboard()
+    
+    let splashViewController = viewControllerFactory.splashViewController(viewControllerFactory)
+    
+    self.window?.rootViewController = splashViewController
     self.window?.makeKeyAndVisible()
     
     FirebaseApp.configure()

@@ -18,13 +18,48 @@ final class LoginViewController: UIViewController {
   
   weak var delegate: PopToRootProtocolDelegate?
   
+  var viewModel: LoginViewModel!
+  var viewControllerFactory: ViewControllerFactory!
+  
   private let disposeBag = DisposeBag()
-  private let viewModel = LoginViewModel()
   private let throttleInterval = 1
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    textFieldsBindings()
+    loginButtonBindings()
+    loginActionError()
+    loginActionElements()
+  }
+  
+  @IBAction func noAccountButtonDidTap(_ sender: UIButton) {
+    navigationController?.popToRootViewController(animated: false)
+    delegate?.didPopToRootViewController(from: Self.self)
+  }
+}
+
+private extension LoginViewController {
+  
+  func loginActionElements() {
+    viewModel.loginAction.elements
+      .filter { $0 }
+      .take(1)
+      .subscribe(onNext: { [weak self] _ in
+        self?.navigateToHome()
+      })
+      .disposed(by: disposeBag)
+  }
+  
+  func loginActionError() {
+    viewModel.loginAction
+      .errors
+      .subscribe { (error) in
+        print("login error")
+      }
+    .disposed(by: disposeBag)
+  }
+  
+  func textFieldsBindings() {
     emailTextField.rx.text.orEmpty
       .throttle(.seconds(throttleInterval), scheduler: MainScheduler.instance)
       .bind(to: viewModel.emailText)
@@ -34,7 +69,9 @@ final class LoginViewController: UIViewController {
       .throttle(.seconds(throttleInterval), scheduler: MainScheduler.instance)
       .bind(to: viewModel.passwordText)
       .disposed(by: disposeBag)
-    
+  }
+  
+  func loginButtonBindings() {
     viewModel.isFieldsValid
       .bind(to: loginButton.rx.isEnabled)
       .disposed(by: disposeBag)
@@ -50,27 +87,11 @@ final class LoginViewController: UIViewController {
       .withLatestFrom(viewModel.emailPasswordObservable)
       .bind(to: viewModel.loginAction.inputs)
       .disposed(by: disposeBag)
-    
-    viewModel.loginAction
-      .errors
-      .subscribe { (error) in
-        print("login error")
-      }
-    .disposed(by: disposeBag)
   }
-  
-  @IBAction func noAccountButtonDidTap(_ sender: UIButton) {
-    navigationController?.popToRootViewController(animated: false)
-    delegate?.didPopToRootViewController(from: Self.self)
-  }
-}
-
-private extension LoginViewController {
   
   func navigateToHome() {
-    let homeViewController = HomeViewController.instanceFromStoryboard()
-    let navigationController = UINavigationController(rootViewController: homeViewController)
-    UIApplication.changeRoot(with: navigationController)
+    let homeViewController = viewControllerFactory.homeViewController(viewControllerFactory)
+    UIApplication.changeRoot(with: homeViewController)
   }
   
 }

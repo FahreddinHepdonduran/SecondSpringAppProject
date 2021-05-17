@@ -10,16 +10,16 @@ import UIKit
 
 final class SplashScreenViewController: UIViewController {
   
+  var viewControllerFactory: ViewControllerFactory!
+  
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     perform(#selector(changeRootToSignUp), with: nil, afterDelay: 3)
   }
   
   @objc private func changeRootToSignUp() {
-    let signUpViewController = SignUpScreenViewController.instanceFromStoryboard()
-    let navigationController = UINavigationController(rootViewController: signUpViewController)
-    navigationController.navigationBar.isTranslucent = true
-    UIApplication.changeRoot(with: navigationController)
+    let signUpViewController = viewControllerFactory.SignUpViewController(viewControllerFactory)
+    UIApplication.changeRoot(with: signUpViewController)
   }
   
 }

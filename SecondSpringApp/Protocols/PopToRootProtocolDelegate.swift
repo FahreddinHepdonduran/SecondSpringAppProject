@@ -6,7 +6,6 @@
 //  Copyright © 2021 fahreddin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 protocol PopToRootProtocolDelegate: class {

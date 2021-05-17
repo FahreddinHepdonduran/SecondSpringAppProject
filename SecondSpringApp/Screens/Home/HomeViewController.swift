@@ -23,6 +23,8 @@ final class HomeViewController: UIViewController {
   
   private var chatRooms = [RoomModel]()
   
+  var viewControllerFactory: ViewControllerFactory!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     tableViewDelegates()
