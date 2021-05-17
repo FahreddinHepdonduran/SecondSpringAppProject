@@ -26,19 +26,31 @@ final class LoginViewModel {
   
   let loginAction: Action<(String, String), Bool> = Action { credentials in
     let (email, password) = credentials
-    
-    return .error(error.login)
-  }
-  
-  enum error: Error {
-    case login
+    return signInUser(email, password)
   }
   
 }
 
 private extension LoginViewModel {
   
-  private func makeValidation() {
+  class func signInUser(_ email: String, _ password: String) -> Observable<Bool> {
+    return Observable.create { (observer) -> Disposable in
+      
+      FirebaseAuthManager.shared.signInUser(email, password) { (result) in
+        switch result {
+        case .success(_):
+          observer.onNext(true)
+        case .failure(let error):
+          observer.onNext(false)
+          observer.onError(error)
+        }
+      }
+      
+      return Disposables.create()
+    }
+  }
+  
+  func makeValidation() {
     let isValidEmail = emailText.asObservable()
       .map({ $0.isValidEmail })
     
@@ -53,7 +65,7 @@ private extension LoginViewModel {
       .disposed(by: disposeBag)
   }
   
-  private func bindEmailPasswordObservable() {
+  func bindEmailPasswordObservable() {
     emailPasswordObservable = Observable.combineLatest(emailText,
     passwordText) { ($0, $1) }
   }
