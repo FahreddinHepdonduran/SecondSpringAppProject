@@ -112,9 +112,6 @@ Account</string>
                                                         <integer key="value" value="30"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="registerButtonDidTapp:" destination="op3-Qa-DrM" eventType="touchUpInside" id="rUG-1t-Dxa"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

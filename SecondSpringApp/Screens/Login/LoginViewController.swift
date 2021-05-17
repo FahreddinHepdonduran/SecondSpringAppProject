@@ -22,7 +22,7 @@ final class LoginViewController: UIViewController {
   var viewControllerFactory: ViewControllerFactory!
   
   private let disposeBag = DisposeBag()
-  private let throttleInterval = 1
+  private let throttleInterval = 250
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -61,12 +61,12 @@ private extension LoginViewController {
   
   func textFieldsBindings() {
     emailTextField.rx.text.orEmpty
-      .throttle(.seconds(throttleInterval), scheduler: MainScheduler.instance)
+      .throttle(.milliseconds(throttleInterval), scheduler: MainScheduler.instance)
       .bind(to: viewModel.emailText)
       .disposed(by: disposeBag)
     
     passwordTextField.rx.text.orEmpty
-      .throttle(.seconds(throttleInterval), scheduler: MainScheduler.instance)
+      .throttle(.milliseconds(throttleInterval), scheduler: MainScheduler.instance)
       .bind(to: viewModel.passwordText)
       .disposed(by: disposeBag)
   }
@@ -84,6 +84,7 @@ private extension LoginViewController {
       .disposed(by: disposeBag)
     
     loginButton.rx.tap
+      .throttle(.milliseconds(throttleInterval), scheduler: MainScheduler.instance)
       .withLatestFrom(viewModel.emailPasswordObservable)
       .bind(to: viewModel.loginAction.inputs)
       .disposed(by: disposeBag)

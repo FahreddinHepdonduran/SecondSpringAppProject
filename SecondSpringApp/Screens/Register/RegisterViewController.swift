@@ -10,8 +10,6 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-
-
 final class RegisterScreenViewController: UIViewController {
   
   @IBOutlet private weak var nicknameTextField: UITextField!
@@ -21,28 +19,59 @@ final class RegisterScreenViewController: UIViewController {
   
   weak var delegate: PopToRootProtocolDelegate?
   
+  var viewModel: RegisterViewModel!
+  var viewControllerFactory: ViewControllerFactory!
+  
   private let disposeBag = DisposeBag()
-  private let throttleInterval = 500
+  private let throttleInterval = 250
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    updateRegisterButtonState()
-  }
-  
-  @IBAction func registerButtonDidTapp(_ sender: UIButton) {
-    let email = emailTextField.text!
-    let password = passwordTextField.text!
-    let nickname = nicknameTextField.text!
+    nicknameTextField.rx.text.orEmpty
+      .throttle(.milliseconds(throttleInterval), scheduler: MainScheduler.instance)
+      .bind(to: viewModel.nicknameText)
+      .disposed(by: disposeBag)
     
-    FirebaseAuthManager.shared.signUpNewUser(email, password, nickname) { [weak self] (result) in
-      switch result {
-      case .success(let user):
-        print(user)
+    emailTextField.rx.text.orEmpty
+      .throttle(.milliseconds(throttleInterval), scheduler: MainScheduler.instance)
+      .bind(to: viewModel.emailText)
+      .disposed(by: disposeBag)
+    
+    passwordTextField.rx.text.orEmpty
+      .throttle(.milliseconds(throttleInterval), scheduler: MainScheduler.instance)
+      .bind(to: viewModel.passwordText)
+      .disposed(by: disposeBag)
+    
+    viewModel.isFieldsValid
+      .bind(to: registerButton.rx.isEnabled)
+      .disposed(by: disposeBag)
+    
+    viewModel.isFieldsValid
+      .subscribeOn(MainScheduler.instance)
+      .subscribe(onNext: { [weak self] in
+        self?.registerButton.alpha = $0 ? 1 : 0.5
+      })
+      .disposed(by: disposeBag)
+    
+    registerButton.rx.tap
+      .throttle(.milliseconds(throttleInterval), scheduler: MainScheduler.instance)
+      .withLatestFrom(viewModel.emailPasswordObservable)
+      .bind(to: viewModel.registerAction.inputs)
+      .disposed(by: disposeBag)
+    
+    viewModel.registerAction.elements
+      .filter({ $0 })
+      .take(1)
+      .subscribe(onNext: { [weak self] _ in
         self?.navigateToHome()
-      case .failure(let error):
-        print(error)
-      }
-    }
+      })
+    .disposed(by: disposeBag)
+    
+    viewModel.registerAction.errors
+      .subscribe(onError: { error in
+        print("register error")
+      })
+      .disposed(by: disposeBag)
   }
   
   @IBAction func haveAnAccountButtonDidTap(_ sender: UIButton) {
@@ -54,51 +83,9 @@ final class RegisterScreenViewController: UIViewController {
 
 private extension RegisterScreenViewController {
   
-  func validatePassword() -> Observable<Bool> {
-    let isValidPassword = passwordTextField.rx.text.orEmpty
-    .throttle(.milliseconds(throttleInterval), scheduler: MainScheduler.instance)
-    .map({ $0.count >= 6 })
-    .share(replay: 1)
-    
-    return isValidPassword
-  }
-  
-  func validateEmail() -> Observable<Bool> {
-    let isValidEmail = emailTextField.rx.text.orEmpty
-      .throttle(.milliseconds(throttleInterval), scheduler: MainScheduler.instance)
-      .map({ $0.isValidEmail })
-      .share(replay: 1)
-    
-    return isValidEmail
-  }
-  
-  func validateAllFields() -> Observable<Bool> {
-    let validEmail = validateEmail()
-    let validPassword = validatePassword()
-    
-    let validAllFields = Observable.combineLatest(validEmail, validPassword) { $0 && $1}
-      .share(replay: 1)
-    
-    return validAllFields
-  }
-  
-  func updateRegisterButtonState() {
-    validateAllFields()
-      .bind(to: registerButton.rx.isEnabled)
-      .disposed(by: disposeBag)
-    
-    validateAllFields()
-      .subscribeOn(MainScheduler.instance)
-      .subscribe(onNext: { [weak self] in
-        self?.registerButton.alpha = $0 ? 1 : 0.5
-      })
-      .disposed(by: disposeBag)
-  }
-  
   func navigateToHome() {
-    let homeViewController = HomeViewController.instanceFromStoryboard()
-    let navigationController = UINavigationController(rootViewController: homeViewController)
-    UIApplication.changeRoot(with: navigationController)
+    let homeViewController = viewControllerFactory.homeViewController(viewControllerFactory)
+    UIApplication.changeRoot(with: homeViewController)
   }
   
 }
