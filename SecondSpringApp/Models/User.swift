@@ -8,7 +8,18 @@
 
 import Foundation
 
-struct User {
+struct UserInfo {
   let uid: String
   let name: String
+}
+
+extension UserInfo {
+  
+  static func userInfo(from data: [String:Any]) -> UserInfo {
+    let uid = data["uid"] as! String
+    let username = data["username"] as! String
+    
+    return UserInfo(uid: uid, name: username)
+  }
+  
 }

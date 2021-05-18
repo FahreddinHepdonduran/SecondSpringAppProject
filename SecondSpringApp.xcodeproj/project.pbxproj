@@ -10,6 +10,9 @@
 		A2932D16FB8A491996372BC7 /* Pods_SecondSpringApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CADC7F43168CF21E8678401E /* Pods_SecondSpringApp.framework */; };
 		E50D5D2E2652B6CA009D2D92 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50D5D2D2652B6CA009D2D92 /* ViewControllerFactory.swift */; };
 		E50D5D302652BE98009D2D92 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50D5D2F2652BE98009D2D92 /* RegisterViewModel.swift */; };
+		E50D5D32265303BE009D2D92 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50D5D31265303BE009D2D92 /* User.swift */; };
+		E50D5D3526530A9B009D2D92 /* HomeTableViewDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50D5D3426530A9B009D2D92 /* HomeTableViewDelegateExtension.swift */; };
+		E50D5D3726530AAF009D2D92 /* HomeTableViewDataSourceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50D5D3626530AAF009D2D92 /* HomeTableViewDataSourceExtension.swift */; };
 		E5159B0A2647FF960031AEB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5159B092647FF960031AEB0 /* AppDelegate.swift */; };
 		E5159B0C2647FF960031AEB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5159B0B2647FF960031AEB0 /* SceneDelegate.swift */; };
 		E5159B0E2647FF960031AEB0 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5159B0D2647FF960031AEB0 /* SplashScreenViewController.swift */; };
@@ -21,6 +24,8 @@
 		E53418FC26487DF90066072C /* SignUpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53418FB26487DF90066072C /* SignUpScreenViewController.swift */; };
 		E53418FF264881590066072C /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53418FE264881590066072C /* LoginState.swift */; };
 		E534190626488AAF0066072C /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534190526488AAF0066072C /* UIApplication+Extensions.swift */; };
+		E53FE5A626540DB000AEAE67 /* ChatTableViewDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53FE5A526540DB000AEAE67 /* ChatTableViewDelegateExtension.swift */; };
+		E53FE5A826540DC600AEAE67 /* ChatTableViewDataSourceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53FE5A726540DC600AEAE67 /* ChatTableViewDataSourceExtension.swift */; };
 		E58830AA264D6ABE005EFB55 /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58830A9264D6ABE005EFB55 /* RoomTableViewCell.swift */; };
 		E58830AD264D7B59005EFB55 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58830AC264D7B59005EFB55 /* RoomModel.swift */; };
 		E5A1118F26516002007A0A46 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1118E26516002007A0A46 /* CustomTextField.swift */; };
@@ -48,6 +53,9 @@
 		CADC7F43168CF21E8678401E /* Pods_SecondSpringApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecondSpringApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50D5D2D2652B6CA009D2D92 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		E50D5D2F2652BE98009D2D92 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		E50D5D31265303BE009D2D92 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E50D5D3426530A9B009D2D92 /* HomeTableViewDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewDelegateExtension.swift; sourceTree = "<group>"; };
+		E50D5D3626530AAF009D2D92 /* HomeTableViewDataSourceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewDataSourceExtension.swift; sourceTree = "<group>"; };
 		E5159B062647FF950031AEB0 /* SecondSpringApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecondSpringApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5159B092647FF960031AEB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5159B0B2647FF960031AEB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +69,8 @@
 		E53418FB26487DF90066072C /* SignUpScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenViewController.swift; sourceTree = "<group>"; };
 		E53418FE264881590066072C /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 		E534190526488AAF0066072C /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		E53FE5A526540DB000AEAE67 /* ChatTableViewDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewDelegateExtension.swift; sourceTree = "<group>"; };
+		E53FE5A726540DC600AEAE67 /* ChatTableViewDataSourceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewDataSourceExtension.swift; sourceTree = "<group>"; };
 		E58830A9264D6ABE005EFB55 /* RoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; };
 		E58830AC264D7B59005EFB55 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
 		E5A1118E26516002007A0A46 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -117,6 +127,15 @@
 				E50D5D2D2652B6CA009D2D92 /* ViewControllerFactory.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		E50D5D3326530A62009D2D92 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E50D5D3426530A9B009D2D92 /* HomeTableViewDelegateExtension.swift */,
+				E50D5D3626530AAF009D2D92 /* HomeTableViewDataSourceExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E5159AFD2647FF950031AEB0 = {
@@ -226,6 +245,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E53FE5A426540D7F00AEAE67 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E53FE5A526540DB000AEAE67 /* ChatTableViewDelegateExtension.swift */,
+				E53FE5A726540DC600AEAE67 /* ChatTableViewDataSourceExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E58830A8264D6A79005EFB55 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				E58830AC264D7B59005EFB55 /* RoomModel.swift */,
+				E50D5D31265303BE009D2D92 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -281,6 +310,7 @@
 		E5F32C60264E947500EA3CD1 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				E53FE5A426540D7F00AEAE67 /* Extensions */,
 				E5F32C61264E94F200EA3CD1 /* ChatViewController.swift */,
 				E5F32C63264E950B00EA3CD1 /* Chat.storyboard */,
 			);
@@ -290,6 +320,7 @@
 		E5FC4A66264AB7C2004F60AC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E50D5D3326530A62009D2D92 /* Extensions */,
 				E5FC4A67264AB7D5004F60AC /* HomeViewController.swift */,
 				E5FC4A69264AB7E1004F60AC /* Home.storyboard */,
 			);
@@ -438,14 +469,19 @@
 				E5A111912651676C007A0A46 /* UITextField+Extensions.swift in Sources */,
 				E5EB915A264977D700C73FFF /* RegisterViewController.swift in Sources */,
 				E5FC4A68264AB7D5004F60AC /* HomeViewController.swift in Sources */,
+				E50D5D3726530AAF009D2D92 /* HomeTableViewDataSourceExtension.swift in Sources */,
 				E5159B0A2647FF960031AEB0 /* AppDelegate.swift in Sources */,
+				E53FE5A626540DB000AEAE67 /* ChatTableViewDelegateExtension.swift in Sources */,
 				E5159B31264810830031AEB0 /* StoryboardInstantiable.swift in Sources */,
 				E5F32C66264E97C700EA3CD1 /* ChatTableViewCell.swift in Sources */,
 				E58830AA264D6ABE005EFB55 /* RoomTableViewCell.swift in Sources */,
+				E50D5D3526530A9B009D2D92 /* HomeTableViewDelegateExtension.swift in Sources */,
 				E5D7BCB7264C09D600114998 /* FirebaseFirestoreManager.swift in Sources */,
+				E53FE5A826540DC600AEAE67 /* ChatTableViewDataSourceExtension.swift in Sources */,
 				E53418FC26487DF90066072C /* SignUpScreenViewController.swift in Sources */,
 				E5A11193265185CF007A0A46 /* PopToRootProtocolDelegate.swift in Sources */,
 				E5159B0C2647FF960031AEB0 /* SceneDelegate.swift in Sources */,
+				E50D5D32265303BE009D2D92 /* User.swift in Sources */,
 				E5A111962651923D007A0A46 /* LoginViewModel.swift in Sources */,
 				E50D5D2E2652B6CA009D2D92 /* ViewControllerFactory.swift in Sources */,
 				E50D5D302652BE98009D2D92 /* RegisterViewModel.swift in Sources */,

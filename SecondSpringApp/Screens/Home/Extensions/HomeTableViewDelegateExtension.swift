@@ -12,7 +12,7 @@ extension HomeViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let room = chatRooms[indexPath.row]
-    let chatViewController = viewControllerFactory.chatViewController(room)
+    let chatViewController = viewControllerFactory.chatViewController(room, user)
     navigationController?.pushViewController(chatViewController,
                                              animated: true)
   }

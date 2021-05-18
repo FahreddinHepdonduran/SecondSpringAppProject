@@ -19,39 +19,51 @@ final class FirebaseFirestoreManager {
   
   private init() { }
   
-  func addDocument(_ authResult: AuthDataResult, _ nickname: String,
+  func addDocumentToUsers(_ authResult: AuthDataResult, _ nickname: String,
                    completion: @escaping(Error?) -> Void) {
     firestore.collection("Users").addDocument(data: [
       "uid": authResult.user.uid,
-      "nickname": nickname
+      "username": nickname
     ]) { error in
       if let error = error {
         completion(error)
         return
       }
     }
-    userDefaults.setValue(nickname, forKey: "nickname")
   }
   
-  func addRoom(_ room: RoomModel, completion: @escaping(Error?) -> Void) {
-    firestore.collection("Rooms").addDocument(data: [
-      "id": "\(room.id)",
+  func addDocumentToRooms(_ room: RoomModel, completion: @escaping(Error?) -> Void) {
+    firestore.collection("Rooms").document(room.id.uuidString)
+    .setData([
+      "id": "\(room.id.uuidString)",
       "name": room.name,
       "messageHistory": room.messageHistory
-    ]) { (error) in
+    ]){ (error) in
       if let error = error {
         completion(error)
       }
     }
   }
   
-  func getChatRooms(_ completion: @escaping([QueryDocumentSnapshot]) -> Void) {
+  func getDocumentsFromRooms(_ completion: @escaping([QueryDocumentSnapshot]) -> Void) {
     firestore.collection("Rooms").getDocuments { (snapshot, error) in
       guard let error = error else {
         completion(snapshot!.documents)
         return
       }
       print(error)
+    }
+  }
+  
+  func getUserDocument(where id: String, _ completion: @escaping(Result<QueryDocumentSnapshot, Error>) -> Void) {
+    firestore.collection("Users").whereField("uid", isEqualTo: id)
+      .getDocuments { (querySnapshot, error) in
+        guard let querySnapshot = querySnapshot else {
+          completion(.failure(error!))
+          return
+        }
+        
+        completion(.success(querySnapshot.documents.first!))
     }
   }
   

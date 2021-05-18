@@ -17,7 +17,8 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zWA-mh-Rd1">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatTableViewCell" rowHeight="60" id="7hm-MI-lCg" customClass="ChatTableViewCell" customModule="SecondSpringApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="60"/>
@@ -52,36 +53,54 @@
                                                 <constraint firstItem="wVn-fC-o9R" firstAttribute="top" secondItem="hsO-Bx-6eI" secondAttribute="bottom" id="zQE-4J-8eo"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="messageLabel" destination="hsO-Bx-6eI" id="Ff7-hc-0ii"/>
                                             <outlet property="senderNicknameLabel" destination="wVn-fC-o9R" id="W0A-be-I75"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="OWL-5a-z4v" id="YJG-DK-EMg"/>
+                                    <outlet property="delegate" destination="OWL-5a-z4v" id="8Cn-Sz-tiA"/>
+                                </connections>
                             </tableView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Type Here" translatesAutoresizingMaskIntoConstraints="NO" id="Qum-Fj-V6u">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qum-Fj-V6u">
                                 <rect key="frame" x="0.0" y="822" width="359" height="40"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="JjC-Lf-u1b"/>
                                 </constraints>
+                                <inset key="scrollIndicatorInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="OWL-5a-z4v" id="9po-vr-cnD"/>
+                                </connections>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6DF-os-8VH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6DF-os-8VH">
                                 <rect key="frame" x="359" y="822" width="55" height="40"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.49019607840000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="55" id="UO8-FW-F1y"/>
                                     <constraint firstAttribute="height" constant="40" id="zdH-8m-NTd"/>
                                 </constraints>
-                                <state key="normal" title="Send"/>
-                                <connections>
-                                    <action selector="sendButtonDidTap:" destination="OWL-5a-z4v" eventType="touchUpInside" id="0Jd-Xn-NMc"/>
-                                </connections>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="return" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6DF-os-8VH" firstAttribute="leading" secondItem="Qum-Fj-V6u" secondAttribute="trailing" id="0Ec-nj-lmy"/>
                             <constraint firstAttribute="bottom" secondItem="zWA-mh-Rd1" secondAttribute="bottom" id="3c2-zR-nPi"/>
@@ -98,7 +117,7 @@
                     <connections>
                         <outlet property="messageEntryBottomConstraint" destination="gQu-3v-QNw" id="7xZ-DT-COh"/>
                         <outlet property="messageEntryHeightConstraint" destination="JjC-Lf-u1b" id="SCN-t6-9fX"/>
-                        <outlet property="messageEntryTextView" destination="Qum-Fj-V6u" id="Uz7-Nc-AIW"/>
+                        <outlet property="messageEntryTextView" destination="Qum-Fj-V6u" id="p2N-uO-hbw"/>
                         <outlet property="sendButton" destination="6DF-os-8VH" id="7WF-QO-Zbv"/>
                         <outlet property="sendButtonBottomConstraint" destination="YrE-ZW-JTV" id="vrT-vj-IQR"/>
                         <outlet property="tableView" destination="zWA-mh-Rd1" id="gEl-Ix-hu3"/>
@@ -109,4 +128,7 @@
             <point key="canvasLocation" x="-604.34782608695662" y="56.25"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="return" catalog="system" width="128" height="101"/>
+    </resources>
 </document>

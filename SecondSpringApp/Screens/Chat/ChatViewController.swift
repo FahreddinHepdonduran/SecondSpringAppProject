@@ -8,77 +8,109 @@
 
 import UIKit
 import FirebaseFirestore
+import RxSwift
+import RxCocoa
 
 final class ChatViewController: UIViewController {
   
   @IBOutlet private weak var tableView: UITableView!
   @IBOutlet private weak var messageEntryTextView: UITextView!
+  @IBOutlet private weak var sendButton: UIButton!
   @IBOutlet private weak var messageEntryBottomConstraint: NSLayoutConstraint!
   @IBOutlet private weak var messageEntryHeightConstraint: NSLayoutConstraint!
-  @IBOutlet private weak var sendButton: UIButton!
   @IBOutlet private weak var sendButtonBottomConstraint: NSLayoutConstraint!
   
-  var room: RoomModel!
+  private let disposeBag = DisposeBag()
+  private var listener: ListenerRegistration!
   
-  private var userName: String {
-    return UserDefaults.standard.value(forKey: "nickname") as! String
+  private var docRef: DocumentReference {
+    return Firestore.firestore()
+    .collection("Rooms")
+      .document(room.id.uuidString)
+    
   }
   
-  private var docRef: String?
+  var room: RoomModel!
+  var user: UserInfo!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    tableviewDelegates()
     configureTableView()
     addNotification()
     
-    Firestore.firestore().collection("Rooms")
-      .whereField("id", isEqualTo: room.id.uuidString)
-      .getDocuments { (querySnapsoht, error) in
-        if let error = error {
-          print(error)
-        } else {
-          self.docRef = querySnapsoht?.documents.first?.documentID
-          self.addListener(self.docRef!)
-        }
-    }
-    
-    
+    sendButton.rx.tap
+      .withLatestFrom(messageEntryTextView.rx.text.orEmpty)
+      .subscribe(onNext: { (text) in
+        let message = [self.user.name : text]
+        self.docRef.updateData([
+          "messageHistory" : FieldValue.arrayUnion([message])
+        ])
+      })
+    .disposed(by: disposeBag)
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    addListener()
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    listener.remove()
   }
   
   deinit {
     NotificationCenter.default.removeObserver(self)
   }
   
-  @IBAction func sendButtonDidTap(_ sender: UIButton) {
-    let message = [userName:messageEntryTextView.text!]
-    Firestore.firestore().collection("Rooms")
-    .document(docRef!).updateData([
-      "messageHistory": FieldValue.arrayUnion([message])
-    ])
-  }
 }
 
 private extension ChatViewController {
+  
+  func addNotification() {
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(keyboarShowNotification(_:)),
+                                           name: UIResponder.keyboardWillShowNotification,
+                                           object: nil)
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(keyboardHideNotification),
+                                           name: UIResponder.keyboardWillHideNotification,
+                                           object: nil)
+  }
   
   @objc
   func keyboarShowNotification(_ notification: Notification) {
     let userInfo = notification.userInfo!
     let keyboardHeight = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.height
-    let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
-    let moveUp = (notification.name == UIResponder.keyboardWillShowNotification)
     
-    messageEntryBottomConstraint.constant = moveUp ? -keyboardHeight : 0
-    sendButtonBottomConstraint.constant = moveUp ? -keyboardHeight : 0
+    messageEntryBottomConstraint.constant = -(keyboardHeight - 34)
+    sendButtonBottomConstraint.constant = -(keyboardHeight - 34)
     
-    UIView.animate(withDuration: duration) { [weak self] in
+    UIView.animate(withDuration: 0.25) { [weak self] in
       self?.view.layoutIfNeeded()
     }
   }
   
-  func tableviewDelegates() {
-    tableView.delegate = self
-    tableView.dataSource = self
+  @objc
+  func keyboardHideNotification() {
+    messageEntryBottomConstraint.constant = 0
+    sendButtonBottomConstraint.constant = 0
+    
+    UIView.animate(withDuration: 0.25) { [weak self] in
+      self?.view.layoutIfNeeded()
+    }
+  }
+  
+  func addListener() {
+    listener = docRef.addSnapshotListener { (documentSnapshot, error) in
+      guard let documentSnapshot = documentSnapshot else {
+        print(error!)
+        return
+      }
+      
+      self.room.messageHistory = documentSnapshot.data()!["messageHistory"] as! [[String : String]]
+      self.tableView.reloadData()
+    }
   }
   
   func configureTableView() {
@@ -86,41 +118,15 @@ private extension ChatViewController {
     tableView.estimatedRowHeight = 60
   }
   
-  func addNotification() {
-    NotificationCenter.default.addObserver(self,
-                                           selector: #selector(keyboarShowNotification(_:)),
-                                           name: UIResponder.keyboardWillShowNotification,
-                                           object: nil)
-  }
-  
-  func addListener(_ docRef: String) {
-    Firestore.firestore().collection("Rooms")
-      .document(docRef).addSnapshotListener { documentSnapshot, error in
-          guard let document = documentSnapshot else {
-              print("Error fetching document: \(error!)")
-              return
-          }
-        self.room.messageHistory = document.data()!["messageHistory"] as! [[String:String]]
-        self.tableView.reloadData()
-    }
-  }
-  
 }
 
-extension ChatViewController: UITableViewDelegate {}
-
-extension ChatViewController: UITableViewDataSource {
-  
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return room.messageHistory.count
+extension ChatViewController: UITextViewDelegate {
+  func textViewDidChange(_ textView: UITextView) {
+    let maxHeight = (textView.font?.lineHeight ?? 0.0)*6
+    
+    guard messageEntryHeightConstraint.constant < maxHeight else { return }
+    messageEntryHeightConstraint.constant = messageEntryTextView.contentSize.height
   }
-  
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell") as! ChatTableViewCell
-    cell.message = room.messageHistory[indexPath.row]
-    return cell
-  }
-  
 }
 
 extension ChatViewController: StoryboardInstantiable { }
