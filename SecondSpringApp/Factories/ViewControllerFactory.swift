@@ -49,4 +49,10 @@ final class ViewControllerFactory {
     return navigationController
   }
   
+  func chatViewController(_ room: RoomModel) -> ChatViewController {
+    let chatViewController = ChatViewController.instanceFromStoryboard()
+    chatViewController.room = room
+    return chatViewController
+  }
+  
 }
