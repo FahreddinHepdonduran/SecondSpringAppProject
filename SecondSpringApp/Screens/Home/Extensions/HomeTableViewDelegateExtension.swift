@@ -11,8 +11,8 @@ import UIKit
 extension HomeViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let chatViewController = ChatViewController.instanceFromStoryboard()
-    chatViewController.room = chatRooms[indexPath.row]
+    let room = chatRooms[indexPath.row]
+    let chatViewController = viewControllerFactory.chatViewController(room)
     navigationController?.pushViewController(chatViewController,
                                              animated: true)
   }
