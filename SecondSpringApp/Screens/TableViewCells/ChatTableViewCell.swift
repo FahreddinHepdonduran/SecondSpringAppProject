@@ -10,7 +10,7 @@ import UIKit
 
 final class ChatTableViewCell: UITableViewCell {
   
-  @IBOutlet weak var messageLabel: UILabel!
+  @IBOutlet weak var messageTextView: UITextView!
   @IBOutlet private weak var senderNicknameLabel: UILabel!
   
   var message: [String:String]? {
@@ -36,7 +36,7 @@ final class ChatTableViewCell: UITableViewCell {
 private extension ChatTableViewCell {
   
   func configure(message: [String:String]) {
-    messageLabel.text = message.values.first
+    messageTextView.text = message.values.first
     senderNicknameLabel.text = message.keys.first
   }
   

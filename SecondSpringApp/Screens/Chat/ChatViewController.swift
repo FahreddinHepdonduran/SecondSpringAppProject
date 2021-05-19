@@ -22,7 +22,6 @@ final class ChatViewController: UIViewController {
   
   private let disposeBag = DisposeBag()
   private var listener: ListenerRegistration!
-  
   private var docRef: DocumentReference {
     return Firestore.firestore()
     .collection("Rooms")
@@ -115,7 +114,7 @@ private extension ChatViewController {
   
   func configureTableView() {
     tableView.rowHeight = UITableView.automaticDimension
-    tableView.estimatedRowHeight = 60
+    tableView.estimatedRowHeight = 80
   }
   
 }
