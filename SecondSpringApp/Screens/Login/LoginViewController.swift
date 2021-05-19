@@ -16,8 +16,6 @@ final class LoginViewController: UIViewController {
   @IBOutlet private weak var passwordTextField: UITextField!
   @IBOutlet private weak var loginButton: UIButton!
   
-  weak var delegate: PopToRootProtocolDelegate?
-  
   var viewModel: LoginViewModel!
   var viewControllerFactory: ViewControllerFactory!
   
@@ -33,8 +31,7 @@ final class LoginViewController: UIViewController {
   }
   
   @IBAction func noAccountButtonDidTap(_ sender: UIButton) {
-    navigationController?.popToRootViewController(animated: false)
-    delegate?.didPopToRootViewController(from: Self.self)
+    navigationController?.popViewController(animated: true)
   }
 }
 

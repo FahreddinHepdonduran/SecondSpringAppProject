@@ -20,8 +20,6 @@
 		E5159B162647FF990031AEB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5159B142647FF990031AEB0 /* LaunchScreen.storyboard */; };
 		E5159B24264808710031AEB0 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5159B23264808710031AEB0 /* SplashScreen.storyboard */; };
 		E5159B31264810830031AEB0 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5159B30264810830031AEB0 /* StoryboardInstantiable.swift */; };
-		E53418FA26487D270066072C /* SignUpScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E53418F926487D270066072C /* SignUpScreen.storyboard */; };
-		E53418FC26487DF90066072C /* SignUpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53418FB26487DF90066072C /* SignUpScreenViewController.swift */; };
 		E53418FF264881590066072C /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53418FE264881590066072C /* LoginState.swift */; };
 		E534190626488AAF0066072C /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534190526488AAF0066072C /* UIApplication+Extensions.swift */; };
 		E53FE5A626540DB000AEAE67 /* ChatTableViewDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53FE5A526540DB000AEAE67 /* ChatTableViewDelegateExtension.swift */; };
@@ -30,7 +28,6 @@
 		E58830AD264D7B59005EFB55 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58830AC264D7B59005EFB55 /* RoomModel.swift */; };
 		E5A1118F26516002007A0A46 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1118E26516002007A0A46 /* CustomTextField.swift */; };
 		E5A111912651676C007A0A46 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A111902651676C007A0A46 /* UITextField+Extensions.swift */; };
-		E5A11193265185CF007A0A46 /* PopToRootProtocolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A11192265185CF007A0A46 /* PopToRootProtocolDelegate.swift */; };
 		E5A111962651923D007A0A46 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A111952651923D007A0A46 /* LoginViewModel.swift */; };
 		E5D7BCB7264C09D600114998 /* FirebaseFirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7BCB6264C09D600114998 /* FirebaseFirestoreManager.swift */; };
 		E5EB915A264977D700C73FFF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EB9159264977D700C73FFF /* RegisterViewController.swift */; };
@@ -65,8 +62,6 @@
 		E5159B172647FF990031AEB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5159B23264808710031AEB0 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		E5159B30264810830031AEB0 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
-		E53418F926487D270066072C /* SignUpScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpScreen.storyboard; sourceTree = "<group>"; };
-		E53418FB26487DF90066072C /* SignUpScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenViewController.swift; sourceTree = "<group>"; };
 		E53418FE264881590066072C /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 		E534190526488AAF0066072C /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		E53FE5A526540DB000AEAE67 /* ChatTableViewDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewDelegateExtension.swift; sourceTree = "<group>"; };
@@ -75,7 +70,6 @@
 		E58830AC264D7B59005EFB55 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
 		E5A1118E26516002007A0A46 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E5A111902651676C007A0A46 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
-		E5A11192265185CF007A0A46 /* PopToRootProtocolDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopToRootProtocolDelegate.swift; sourceTree = "<group>"; };
 		E5A111952651923D007A0A46 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E5D7BCB6264C09D600114998 /* FirebaseFirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreManager.swift; sourceTree = "<group>"; };
 		E5EB9159264977D700C73FFF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -184,7 +178,6 @@
 				E5FC4A66264AB7C2004F60AC /* Home */,
 				E5EB9157264977A700C73FFF /* Login */,
 				E5EB9158264977B100C73FFF /* Register */,
-				E5159B322648175D0031AEB0 /* SignUp */,
 				E5159B22264808090031AEB0 /* Splash */,
 				E58830A8264D6A79005EFB55 /* TableViewCells */,
 			);
@@ -213,18 +206,8 @@
 			isa = PBXGroup;
 			children = (
 				E5159B30264810830031AEB0 /* StoryboardInstantiable.swift */,
-				E5A11192265185CF007A0A46 /* PopToRootProtocolDelegate.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		E5159B322648175D0031AEB0 /* SignUp */ = {
-			isa = PBXGroup;
-			children = (
-				E53418F926487D270066072C /* SignUpScreen.storyboard */,
-				E53418FB26487DF90066072C /* SignUpScreenViewController.swift */,
-			);
-			path = SignUp;
 			sourceTree = "<group>";
 		};
 		E53418FD2648813E0066072C /* Enumerations */ = {
@@ -399,7 +382,6 @@
 				E5F32C64264E950B00EA3CD1 /* Chat.storyboard in Resources */,
 				E5FC4A6A264AB7E1004F60AC /* Home.storyboard in Resources */,
 				E5FC4A6C264ADF03004F60AC /* GoogleService-Info.plist in Resources */,
-				E53418FA26487D270066072C /* SignUpScreen.storyboard in Resources */,
 				E5159B162647FF990031AEB0 /* LaunchScreen.storyboard in Resources */,
 				E5159B24264808710031AEB0 /* SplashScreen.storyboard in Resources */,
 				E5159B132647FF990031AEB0 /* Assets.xcassets in Resources */,
@@ -478,8 +460,6 @@
 				E50D5D3526530A9B009D2D92 /* HomeTableViewDelegateExtension.swift in Sources */,
 				E5D7BCB7264C09D600114998 /* FirebaseFirestoreManager.swift in Sources */,
 				E53FE5A826540DC600AEAE67 /* ChatTableViewDataSourceExtension.swift in Sources */,
-				E53418FC26487DF90066072C /* SignUpScreenViewController.swift in Sources */,
-				E5A11193265185CF007A0A46 /* PopToRootProtocolDelegate.swift in Sources */,
 				E5159B0C2647FF960031AEB0 /* SceneDelegate.swift in Sources */,
 				E50D5D32265303BE009D2D92 /* User.swift in Sources */,
 				E5A111962651923D007A0A46 /* LoginViewModel.swift in Sources */,

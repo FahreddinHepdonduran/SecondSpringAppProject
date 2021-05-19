@@ -17,8 +17,6 @@ final class RegisterScreenViewController: UIViewController {
   @IBOutlet private weak var passwordTextField: UITextField!
   @IBOutlet private weak var registerButton: UIButton!
   
-  weak var delegate: PopToRootProtocolDelegate?
-  
   var viewModel: RegisterViewModel!
   var viewControllerFactory: ViewControllerFactory!
   
@@ -75,8 +73,7 @@ final class RegisterScreenViewController: UIViewController {
   }
   
   @IBAction func haveAnAccountButtonDidTap(_ sender: UIButton) {
-    navigationController?.popToRootViewController(animated: false)
-    delegate?.didPopToRootViewController(from: Self.self)
+    presentLogin()
   }
   
 }
@@ -86,6 +83,11 @@ private extension RegisterScreenViewController {
   func navigateToHome() {
     let homeViewController = viewControllerFactory.homeViewController(viewControllerFactory)
     UIApplication.changeRoot(with: homeViewController)
+  }
+  
+  func presentLogin() {
+    let loginViewController = viewControllerFactory.loginViewController(viewControllerFactory)
+    navigationController?.pushViewController(loginViewController, animated: true)
   }
   
 }

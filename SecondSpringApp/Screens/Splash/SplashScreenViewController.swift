@@ -14,11 +14,11 @@ final class SplashScreenViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    perform(#selector(changeRootToSignUp), with: nil, afterDelay: 3)
+    perform(#selector(changeRootToRegister), with: nil, afterDelay: 3)
   }
   
-  @objc private func changeRootToSignUp() {
-    let signUpViewController = viewControllerFactory.SignUpViewController(viewControllerFactory)
+  @objc private func changeRootToRegister() {
+    let signUpViewController = viewControllerFactory.registerViewController(viewControllerFactory)
     UIApplication.changeRoot(with: signUpViewController)
   }
   

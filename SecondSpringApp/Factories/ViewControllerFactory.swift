@@ -16,30 +16,20 @@ final class ViewControllerFactory {
     return splashViewController
   }
   
-  func SignUpViewController(_ viewControllerFactory: ViewControllerFactory) -> UINavigationController {
-    let signUpViewController = SignUpScreenViewController.instanceFromStoryboard()
-    signUpViewController.viewControllerFactory = viewControllerFactory
-    let navigationController = UINavigationController(rootViewController: signUpViewController)
-    navigationController.navigationBar.isHidden = true
-    return navigationController
-  }
-  
-  func loginViewController(_ delegate: PopToRootProtocolDelegate,
-                           _ viewControllerFactory: ViewControllerFactory) -> LoginViewController {
+  func loginViewController(_ viewControllerFactory: ViewControllerFactory) -> LoginViewController {
     let loginViewController = LoginViewController.instanceFromStoryboard()
-    loginViewController.delegate = delegate
     loginViewController.viewControllerFactory = viewControllerFactory
     loginViewController.viewModel = LoginViewModel()
     return loginViewController
   }
   
-  func registerViewController(_ delegate: PopToRootProtocolDelegate,
-                              _ viewControllerFactory: ViewControllerFactory) -> RegisterScreenViewController {
+  func registerViewController(_ viewControllerFactory: ViewControllerFactory) -> UINavigationController {
     let registerViewController = RegisterScreenViewController.instanceFromStoryboard()
-    registerViewController.delegate = delegate
     registerViewController.viewControllerFactory = viewControllerFactory
     registerViewController.viewModel = RegisterViewModel()
-    return registerViewController
+    let navigationController = UINavigationController(rootViewController: registerViewController)
+    navigationController.navigationBar.isHidden = true
+    return navigationController
   }
   
   func homeViewController(_ viewControllerFactory: ViewControllerFactory) -> UINavigationController {
