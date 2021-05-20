@@ -13,7 +13,6 @@ import FirebaseFirestore
 final class FirebaseFirestoreManager {
   
   private let firestore = Firestore.firestore()
-  private let userDefaults = UserDefaults.standard
   
   static let shared = FirebaseFirestoreManager()
   

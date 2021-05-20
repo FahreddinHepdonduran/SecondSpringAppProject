@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 final class ChatTableViewCell: UITableViewCell {
   
-  @IBOutlet weak var messageTextView: UITextView!
+  @IBOutlet private weak var messageTextView: UITextView!
   @IBOutlet private weak var senderNicknameLabel: UILabel!
   
-  var message: [String:String]? {
+  var currentUser: UserInfo?
+  var message: [String : Any]? {
     didSet {
       guard let message = self.message else { return }
       configure(message: message)
@@ -35,9 +37,19 @@ final class ChatTableViewCell: UITableViewCell {
 
 private extension ChatTableViewCell {
   
-  func configure(message: [String:String]) {
-    messageTextView.text = message.values.first
-    senderNicknameLabel.text = message.keys.first
+  func configure(message: [String : Any]) {
+    messageTextView.text = message["message"] as? String
+    let stmp = message["time"] as? Timestamp
+    senderNicknameLabel.text = String(describing: stmp?.dateValue())
+    
+    let user = UserInfo(uid: (message["senderID"] as? String) ?? "",
+                        name: (message["senderName"] as? String) ?? "")
+    
+    guard user == currentUser else {
+      return
+    }
+    
+    messageTextView.backgroundColor = .red
   }
   
 }

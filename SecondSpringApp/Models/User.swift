@@ -13,6 +13,14 @@ struct UserInfo {
   let name: String
 }
 
+extension UserInfo: Equatable {
+
+  static func ==(lhs: UserInfo, rhs: UserInfo) -> Bool {
+    return lhs.uid == rhs.uid
+  }
+
+}
+
 extension UserInfo {
   
   static func userInfo(from data: [String:Any]) -> UserInfo {
