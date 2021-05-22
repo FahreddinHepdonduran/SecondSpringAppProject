@@ -61,7 +61,11 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="messageLeadingConstraint" destination="oja-K1-GnY" id="9Qf-se-Sdt"/>
                                             <outlet property="messageTextView" destination="4xk-kv-6Va" id="9xQ-fX-hfb"/>
+                                            <outlet property="messageTrailingConstraint" destination="Guz-S8-iVD" id="N2E-dQ-Yo5"/>
+                                            <outlet property="nicknameLeadingConstraint" destination="mEn-z7-VwT" id="lWB-hR-GYJ"/>
+                                            <outlet property="nicknameTrailingConstraint" destination="Gtq-iU-wYj" id="wgw-Qq-4VX"/>
                                             <outlet property="senderNicknameLabel" destination="wVn-fC-o9R" id="W0A-be-I75"/>
                                         </connections>
                                     </tableViewCell>
