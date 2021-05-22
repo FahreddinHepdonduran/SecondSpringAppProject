@@ -24,6 +24,8 @@
 		E534190626488AAF0066072C /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534190526488AAF0066072C /* UIApplication+Extensions.swift */; };
 		E53FE5A626540DB000AEAE67 /* ChatTableViewDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53FE5A526540DB000AEAE67 /* ChatTableViewDelegateExtension.swift */; };
 		E53FE5A826540DC600AEAE67 /* ChatTableViewDataSourceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53FE5A726540DC600AEAE67 /* ChatTableViewDataSourceExtension.swift */; };
+		E548EF7526591EB600953FD0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E548EF7426591EB600953FD0 /* ProfileViewController.swift */; };
+		E548EF7726591EC500953FD0 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E548EF7626591EC500953FD0 /* Profile.storyboard */; };
 		E58830AA264D6ABE005EFB55 /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58830A9264D6ABE005EFB55 /* RoomTableViewCell.swift */; };
 		E58830AD264D7B59005EFB55 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58830AC264D7B59005EFB55 /* RoomModel.swift */; };
 		E5A1118F26516002007A0A46 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1118E26516002007A0A46 /* CustomTextField.swift */; };
@@ -66,6 +68,8 @@
 		E534190526488AAF0066072C /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		E53FE5A526540DB000AEAE67 /* ChatTableViewDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewDelegateExtension.swift; sourceTree = "<group>"; };
 		E53FE5A726540DC600AEAE67 /* ChatTableViewDataSourceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewDataSourceExtension.swift; sourceTree = "<group>"; };
+		E548EF7426591EB600953FD0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E548EF7626591EC500953FD0 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		E58830A9264D6ABE005EFB55 /* RoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; };
 		E58830AC264D7B59005EFB55 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
 		E5A1118E26516002007A0A46 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 		E5159B1D264806450031AEB0 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E548EF7326591E9000953FD0 /* Profile */,
 				E5F32C60264E947500EA3CD1 /* Chat */,
 				E5FC4A66264AB7C2004F60AC /* Home */,
 				E5EB9157264977A700C73FFF /* Login */,
@@ -235,6 +240,15 @@
 				E53FE5A726540DC600AEAE67 /* ChatTableViewDataSourceExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E548EF7326591E9000953FD0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E548EF7426591EB600953FD0 /* ProfileViewController.swift */,
+				E548EF7626591EC500953FD0 /* Profile.storyboard */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		E58830A8264D6A79005EFB55 /* TableViewCells */ = {
@@ -385,6 +399,7 @@
 				E5159B162647FF990031AEB0 /* LaunchScreen.storyboard in Resources */,
 				E5159B24264808710031AEB0 /* SplashScreen.storyboard in Resources */,
 				E5159B132647FF990031AEB0 /* Assets.xcassets in Resources */,
+				E548EF7726591EC500953FD0 /* Profile.storyboard in Resources */,
 				E5EB91602649785000C73FFF /* Login.storyboard in Resources */,
 				E5EB915C2649782300C73FFF /* RegisterScreen.storyboard in Resources */,
 			);
@@ -445,6 +460,7 @@
 				E58830AD264D7B59005EFB55 /* RoomModel.swift in Sources */,
 				E5FC4A6E264AE3E5004F60AC /* String+Extensions.swift in Sources */,
 				E5159B0E2647FF960031AEB0 /* SplashScreenViewController.swift in Sources */,
+				E548EF7526591EB600953FD0 /* ProfileViewController.swift in Sources */,
 				E534190626488AAF0066072C /* UIApplication+Extensions.swift in Sources */,
 				E53418FF264881590066072C /* LoginState.swift in Sources */,
 				E5A1118F26516002007A0A46 /* CustomTextField.swift in Sources */,
