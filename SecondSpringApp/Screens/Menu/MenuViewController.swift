@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MenuTableViewController: UITableViewController {
+final class MenuViewController: UITableViewController {
   
   private let rowValues: [String] = [
     "Profile",
@@ -26,10 +26,10 @@ final class MenuTableViewController: UITableViewController {
 }
 
 // MARK: - TableViewDelegate
-extension MenuTableViewController { }
+extension MenuViewController { }
 
 // MARK: - TableViewDataSoruce
-extension MenuTableViewController {
+extension MenuViewController {
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return rowValues.count
@@ -43,3 +43,5 @@ extension MenuTableViewController {
   }
   
 }
+
+extension MenuViewController: StoryboardInstantiable { }
