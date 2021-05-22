@@ -13,6 +13,8 @@ final class HomeViewController: UIViewController {
   
   @IBOutlet private weak var tableView: UITableView!
   
+  private var animator = ManuAnimator()
+  
   var user: UserInfo!
   var chatRooms = [RoomModel]()
   
@@ -45,6 +47,12 @@ private extension HomeViewController {
                                              target: self,
                                              action: #selector(rightBarButtonItemAction))
     navigationItem.rightBarButtonItem = rightBarButtonItem
+    
+    let leftBarButtonItem = UIBarButtonItem(title: "Menu",
+                                            style: .plain,
+                                            target: self,
+                                            action: #selector(leftBarButtonItemAction))
+    navigationItem.leftBarButtonItem = leftBarButtonItem
   }
   
   @objc
@@ -65,6 +73,13 @@ private extension HomeViewController {
     alertController.addAction(action)
     
     present(alertController, animated: true, completion: nil)
+  }
+  
+  @objc
+  func leftBarButtonItemAction() {
+    let menuViewController = viewControllerFactory.menuViewController(self.animator,
+                                                                      self)
+    present(menuViewController, animated: true, completion: nil)
   }
   
   func addRoomToFirebase(_ room: RoomModel) {
@@ -114,6 +129,20 @@ private extension HomeViewController {
   func reloadTableView() {
     DispatchQueue.main.async { [weak self] in
       self?.tableView.reloadData()
+    }
+  }
+  
+}
+
+extension HomeViewController: MenuViewControllerDelegate {
+  
+  func didTapMenuType(_ menuType: MenuType) {
+    switch menuType {
+    case .profile:
+      let profileViewController = viewControllerFactory.profileViewController()
+      navigationController?.pushViewController(profileViewController, animated: true)
+    case .logOut:
+      print("logput")
     }
   }
   

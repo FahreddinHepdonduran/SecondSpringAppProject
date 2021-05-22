@@ -26,8 +26,10 @@
 		E53FE5A826540DC600AEAE67 /* ChatTableViewDataSourceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53FE5A726540DC600AEAE67 /* ChatTableViewDataSourceExtension.swift */; };
 		E548EF7526591EB600953FD0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E548EF7426591EB600953FD0 /* ProfileViewController.swift */; };
 		E548EF7726591EC500953FD0 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E548EF7626591EC500953FD0 /* Profile.storyboard */; };
-		E548EF7A2659227100953FD0 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E548EF792659227100953FD0 /* MenuTableViewController.swift */; };
+		E548EF7A2659227100953FD0 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E548EF792659227100953FD0 /* MenuViewController.swift */; };
 		E548EF7C265922A900953FD0 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E548EF7B265922A900953FD0 /* Menu.storyboard */; };
+		E548EF7F26592A3F00953FD0 /* MenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E548EF7E26592A3F00953FD0 /* MenuAnimator.swift */; };
+		E548EF812659493000953FD0 /* MenuType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E548EF802659493000953FD0 /* MenuType.swift */; };
 		E58830AA264D6ABE005EFB55 /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58830A9264D6ABE005EFB55 /* RoomTableViewCell.swift */; };
 		E58830AD264D7B59005EFB55 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58830AC264D7B59005EFB55 /* RoomModel.swift */; };
 		E5A1118F26516002007A0A46 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1118E26516002007A0A46 /* CustomTextField.swift */; };
@@ -72,8 +74,10 @@
 		E53FE5A726540DC600AEAE67 /* ChatTableViewDataSourceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewDataSourceExtension.swift; sourceTree = "<group>"; };
 		E548EF7426591EB600953FD0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E548EF7626591EC500953FD0 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		E548EF792659227100953FD0 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		E548EF792659227100953FD0 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		E548EF7B265922A900953FD0 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		E548EF7E26592A3F00953FD0 /* MenuAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAnimator.swift; sourceTree = "<group>"; };
+		E548EF802659493000953FD0 /* MenuType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuType.swift; sourceTree = "<group>"; };
 		E58830A9264D6ABE005EFB55 /* RoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; };
 		E58830AC264D7B59005EFB55 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
 		E5A1118E26516002007A0A46 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 		E5159B082647FF950031AEB0 /* SecondSpringApp */ = {
 			isa = PBXGroup;
 			children = (
+				E548EF7D26592A2900953FD0 /* Animations */,
 				E5159B21264807310031AEB0 /* AppDelegate */,
 				E5159B122647FF990031AEB0 /* Assets.xcassets */,
 				E5A1118D26515FDD007A0A46 /* CustomTextFields */,
@@ -224,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				E53418FE264881590066072C /* LoginState.swift */,
+				E548EF802659493000953FD0 /* MenuType.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -259,10 +265,18 @@
 		E548EF782659223200953FD0 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				E548EF792659227100953FD0 /* MenuTableViewController.swift */,
+				E548EF792659227100953FD0 /* MenuViewController.swift */,
 				E548EF7B265922A900953FD0 /* Menu.storyboard */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		E548EF7D26592A2900953FD0 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				E548EF7E26592A3F00953FD0 /* MenuAnimator.swift */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		E58830A8264D6A79005EFB55 /* TableViewCells */ = {
@@ -469,6 +483,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E548EF812659493000953FD0 /* MenuType.swift in Sources */,
+				E548EF7F26592A3F00953FD0 /* MenuAnimator.swift in Sources */,
 				E5FC4A71264AE9AC004F60AC /* FirebaseAuthManager.swift in Sources */,
 				E5EB915E2649783600C73FFF /* LoginViewController.swift in Sources */,
 				E5F32C62264E94F200EA3CD1 /* ChatViewController.swift in Sources */,
@@ -477,7 +493,7 @@
 				E5159B0E2647FF960031AEB0 /* SplashScreenViewController.swift in Sources */,
 				E548EF7526591EB600953FD0 /* ProfileViewController.swift in Sources */,
 				E534190626488AAF0066072C /* UIApplication+Extensions.swift in Sources */,
-				E548EF7A2659227100953FD0 /* MenuTableViewController.swift in Sources */,
+				E548EF7A2659227100953FD0 /* MenuViewController.swift in Sources */,
 				E53418FF264881590066072C /* LoginState.swift in Sources */,
 				E5A1118F26516002007A0A46 /* CustomTextField.swift in Sources */,
 				E5A111912651676C007A0A46 /* UITextField+Extensions.swift in Sources */,

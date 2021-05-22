@@ -46,4 +46,17 @@ final class ViewControllerFactory {
     return chatViewController
   }
   
+  func menuViewController(_ transitionDelegate: UIViewControllerTransitioningDelegate,
+                          _ delegate: MenuViewControllerDelegate) -> MenuViewController {
+    let menuViewController = MenuViewController.instanceFromStoryboard()
+    menuViewController.transitioningDelegate = transitionDelegate
+    menuViewController.delegate = delegate
+    return menuViewController
+  }
+  
+  func profileViewController() -> ProfileViewController {
+    let profileViewController = ProfileViewController.instanceFromStoryboard()
+    return profileViewController
+  }
+  
 }

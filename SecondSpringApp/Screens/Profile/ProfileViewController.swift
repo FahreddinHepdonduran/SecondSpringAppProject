@@ -8,16 +8,35 @@
 
 import UIKit
 
-final class ProfileViewController: UITableViewController {
+final class ProfileViewController: UIViewController, UINavigationControllerDelegate {
+  
+  @IBOutlet private weak var profilemageView: UIImageView!
+  @IBOutlet private weak var usernameLabel: UITextField!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    profilemageView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                action: #selector(openPicker)))
+  }
+  
+  @objc
+  func openPicker() {
+    let picker = UIImagePickerController()
+    picker.sourceType = .photoLibrary
+    picker.delegate = self
+    present(picker, animated: true, completion: nil)
   }
   
 }
 
-// MARK: - TableViewDelegate
-extension ProfileViewController { }
+extension ProfileViewController: UIImagePickerControllerDelegate {
+  
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    guard let image = info[.originalImage] as? UIImage else {return}
+    profilemageView.image = image
+    picker.dismiss(animated: true, completion: nil)
+  }
+  
+}
 
-// MARK: - TableViewDataSoruce
-extension ProfileViewController { }
+extension ProfileViewController: StoryboardInstantiable { }

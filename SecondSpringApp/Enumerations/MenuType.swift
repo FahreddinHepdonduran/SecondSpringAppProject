@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+enum MenuType: String {
+  case profile = "Profile"
+  case logOut = "Log-Out"
+}
