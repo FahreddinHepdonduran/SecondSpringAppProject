@@ -11,12 +11,18 @@ import UIKit
 final class ProfileViewController: UIViewController, UINavigationControllerDelegate {
   
   @IBOutlet private weak var profilemageView: UIImageView!
-  @IBOutlet private weak var usernameLabel: UITextField!
+  @IBOutlet private weak var nameLabel: UILabel!
+  @IBOutlet private weak var emailLabel: UILabel!
+  
+  var user: UserInfo!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     profilemageView.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                                 action: #selector(openPicker)))
+    
+    nameLabel.text = user.name
+    emailLabel.text = user.email
   }
   
   @objc

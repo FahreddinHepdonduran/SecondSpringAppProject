@@ -111,6 +111,8 @@ private extension ChatViewController {
         let message: [String : Any] = [
           "senderID" : self.user.uid,
           "senderName" : self.user.name,
+          "senderEmail" : self.user.email,
+          "senderImage" : self.user.imageUrl,
           "message" : text,
           "time" : Timestamp(date: Date())
         ]

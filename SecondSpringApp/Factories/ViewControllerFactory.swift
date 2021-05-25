@@ -54,8 +54,9 @@ final class ViewControllerFactory {
     return menuViewController
   }
   
-  func profileViewController() -> ProfileViewController {
+  func profileViewController(_ user: UserInfo) -> ProfileViewController {
     let profileViewController = ProfileViewController.instanceFromStoryboard()
+    profileViewController.user = user
     return profileViewController
   }
   

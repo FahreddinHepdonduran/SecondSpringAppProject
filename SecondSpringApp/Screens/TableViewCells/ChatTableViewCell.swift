@@ -59,7 +59,9 @@ private extension ChatTableViewCell {
     }
     
     let user = UserInfo(uid: (message["senderID"] as? String) ?? "",
-                        name: (message["senderName"] as? String) ?? "")
+                        name: (message["senderName"] as? String) ?? "",
+                        email: (message["senderEmail"] as? String) ?? "",
+                        imageUrl: (message["senderImage"] as? String) ?? "")
     
     guard user == currentUser else {
       return

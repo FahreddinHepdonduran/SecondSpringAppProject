@@ -16,31 +16,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="pir-w8-GSO">
-                                <rect key="frame" x="157" y="163" width="100" height="100"/>
+                                <rect key="frame" x="44" y="145" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="1E3-fb-Mqt"/>
                                     <constraint firstAttribute="width" constant="100" id="MeE-5O-Q6F"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sr7-Pg-ybL">
-                                <rect key="frame" x="63" y="344" width="288" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pda-XJ-yZO">
+                                <rect key="frame" x="44" y="301" width="221" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="t4N-Vn-3cW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNG-df-loN">
+                                <rect key="frame" x="44" y="379" width="221" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="MMn-aM-i2u" firstAttribute="trailing" secondItem="Sr7-Pg-ybL" secondAttribute="trailing" constant="63" id="2wV-8t-5i2"/>
-                            <constraint firstItem="Sr7-Pg-ybL" firstAttribute="leading" secondItem="MMn-aM-i2u" secondAttribute="leading" constant="63" id="88z-TR-Fak"/>
-                            <constraint firstItem="pir-w8-GSO" firstAttribute="centerX" secondItem="cJ2-nv-xga" secondAttribute="centerX" id="UsL-ee-TJB"/>
-                            <constraint firstItem="Sr7-Pg-ybL" firstAttribute="top" secondItem="pir-w8-GSO" secondAttribute="bottom" constant="81" id="X8A-Pw-WDK"/>
-                            <constraint firstItem="pir-w8-GSO" firstAttribute="top" secondItem="MMn-aM-i2u" secondAttribute="top" constant="119" id="yxX-RD-ZbI"/>
+                            <constraint firstItem="qNG-df-loN" firstAttribute="height" secondItem="pda-XJ-yZO" secondAttribute="height" id="2xf-lS-3b2"/>
+                            <constraint firstItem="pda-XJ-yZO" firstAttribute="top" secondItem="pir-w8-GSO" secondAttribute="bottom" constant="56" id="AuJ-q1-dhP"/>
+                            <constraint firstItem="MMn-aM-i2u" firstAttribute="trailing" secondItem="qNG-df-loN" secondAttribute="trailing" constant="149" id="MAV-qg-LAV"/>
+                            <constraint firstItem="qNG-df-loN" firstAttribute="leading" secondItem="MMn-aM-i2u" secondAttribute="leading" constant="44" id="TGe-Jk-9Bd"/>
+                            <constraint firstItem="qNG-df-loN" firstAttribute="top" secondItem="pda-XJ-yZO" secondAttribute="bottom" constant="38" id="TKD-2t-3r3"/>
+                            <constraint firstItem="pir-w8-GSO" firstAttribute="leading" secondItem="MMn-aM-i2u" secondAttribute="leading" constant="44" id="V5l-Ip-6vb"/>
+                            <constraint firstItem="pir-w8-GSO" firstAttribute="top" secondItem="MMn-aM-i2u" secondAttribute="top" constant="101" id="hOs-Fp-dE8"/>
+                            <constraint firstItem="pda-XJ-yZO" firstAttribute="leading" secondItem="MMn-aM-i2u" secondAttribute="leading" constant="44" id="k5R-Vq-yZz"/>
+                            <constraint firstItem="MMn-aM-i2u" firstAttribute="trailing" secondItem="pda-XJ-yZO" secondAttribute="trailing" constant="149" id="nKX-br-06z"/>
+                            <constraint firstItem="MMn-aM-i2u" firstAttribute="trailing" secondItem="pir-w8-GSO" secondAttribute="trailing" constant="270" id="tl8-RH-DFW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MMn-aM-i2u"/>
                     </view>
                     <connections>
+                        <outlet property="emailLabel" destination="qNG-df-loN" id="mHf-Nh-XZi"/>
+                        <outlet property="nameLabel" destination="pda-XJ-yZO" id="IpE-mm-RNT"/>
                         <outlet property="profilemageView" destination="pir-w8-GSO" id="zvO-wi-6j7"/>
-                        <outlet property="usernameLabel" destination="Sr7-Pg-ybL" id="YsN-Eo-Jdk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6jA-Dk-ftz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

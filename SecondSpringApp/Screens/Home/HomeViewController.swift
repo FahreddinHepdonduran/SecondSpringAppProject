@@ -139,10 +139,16 @@ extension HomeViewController: MenuViewControllerDelegate {
   func didTapMenuType(_ menuType: MenuType) {
     switch menuType {
     case .profile:
-      let profileViewController = viewControllerFactory.profileViewController()
+      let profileViewController = viewControllerFactory.profileViewController(self.user)
       navigationController?.pushViewController(profileViewController, animated: true)
     case .logOut:
-      print("logput")
+      do {
+        try Auth.auth().signOut()
+        let signUpController = viewControllerFactory.registerViewController(viewControllerFactory)
+        UIApplication.changeRoot(with: signUpController)
+      } catch {
+        print("error sign out")
+      }
     }
   }
   
