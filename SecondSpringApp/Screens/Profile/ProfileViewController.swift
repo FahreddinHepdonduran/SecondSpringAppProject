@@ -28,6 +28,9 @@ final class ProfileViewController: UIViewController, UINavigationControllerDeleg
                                                                 action: #selector(openPicker)))
   }
   
+  @IBAction func saveButtonDidTap(_ sender: UIButton) {
+  }
+  
 }
 
 private extension ProfileViewController {
