@@ -39,6 +39,7 @@ private extension LoginViewController {
   
   func loginActionElements() {
     viewModel.loginAction.elements
+      .subscribeOn(MainScheduler.instance)
       .filter { $0 }
       .take(1)
       .subscribe(onNext: { [weak self] _ in

@@ -114,16 +114,23 @@ private extension HomeViewController {
   }
   
   func listenCurrentUser() {
-    let currentuserid = Auth.auth().currentUser?.uid
-    self.userListener = Firestore.firestore().collection("Users")
-      .document(currentuserid!).addSnapshotListener({ (doc, error) in
-      guard error == nil else {
-        print(error!.localizedDescription)
-        return
-      }
-      self.user = UserInfo.userInfo(from: doc!.data()!)
-    })
-  }
+    DispatchQueue.global().async { [weak self] in
+      guard let self = self else {return}
+      guard let currentUserID = FirebaseAuthManager.shared.getCurrentUser() else { return }
+      self.userListener = Firestore.firestore().collection("Users")
+        .document(currentUserID.uid).addSnapshotListener({ (doc, error) in
+          guard error == nil else {
+            DispatchQueue.main.async {
+              print(error!.localizedDescription)
+            }
+            return
+          }
+          DispatchQueue.main.async {
+            print("home screen user fetched")
+            self.user = UserInfo.userInfo(from: doc!.data()!)
+          }
+        })
+    }  }
   
   func tableViewDelegates() {
     tableView.delegate = self
@@ -146,13 +153,31 @@ extension HomeViewController: MenuViewControllerDelegate {
       let profileViewController = viewControllerFactory.profileViewController(self.user)
       navigationController?.pushViewController(profileViewController, animated: true)
     case .logOut:
+      logOut()
+    }
+  }
+  
+  func logOut() {
+    DispatchQueue.global().async { [weak self] in
+      guard let self = self else {return}
       do {
         try Auth.auth().signOut()
-        let signUpController = viewControllerFactory.registerViewController(viewControllerFactory)
-        UIApplication.changeRoot(with: signUpController)
+        self.changeRootSignUp()
       } catch {
-        print("error sign out")
+        DispatchQueue.main.async {
+          print("Error log out")
+        }
       }
+    }
+  }
+  
+  func changeRootSignUp() {
+    DispatchQueue.main.async { [weak self] in
+      guard let self = self else {return}
+      
+      let signUpController = self.viewControllerFactory
+        .registerViewController(self.viewControllerFactory)
+      UIApplication.changeRoot(with: signUpController)
     }
   }
   

@@ -35,13 +35,15 @@ private extension LoginViewModel {
   
   class func signInUser(_ email: String, _ password: String) -> Observable<Bool> {
     return Observable.create { (observer) -> Disposable in
-      FirebaseAuthManager.shared.signInUser(email, password) { (result) in
-        switch result {
-        case .success(_):
-          observer.onNext(true)
-        case .failure(let error):
-          observer.onNext(false)
-          observer.onError(error)
+      DispatchQueue.global().async {
+        FirebaseAuthManager.shared.signInUser(email, password) { (result) in
+          switch result {
+          case .success(_):
+            observer.onNext(true)
+          case .failure(let error):
+            observer.onNext(false)
+            observer.onError(error)
+          }
         }
       }
       
