@@ -14,28 +14,30 @@ final class HomeViewController: UIViewController {
   @IBOutlet private weak var tableView: UITableView!
   
   private var animator = ManuAnimator()
+  private var roomListener: ListenerRegistration!
+  private var userListener: ListenerRegistration!
   
   var user: UserInfo!
   var chatRooms = [RoomModel]()
-  
   var viewControllerFactory: ViewControllerFactory!
-  var listener: ListenerRegistration!
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
     tableViewDelegates()
     configureNavigationController()
-    setUserInfo()
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     listenForRooms()
+    listenCurrentUser()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
-    listener.remove()
+    roomListener.remove()
+    userListener.remove()
   }
   
 }
@@ -93,19 +95,9 @@ private extension HomeViewController {
     }
   }
   
-  func setUserInfo() {
-    FirebaseAuthManager.shared.getCurrentUserInfo { [weak self] (result) in
-      switch result {
-      case .success(let userInfo):
-        self?.user = userInfo
-      case .failure(let error):
-        print(error.localizedDescription)
-      }
-    }
-  }
-  
   func listenForRooms() {
-    listener = Firestore.firestore().collection("Rooms")
+    
+    roomListener = Firestore.firestore().collection("Rooms")
       .addSnapshotListener { (querySnapShot, error) in
         guard let querySnapShot = querySnapShot else {
           print(error!)
@@ -119,6 +111,18 @@ private extension HomeViewController {
         }
         self.reloadTableView()
     }
+  }
+  
+  func listenCurrentUser() {
+    let currentuserid = Auth.auth().currentUser?.uid
+    self.userListener = Firestore.firestore().collection("Users")
+      .document(currentuserid!).addSnapshotListener({ (doc, error) in
+      guard error == nil else {
+        print(error!.localizedDescription)
+        return
+      }
+      self.user = UserInfo.userInfo(from: doc!.data()!)
+    })
   }
   
   func tableViewDelegates() {

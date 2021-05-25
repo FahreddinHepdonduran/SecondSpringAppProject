@@ -16,6 +16,8 @@ final class ProfileViewController: UIViewController, UINavigationControllerDeleg
   @IBOutlet private weak var nameLabel: UILabel!
   @IBOutlet private weak var emailLabel: UILabel!
   
+  private let queue = OperationQueue()
+  
   var user: UserInfo!
   
   override func viewDidLoad() {
@@ -44,29 +46,16 @@ private extension ProfileViewController {
   }
   
   func uploadImage() {
-    let image = profilemageView.image
-    let imageData = image?.jpegData(compressionQuality: 0.5)
+    let image = self.profilemageView.image
+    let imageData = image?.jpegData(compressionQuality: 0.2)
+    let imageID = UUID().uuidString
     
-    let imageID = UUID()
+    let uploadOp = UploadImageOperation(imageData!, imageID: imageID)
+    let imageUrlOp = UpdateImageUrl(imageID, self.user.uid)
+    imageUrlOp.addDependency(uploadOp)
     
-    let imagesRef = Storage.storage().reference().child("images/\(imageID.uuidString).jpg")
-    
-    imagesRef.putData(imageData!, metadata: nil) { (metadata, error) in
-      guard metadata != nil else {
-        print(error!)
-        return
-      }
-      print("image upload sucses")
-    }
-    
-    Firestore.firestore().collection("Users").document(user.uid)
-      .updateData(["imageUrl" : imageID.uuidString]) { (error) in
-        guard error != nil else {
-          print("success update imageUrl")
-          return
-        }
-        print(error!.localizedDescription)
-    }
+    queue.addOperation(uploadOp)
+    queue.addOperation(imageUrlOp)
   }
   
   func downloadImage() {
