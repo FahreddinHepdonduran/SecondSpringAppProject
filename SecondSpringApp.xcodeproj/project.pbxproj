@@ -30,6 +30,9 @@
 		E548EF7C265922A900953FD0 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E548EF7B265922A900953FD0 /* Menu.storyboard */; };
 		E548EF7F26592A3F00953FD0 /* MenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E548EF7E26592A3F00953FD0 /* MenuAnimator.swift */; };
 		E548EF812659493000953FD0 /* MenuType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E548EF802659493000953FD0 /* MenuType.swift */; };
+		E55A6FB9265D571800922DB4 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A6FB8265D571800922DB4 /* AsyncOperation.swift */; };
+		E55A6FBB265D574A00922DB4 /* UploadImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A6FBA265D574A00922DB4 /* UploadImageOperation.swift */; };
+		E55A6FBD265D578000922DB4 /* UpdateImageUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A6FBC265D578000922DB4 /* UpdateImageUrl.swift */; };
 		E58830AA264D6ABE005EFB55 /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58830A9264D6ABE005EFB55 /* RoomTableViewCell.swift */; };
 		E58830AD264D7B59005EFB55 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58830AC264D7B59005EFB55 /* RoomModel.swift */; };
 		E5A1118F26516002007A0A46 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1118E26516002007A0A46 /* CustomTextField.swift */; };
@@ -78,6 +81,9 @@
 		E548EF7B265922A900953FD0 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		E548EF7E26592A3F00953FD0 /* MenuAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAnimator.swift; sourceTree = "<group>"; };
 		E548EF802659493000953FD0 /* MenuType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuType.swift; sourceTree = "<group>"; };
+		E55A6FB8265D571800922DB4 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		E55A6FBA265D574A00922DB4 /* UploadImageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageOperation.swift; sourceTree = "<group>"; };
+		E55A6FBC265D578000922DB4 /* UpdateImageUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateImageUrl.swift; sourceTree = "<group>"; };
 		E58830A9264D6ABE005EFB55 /* RoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; };
 		E58830AC264D7B59005EFB55 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
 		E5A1118E26516002007A0A46 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -177,6 +183,7 @@
 				E5159B142647FF990031AEB0 /* LaunchScreen.storyboard */,
 				E58830AB264D7B3D005EFB55 /* Models */,
 				E5FC4A6F264AE975004F60AC /* NetworkManager */,
+				E55A6FB7265D570000922DB4 /* Operations */,
 				E5159B2F264810600031AEB0 /* Protocols */,
 				E5159B1D264806450031AEB0 /* Screens */,
 				E5A1119426519217007A0A46 /* ViewModels */,
@@ -277,6 +284,16 @@
 				E548EF7E26592A3F00953FD0 /* MenuAnimator.swift */,
 			);
 			path = Animations;
+			sourceTree = "<group>";
+		};
+		E55A6FB7265D570000922DB4 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E55A6FB8265D571800922DB4 /* AsyncOperation.swift */,
+				E55A6FBA265D574A00922DB4 /* UploadImageOperation.swift */,
+				E55A6FBC265D578000922DB4 /* UpdateImageUrl.swift */,
+			);
+			path = Operations;
 			sourceTree = "<group>";
 		};
 		E58830A8264D6A79005EFB55 /* TableViewCells */ = {
@@ -486,6 +503,7 @@
 				E548EF812659493000953FD0 /* MenuType.swift in Sources */,
 				E548EF7F26592A3F00953FD0 /* MenuAnimator.swift in Sources */,
 				E5FC4A71264AE9AC004F60AC /* FirebaseAuthManager.swift in Sources */,
+				E55A6FB9265D571800922DB4 /* AsyncOperation.swift in Sources */,
 				E5EB915E2649783600C73FFF /* LoginViewController.swift in Sources */,
 				E5F32C62264E94F200EA3CD1 /* ChatViewController.swift in Sources */,
 				E58830AD264D7B59005EFB55 /* RoomModel.swift in Sources */,
@@ -496,7 +514,9 @@
 				E548EF7A2659227100953FD0 /* MenuViewController.swift in Sources */,
 				E53418FF264881590066072C /* LoginState.swift in Sources */,
 				E5A1118F26516002007A0A46 /* CustomTextField.swift in Sources */,
+				E55A6FBB265D574A00922DB4 /* UploadImageOperation.swift in Sources */,
 				E5A111912651676C007A0A46 /* UITextField+Extensions.swift in Sources */,
+				E55A6FBD265D578000922DB4 /* UpdateImageUrl.swift in Sources */,
 				E5EB915A264977D700C73FFF /* RegisterViewController.swift in Sources */,
 				E5FC4A68264AB7D5004F60AC /* HomeViewController.swift in Sources */,
 				E50D5D3726530AAF009D2D92 /* HomeTableViewDataSourceExtension.swift in Sources */,
