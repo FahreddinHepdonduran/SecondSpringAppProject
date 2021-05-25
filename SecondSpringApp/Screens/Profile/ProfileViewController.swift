@@ -14,16 +14,23 @@ final class ProfileViewController: UIViewController, UINavigationControllerDeleg
   @IBOutlet private weak var nameLabel: UILabel!
   @IBOutlet private weak var emailLabel: UILabel!
   
-  var user: UserInfo!
+  var user: UserInfo? {
+    didSet {
+      guard let user = user else { return }
+      nameLabel.text = user.name
+      emailLabel.text = user.email
+    }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     profilemageView.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                                 action: #selector(openPicker)))
-    
-    nameLabel.text = user.name
-    emailLabel.text = user.email
   }
+  
+}
+
+private extension ProfileViewController {
   
   @objc
   func openPicker() {

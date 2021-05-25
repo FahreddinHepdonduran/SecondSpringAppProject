@@ -11,4 +11,5 @@ target 'SecondSpringApp' do
   pod 'Action'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
 end
