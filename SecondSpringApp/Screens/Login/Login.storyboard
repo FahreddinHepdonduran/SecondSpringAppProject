@@ -34,7 +34,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="Adv-bM-FaR"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="25"/>
@@ -48,6 +48,9 @@
                                                         <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Mxb-H8-6RC" id="K9i-al-fd0"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="111111" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LVH-VW-hAf" customClass="CustomTextField" customModule="SecondSpringApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="70" width="374" height="50"/>
@@ -56,7 +59,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="dS3-LD-btj"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="25"/>
@@ -70,6 +73,9 @@
                                                         <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Mxb-H8-6RC" id="fr8-cc-EmL"/>
+                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJO-8f-GPE">
                                                 <rect key="frame" x="0.0" y="140" width="374" height="30"/>

@@ -95,4 +95,21 @@ private extension LoginViewController {
   
 }
 
+extension LoginViewController: UITextFieldDelegate {
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    switch textField {
+    case emailTextField:
+      passwordTextField.becomeFirstResponder()
+    case passwordTextField:
+      textField.resignFirstResponder()
+    default:
+      textField.resignFirstResponder()
+    }
+    
+    return false
+  }
+  
+}
+
 extension LoginViewController: StoryboardInstantiable { }
