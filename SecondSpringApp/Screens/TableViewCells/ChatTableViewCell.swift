@@ -67,8 +67,9 @@ private extension ChatTableViewCell {
       return
     }
     
-    messageTextView.backgroundColor = .green
-    senderNicknameLabel.backgroundColor = .green
+    let backgroundColor = UIColor(displayP3Red: 111/255, green: 191/255, blue: 132/255, alpha: 1.0)
+    messageTextView.backgroundColor = backgroundColor
+    senderNicknameLabel.backgroundColor = backgroundColor
     
     messageLeadingConstraint.constant = 150
     messageTrailingConstraint.constant = 0
