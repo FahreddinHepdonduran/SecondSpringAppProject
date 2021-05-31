@@ -37,7 +37,6 @@ final class ChatViewController: UIViewController {
     configureTableView()
     addNotification()
     sendMessage()
-    
   }
   
   override func viewWillAppear(_ animated: Bool) {

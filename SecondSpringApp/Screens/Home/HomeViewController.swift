@@ -18,8 +18,8 @@ final class HomeViewController: UIViewController {
   private var userListener: ListenerRegistration!
   
   var user: UserInfo!
-  var chatRooms = [RoomModel]()
   var viewControllerFactory: ViewControllerFactory!
+  var chatRooms = [RoomModel]()
   
   
   override func viewDidLoad() {

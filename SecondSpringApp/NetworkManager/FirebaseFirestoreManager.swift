@@ -34,6 +34,7 @@ final class FirebaseFirestoreManager {
     .setData([
       "id": "\(room.id.uuidString)",
       "name": room.name,
+      "imageUrl" : room.imageUrl,
       "messageHistory": room.messageHistory
     ]){ (error) in
       if let error = error {

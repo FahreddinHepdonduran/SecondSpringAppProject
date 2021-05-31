@@ -26,7 +26,9 @@ final class ProfileViewController: UIViewController, UINavigationControllerDeleg
                                                                 action: #selector(openPicker)))
     nameLabel.text = user.name
     emailLabel.text = user.email
-    downloadImage()
+    if user.imageUrl.count > 1 {
+      downloadImage()
+    }
   }
   
   @IBAction func saveButtonDidTap(_ sender: UIButton) {
