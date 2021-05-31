@@ -71,8 +71,10 @@ private extension HomeViewController {
       let room = RoomModel(name: textfield.text!)
       self?.addRoomToFirebase(room)
     }
+    let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
     
     alertController.addAction(action)
+    alertController.addAction(cancel)
     
     present(alertController, animated: true, completion: nil)
   }

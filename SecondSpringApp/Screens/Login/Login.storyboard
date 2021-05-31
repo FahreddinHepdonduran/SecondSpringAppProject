@@ -40,7 +40,7 @@
                                                         <integer key="value" value="25"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="person"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="email"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
                                                         <real key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
@@ -158,8 +158,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="email" width="220" height="220"/>
         <image name="logo" width="1436" height="1661"/>
         <image name="password" width="47" height="53"/>
-        <image name="person" width="55.5" height="45"/>
     </resources>
 </document>

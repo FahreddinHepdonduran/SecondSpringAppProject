@@ -29,6 +29,7 @@ final class ChatTableViewCell: UITableViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
     // Initialization code
+    messageTextView.frame.size.width = messageTextView.contentSize.width
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
@@ -47,14 +48,12 @@ private extension ChatTableViewCell {
     let stmp = message["time"] as? Timestamp
     if let dateValue = stmp?.dateValue() {
       let dateString2 = String(describing: dateValue)
-      print(dateString2)
 
       let dateFormatter = DateFormatter()
       dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
 
       let dateObj = dateFormatter.date(from: dateString2)
       dateFormatter.dateFormat = "HH:mm"
-      print("Dateobj: \(dateFormatter.string(from: dateObj!))")
       senderNicknameLabel.text = dateFormatter.string(from: dateObj!)
     }
     
