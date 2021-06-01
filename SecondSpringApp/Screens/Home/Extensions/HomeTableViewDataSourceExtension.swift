@@ -16,6 +16,7 @@ extension HomeViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "RoomTableViewCell") as! RoomTableViewCell
+    cell.delegate = self
     let roomModel = chatRooms[indexPath.row]
     cell.model = roomModel
     return cell

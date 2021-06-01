@@ -33,6 +33,9 @@
 		E55A6FB9265D571800922DB4 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A6FB8265D571800922DB4 /* AsyncOperation.swift */; };
 		E55A6FBB265D574A00922DB4 /* UploadImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A6FBA265D574A00922DB4 /* UploadImageOperation.swift */; };
 		E55A6FBD265D578000922DB4 /* UpdateImageUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A6FBC265D578000922DB4 /* UpdateImageUrl.swift */; };
+		E573B0E3266699120062278C /* HomeMenuViewControllerDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573B0E2266699120062278C /* HomeMenuViewControllerDelegateExtension.swift */; };
+		E573B0E526669BAA0062278C /* HomeRoomTableViewCellDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573B0E426669BAA0062278C /* HomeRoomTableViewCellDelegateExtension.swift */; };
+		E573B0E726669D770062278C /* HomePickerViewDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573B0E626669D770062278C /* HomePickerViewDelegateExtension.swift */; };
 		E58830AA264D6ABE005EFB55 /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58830A9264D6ABE005EFB55 /* RoomTableViewCell.swift */; };
 		E58830AD264D7B59005EFB55 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58830AC264D7B59005EFB55 /* RoomModel.swift */; };
 		E5A1118F26516002007A0A46 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1118E26516002007A0A46 /* CustomTextField.swift */; };
@@ -84,6 +87,9 @@
 		E55A6FB8265D571800922DB4 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		E55A6FBA265D574A00922DB4 /* UploadImageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageOperation.swift; sourceTree = "<group>"; };
 		E55A6FBC265D578000922DB4 /* UpdateImageUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateImageUrl.swift; sourceTree = "<group>"; };
+		E573B0E2266699120062278C /* HomeMenuViewControllerDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewControllerDelegateExtension.swift; sourceTree = "<group>"; };
+		E573B0E426669BAA0062278C /* HomeRoomTableViewCellDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoomTableViewCellDelegateExtension.swift; sourceTree = "<group>"; };
+		E573B0E626669D770062278C /* HomePickerViewDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePickerViewDelegateExtension.swift; sourceTree = "<group>"; };
 		E58830A9264D6ABE005EFB55 /* RoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; };
 		E58830AC264D7B59005EFB55 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
 		E5A1118E26516002007A0A46 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -146,6 +152,9 @@
 			children = (
 				E50D5D3426530A9B009D2D92 /* HomeTableViewDelegateExtension.swift */,
 				E50D5D3626530AAF009D2D92 /* HomeTableViewDataSourceExtension.swift */,
+				E573B0E2266699120062278C /* HomeMenuViewControllerDelegateExtension.swift */,
+				E573B0E426669BAA0062278C /* HomeRoomTableViewCellDelegateExtension.swift */,
+				E573B0E626669D770062278C /* HomePickerViewDelegateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -507,12 +516,14 @@
 				E5EB915E2649783600C73FFF /* LoginViewController.swift in Sources */,
 				E5F32C62264E94F200EA3CD1 /* ChatViewController.swift in Sources */,
 				E58830AD264D7B59005EFB55 /* RoomModel.swift in Sources */,
+				E573B0E526669BAA0062278C /* HomeRoomTableViewCellDelegateExtension.swift in Sources */,
 				E5FC4A6E264AE3E5004F60AC /* String+Extensions.swift in Sources */,
 				E5159B0E2647FF960031AEB0 /* SplashScreenViewController.swift in Sources */,
 				E548EF7526591EB600953FD0 /* ProfileViewController.swift in Sources */,
 				E534190626488AAF0066072C /* UIApplication+Extensions.swift in Sources */,
 				E548EF7A2659227100953FD0 /* MenuViewController.swift in Sources */,
 				E53418FF264881590066072C /* LoginState.swift in Sources */,
+				E573B0E726669D770062278C /* HomePickerViewDelegateExtension.swift in Sources */,
 				E5A1118F26516002007A0A46 /* CustomTextField.swift in Sources */,
 				E55A6FBB265D574A00922DB4 /* UploadImageOperation.swift in Sources */,
 				E5A111912651676C007A0A46 /* UITextField+Extensions.swift in Sources */,
@@ -529,6 +540,7 @@
 				E5D7BCB7264C09D600114998 /* FirebaseFirestoreManager.swift in Sources */,
 				E53FE5A826540DC600AEAE67 /* ChatTableViewDataSourceExtension.swift in Sources */,
 				E5159B0C2647FF960031AEB0 /* SceneDelegate.swift in Sources */,
+				E573B0E3266699120062278C /* HomeMenuViewControllerDelegateExtension.swift in Sources */,
 				E50D5D32265303BE009D2D92 /* User.swift in Sources */,
 				E5A111962651923D007A0A46 /* LoginViewModel.swift in Sources */,
 				E50D5D2E2652B6CA009D2D92 /* ViewControllerFactory.swift in Sources */,

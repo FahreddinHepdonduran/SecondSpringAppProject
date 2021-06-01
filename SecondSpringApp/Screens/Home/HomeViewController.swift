@@ -11,7 +11,7 @@ import Firebase
 
 final class HomeViewController: UIViewController {
   
-  @IBOutlet private weak var tableView: UITableView!
+  @IBOutlet weak var tableView: UITableView!
   
   private var animator = ManuAnimator()
   private var roomListener: ListenerRegistration!
@@ -20,6 +20,8 @@ final class HomeViewController: UIViewController {
   var user: UserInfo!
   var viewControllerFactory: ViewControllerFactory!
   var chatRooms = [RoomModel]()
+  var selectedImageRoomModel: RoomModel?
+  var queue = OperationQueue()
   
   
   override func viewDidLoad() {
@@ -142,44 +144,6 @@ private extension HomeViewController {
   func reloadTableView() {
     DispatchQueue.main.async { [weak self] in
       self?.tableView.reloadData()
-    }
-  }
-  
-}
-
-extension HomeViewController: MenuViewControllerDelegate {
-  
-  func didTapMenuType(_ menuType: MenuType) {
-    switch menuType {
-    case .profile:
-      let profileViewController = viewControllerFactory.profileViewController(self.user)
-      navigationController?.pushViewController(profileViewController, animated: true)
-    case .logOut:
-      logOut()
-    }
-  }
-  
-  func logOut() {
-    DispatchQueue.global().async { [weak self] in
-      guard let self = self else {return}
-      do {
-        try Auth.auth().signOut()
-        self.changeRootSignUp()
-      } catch {
-        DispatchQueue.main.async {
-          print("Error log out")
-        }
-      }
-    }
-  }
-  
-  func changeRootSignUp() {
-    DispatchQueue.main.async { [weak self] in
-      guard let self = self else {return}
-      
-      let signUpController = self.viewControllerFactory
-        .registerViewController(self.viewControllerFactory)
-      UIApplication.changeRoot(with: signUpController)
     }
   }
   

@@ -53,7 +53,7 @@ private extension ProfileViewController {
     let imageID = UUID().uuidString
     
     let uploadOp = UploadImageOperation(imageData!, imageID: imageID)
-    let imageUrlOp = UpdateImageUrl(imageID, self.user.uid)
+    let imageUrlOp = UpdateImageUrl(imageID, self.user.uid, "Users")
     imageUrlOp.addDependency(uploadOp)
     
     queue.addOperation(uploadOp)
