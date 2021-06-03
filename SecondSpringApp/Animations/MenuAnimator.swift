@@ -22,8 +22,8 @@ final class ManuAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     let toVC = transitionContext.viewController(forKey: .to)!
     let fromVC = transitionContext.viewController(forKey: .from)!
       
-    let finalWidth = toVC.view.frame.width * 0.7
-    let finalHeight = toVC.view.frame.height
+    let finalWidth = toVC.view.frame.width * 0.8
+    let finalHeight = UIScreen.main.bounds.height
     
     if presenting {
       container.addSubview(toVC.view)
