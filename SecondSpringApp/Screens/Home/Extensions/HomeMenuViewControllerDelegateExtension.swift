@@ -17,6 +17,8 @@ extension HomeViewController: MenuViewControllerDelegate {
       navigationController?.pushViewController(profileViewController, animated: true)
     case .logOut:
       logOut()
+    case .hobies:
+      print("hobies")
     }
   }
   
