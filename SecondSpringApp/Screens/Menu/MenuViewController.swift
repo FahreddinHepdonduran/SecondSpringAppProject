@@ -16,17 +16,20 @@ final class MenuViewController: UITableViewController {
   
   private let menuTypes: [MenuType] = [
     .profile,
-    .logOut
+    .logOut,
+    .hobies
   ]
   
   private let rowIcons: [UIImage] = [
     UIImage(named: "person")!,
-    UIImage(systemName: "arrow.down.left.circle.fill")!
+    UIImage(systemName: "arrow.down.left.circle.fill")!,
+    UIImage(systemName: "star")!
   ]
   
   weak var delegate: MenuViewControllerDelegate?
   
   override func viewDidLoad() {
+    self.tableView.contentInset = UIEdgeInsets(top: 100, left: 0, bottom: 0, right: 0)
   }
   
 }
