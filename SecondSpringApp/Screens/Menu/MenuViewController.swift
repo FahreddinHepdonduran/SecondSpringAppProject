@@ -16,14 +16,12 @@ final class MenuViewController: UITableViewController {
   
   private let menuTypes: [MenuType] = [
     .profile,
-    .logOut,
-    .hobies
+    .logOut
   ]
   
   private let rowIcons: [UIImage] = [
-    UIImage(named: "person")!,
-    UIImage(systemName: "arrow.down.left.circle.fill")!,
-    UIImage(systemName: "star")!
+    UIImage(systemName: "person.fill")!,
+    UIImage(systemName: "arrow.down.left.circle.fill")!
   ]
   
   weak var delegate: MenuViewControllerDelegate?
