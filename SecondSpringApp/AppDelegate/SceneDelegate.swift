@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     self.window?.rootViewController = splashViewController
     self.window?.makeKeyAndVisible()
     
-    FirebaseApp.configure()
+    
   }
   
   func sceneDidDisconnect(_ scene: UIScene) {
