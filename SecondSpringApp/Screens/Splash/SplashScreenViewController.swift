@@ -31,25 +31,18 @@ final class SplashScreenViewController: UIViewController {
       .disposed(by: disposeBag)
   }
   
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-//    loginState.subscribeOn(MainScheduler.instance)
-//      .subscribe(onNext: { state in
-//        if state == .loggedIn {
-//          self.perform(#selector(self.changeRootToHome), with: nil, afterDelay: 3)
-//        } else {
-//          self.perform(#selector(self.changeRootToRegister), with: nil, afterDelay: 3)
-//        }
-//      })
-//      .disposed(by: disposeBag)
-  }
+}
+
+private extension SplashScreenViewController {
   
-  @objc private func changeRootToRegister() {
+  @objc
+  private func changeRootToRegister() {
     let signUpViewController = viewControllerFactory.registerViewController(viewControllerFactory)
     UIApplication.changeRoot(with: signUpViewController)
   }
   
-  @objc private func changeRootToHome() {
+  @objc
+  private func changeRootToHome() {
     let homeVC = viewControllerFactory.homeViewController(viewControllerFactory)
     UIApplication.changeRoot(with: homeVC)
   }
