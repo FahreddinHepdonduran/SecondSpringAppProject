@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300C92768986C1A53C53223A /* Pods_SecondSpringAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CD25432346748C8A3AA1C7 /* Pods_SecondSpringAppTests.framework */; };
 		A2932D16FB8A491996372BC7 /* Pods_SecondSpringApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CADC7F43168CF21E8678401E /* Pods_SecondSpringApp.framework */; };
 		E50D5D2E2652B6CA009D2D92 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50D5D2D2652B6CA009D2D92 /* ViewControllerFactory.swift */; };
 		E50D5D302652BE98009D2D92 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50D5D2F2652BE98009D2D92 /* RegisterViewModel.swift */; };
@@ -42,8 +43,8 @@
 		E5A1118F26516002007A0A46 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1118E26516002007A0A46 /* CustomTextField.swift */; };
 		E5A111912651676C007A0A46 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A111902651676C007A0A46 /* UITextField+Extensions.swift */; };
 		E5A111962651923D007A0A46 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A111952651923D007A0A46 /* LoginViewModel.swift */; };
-		E5D7B0042678ABC20037A9D7 /* SecondSpringAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7B0032678ABC20037A9D7 /* SecondSpringAppTests.swift */; };
 		E5D7BCB7264C09D600114998 /* FirebaseFirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7BCB6264C09D600114998 /* FirebaseFirestoreManager.swift */; };
+		E5DF80902678B81200712BE9 /* SecondSpringAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DF808F2678B81200712BE9 /* SecondSpringAppTests.swift */; };
 		E5EB915A264977D700C73FFF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EB9159264977D700C73FFF /* RegisterViewController.swift */; };
 		E5EB915C2649782300C73FFF /* RegisterScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5EB915B2649782300C73FFF /* RegisterScreen.storyboard */; };
 		E5EB915E2649783600C73FFF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EB915D2649783600C73FFF /* LoginViewController.swift */; };
@@ -56,11 +57,10 @@
 		E5FC4A6C264ADF03004F60AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5FC4A6B264ADF03004F60AC /* GoogleService-Info.plist */; };
 		E5FC4A6E264AE3E5004F60AC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FC4A6D264AE3E5004F60AC /* String+Extensions.swift */; };
 		E5FC4A71264AE9AC004F60AC /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FC4A70264AE9AC004F60AC /* FirebaseAuthManager.swift */; };
-		F953A10642052AE2E5CE1FDA /* Pods_SecondSpringAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CD25432346748C8A3AA1C7 /* Pods_SecondSpringAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E5D7AFFE2678AB510037A9D7 /* PBXContainerItemProxy */ = {
+		E5DF808A2678B7C600712BE9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E5159AFE2647FF950031AEB0 /* Project object */;
 			proxyType = 1;
@@ -112,10 +112,10 @@
 		E5A1118E26516002007A0A46 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E5A111902651676C007A0A46 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		E5A111952651923D007A0A46 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		E5D7AFF92678AB510037A9D7 /* SecondSpringAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecondSpringAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5D7AFFD2678AB510037A9D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E5D7B0032678ABC20037A9D7 /* SecondSpringAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSpringAppTests.swift; sourceTree = "<group>"; };
 		E5D7BCB6264C09D600114998 /* FirebaseFirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreManager.swift; sourceTree = "<group>"; };
+		E5DF80852678B7C600712BE9 /* SecondSpringAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecondSpringAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5DF80892678B7C600712BE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5DF808F2678B81200712BE9 /* SecondSpringAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSpringAppTests.swift; sourceTree = SOURCE_ROOT; };
 		E5EB9159264977D700C73FFF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E5EB915B2649782300C73FFF /* RegisterScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterScreen.storyboard; sourceTree = "<group>"; };
 		E5EB915D2649783600C73FFF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -139,11 +139,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E5D7AFF62678AB510037A9D7 /* Frameworks */ = {
+		E5DF80822678B7C600712BE9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F953A10642052AE2E5CE1FDA /* Pods_SecondSpringAppTests.framework in Frameworks */,
+				300C92768986C1A53C53223A /* Pods_SecondSpringAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,7 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				E5159B082647FF950031AEB0 /* SecondSpringApp */,
-				E5D7AFFA2678AB510037A9D7 /* SecondSpringAppTests */,
+				E5DF80862678B7C600712BE9 /* SecondSpringAppTests */,
 				E5159B072647FF950031AEB0 /* Products */,
 				99D185E2568EE470086BAE8A /* Pods */,
 				DC125F7C9478E6252C7F7022 /* Frameworks */,
@@ -205,7 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				E5159B062647FF950031AEB0 /* SecondSpringApp.app */,
-				E5D7AFF92678AB510037A9D7 /* SecondSpringAppTests.xctest */,
+				E5DF80852678B7C600712BE9 /* SecondSpringAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -374,11 +374,11 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		E5D7AFFA2678AB510037A9D7 /* SecondSpringAppTests */ = {
+		E5DF80862678B7C600712BE9 /* SecondSpringAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				E5D7B0032678ABC20037A9D7 /* SecondSpringAppTests.swift */,
-				E5D7AFFD2678AB510037A9D7 /* Info.plist */,
+				E5DF808F2678B81200712BE9 /* SecondSpringAppTests.swift */,
+				E5DF80892678B7C600712BE9 /* Info.plist */,
 			);
 			path = SecondSpringAppTests;
 			sourceTree = "<group>";
@@ -452,24 +452,24 @@
 			productReference = E5159B062647FF950031AEB0 /* SecondSpringApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E5D7AFF82678AB510037A9D7 /* SecondSpringAppTests */ = {
+		E5DF80842678B7C600712BE9 /* SecondSpringAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E5D7B0002678AB510037A9D7 /* Build configuration list for PBXNativeTarget "SecondSpringAppTests" */;
+			buildConfigurationList = E5DF808C2678B7C600712BE9 /* Build configuration list for PBXNativeTarget "SecondSpringAppTests" */;
 			buildPhases = (
-				00A1A3C5DBB27521922D8E25 /* [CP] Check Pods Manifest.lock */,
-				E5D7AFF52678AB510037A9D7 /* Sources */,
-				E5D7AFF62678AB510037A9D7 /* Frameworks */,
-				E5D7AFF72678AB510037A9D7 /* Resources */,
-				F83EEB7889DDE22708BA07A8 /* [CP] Embed Pods Frameworks */,
+				DA8C95C5898E7AD2C29C02BF /* [CP] Check Pods Manifest.lock */,
+				E5DF80812678B7C600712BE9 /* Sources */,
+				E5DF80822678B7C600712BE9 /* Frameworks */,
+				E5DF80832678B7C600712BE9 /* Resources */,
+				47AEE9B52878BEFFB979A230 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E5D7AFFF2678AB510037A9D7 /* PBXTargetDependency */,
+				E5DF808B2678B7C600712BE9 /* PBXTargetDependency */,
 			);
 			name = SecondSpringAppTests;
 			productName = SecondSpringAppTests;
-			productReference = E5D7AFF92678AB510037A9D7 /* SecondSpringAppTests.xctest */;
+			productReference = E5DF80852678B7C600712BE9 /* SecondSpringAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -485,8 +485,9 @@
 					E5159B052647FF950031AEB0 = {
 						CreatedOnToolsVersion = 11.5;
 					};
-					E5D7AFF82678AB510037A9D7 = {
+					E5DF80842678B7C600712BE9 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 						TestTargetID = E5159B052647FF950031AEB0;
 					};
 				};
@@ -505,7 +506,7 @@
 			projectRoot = "";
 			targets = (
 				E5159B052647FF950031AEB0 /* SecondSpringApp */,
-				E5D7AFF82678AB510037A9D7 /* SecondSpringAppTests */,
+				E5DF80842678B7C600712BE9 /* SecondSpringAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -528,7 +529,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E5D7AFF72678AB510037A9D7 /* Resources */ = {
+		E5DF80832678B7C600712BE9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -538,28 +539,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		00A1A3C5DBB27521922D8E25 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SecondSpringAppTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		0F1E35293152DEC6B0BBC226 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -575,6 +554,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SecondSpringApp/Pods-SecondSpringApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47AEE9B52878BEFFB979A230 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SecondSpringAppTests/Pods-SecondSpringAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SecondSpringAppTests/Pods-SecondSpringAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SecondSpringAppTests/Pods-SecondSpringAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A9D00D58EC977A93B278E828 /* [CP] Check Pods Manifest.lock */ = {
@@ -599,21 +595,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F83EEB7889DDE22708BA07A8 /* [CP] Embed Pods Frameworks */ = {
+		DA8C95C5898E7AD2C29C02BF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SecondSpringAppTests/Pods-SecondSpringAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SecondSpringAppTests/Pods-SecondSpringAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SecondSpringAppTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SecondSpringAppTests/Pods-SecondSpringAppTests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -663,21 +664,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E5D7AFF52678AB510037A9D7 /* Sources */ = {
+		E5DF80812678B7C600712BE9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5D7B0042678ABC20037A9D7 /* SecondSpringAppTests.swift in Sources */,
+				E5DF80902678B81200712BE9 /* SecondSpringAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E5D7AFFF2678AB510037A9D7 /* PBXTargetDependency */ = {
+		E5DF808B2678B7C600712BE9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E5159B052647FF950031AEB0 /* SecondSpringApp */;
-			targetProxy = E5D7AFFE2678AB510037A9D7 /* PBXContainerItemProxy */;
+			targetProxy = E5DF808A2678B7C600712BE9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -847,11 +848,12 @@
 			};
 			name = Release;
 		};
-		E5D7B0012678AB510037A9D7 /* Debug */ = {
+		E5DF808D2678B7C600712BE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3CB756C178727636CA461858 /* Pods-SecondSpringAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6J3M2T865K;
 				INFOPLIST_FILE = SecondSpringAppTests/Info.plist;
@@ -862,17 +864,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ss.SecondSpringAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SecondSpringApp.app/SecondSpringApp";
 			};
 			name = Debug;
 		};
-		E5D7B0022678AB510037A9D7 /* Release */ = {
+		E5DF808E2678B7C600712BE9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AD78C9E443654B64DBA5B880 /* Pods-SecondSpringAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6J3M2T865K;
 				INFOPLIST_FILE = SecondSpringAppTests/Info.plist;
@@ -910,11 +914,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E5D7B0002678AB510037A9D7 /* Build configuration list for PBXNativeTarget "SecondSpringAppTests" */ = {
+		E5DF808C2678B7C600712BE9 /* Build configuration list for PBXNativeTarget "SecondSpringAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E5D7B0012678AB510037A9D7 /* Debug */,
-				E5D7B0022678AB510037A9D7 /* Release */,
+				E5DF808D2678B7C600712BE9 /* Debug */,
+				E5DF808E2678B7C600712BE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

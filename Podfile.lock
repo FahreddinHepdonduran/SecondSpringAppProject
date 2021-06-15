@@ -310,20 +310,26 @@ PODS:
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
+  - RxBlocking (5.1.1):
+    - RxSwift (~> 5)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.2)
+  - RxTest (5.1.2):
+    - RxSwift (~> 5)
 
 DEPENDENCIES:
   - Action
   - Firebase/Auth
   - Firebase/Firestore
   - Firebase/Storage
+  - RxBlocking
   - RxCocoa (~> 5.0)
   - RxSwift (~> 5.0)
+  - RxTest (~> 5.0)
 
 SPEC REPOS:
   trunk:
@@ -344,9 +350,11 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - RxBlocking
     - RxCocoa
     - RxRelay
     - RxSwift
+    - RxTest
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -366,10 +374,12 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 1e2e1f9570186967f617e49128ed26ccf1bafc8e
+  RxTest: 274549b747dca56f47c52c8991ec5cf797ecfe40
 
-PODFILE CHECKSUM: 0512b69881d4b58139d8ba8256fd2482aee74fb9
+PODFILE CHECKSUM: 86e5a3a6e619bf81b00110a5567d457d75c08808
 
 COCOAPODS: 1.8.4

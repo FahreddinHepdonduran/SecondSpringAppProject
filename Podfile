@@ -21,6 +21,8 @@ target 'SecondSpringAppTests' do
   # Pods for SecondSpringApp
   pod 'RxSwift', '~>5.0'
   pod 'RxCocoa', '~>5.0'
+  pod 'RxBlocking'
+  pod 'RxTest', '~>5.0'
   pod 'Action'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
