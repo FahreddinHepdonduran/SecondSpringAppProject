@@ -13,7 +13,7 @@ import RxCocoa
 final class SplashScreenViewController: UIViewController {
   
   var viewControllerFactory: ViewControllerFactory!
-  var viewModel = SplashViewModel()
+  var viewModel: SplashViewModel!
   private let disposeBag = DisposeBag()
   
   override func viewDidLoad() {
