@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import FirebaseAuth
-import FirebaseFirestore
+import Firebase
 
 final class FirebaseAuthManager {
   
@@ -29,7 +28,7 @@ final class FirebaseAuthManager {
       
       completion(.success(authResult.user))
       
-      self?.firestore.addDocumentToUsers(authResult, nickname) { (error) in
+      self?.firestore.addDocumentToUsers(authResult, nickname, email) { (error) in
         guard let error = error else { return }
         completion(.failure(error))
       }
@@ -59,25 +58,14 @@ final class FirebaseAuthManager {
   func getCurrentUserInfo(_ completion: @escaping(Result<UserInfo, Error>) -> Void) {
     guard let currentUser = getCurrentUser() else { return }
     
-    firestore.getUserDocument(where: currentUser.uid) { (result) in
+    firestore.getUserDocument(id: currentUser.uid) { (result) in
       switch result {
       case .success(let document):
-        completion(.success(UserInfo.userInfo(from: document.data())))
+        completion(.success(UserInfo.userInfo(from: document.data()!)))
       case .failure(let error):
         completion(.failure(error))
       }
     }
-  }
-  
-}
-
-private extension FirebaseAuthManager {
-  
-  func userInfo(from data: [String:Any]) -> UserInfo {
-    let uid = data["uid"] as! String
-    let username = data["username"] as! String
-    
-    return UserInfo(uid: uid, name: username)
   }
   
 }

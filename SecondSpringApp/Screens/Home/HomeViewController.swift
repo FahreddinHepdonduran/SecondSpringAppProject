@@ -11,29 +11,35 @@ import Firebase
 
 final class HomeViewController: UIViewController {
   
-  @IBOutlet private weak var tableView: UITableView!
+  @IBOutlet weak var tableView: UITableView!
+  
+  private var animator = ManuAnimator()
+  private var roomListener: ListenerRegistration!
+  private var userListener: ListenerRegistration!
   
   var user: UserInfo!
-  var chatRooms = [RoomModel]()
-  
   var viewControllerFactory: ViewControllerFactory!
-  var listener: ListenerRegistration!
+  var chatRooms = [RoomModel]()
+  var selectedImageRoomModel: RoomModel?
+  var queue = OperationQueue()
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
     tableViewDelegates()
     configureNavigationController()
-    setUserInfo()
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     listenForRooms()
+    listenCurrentUser()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
-    listener.remove()
+    roomListener.remove()
+    userListener.remove()
   }
   
 }
@@ -45,6 +51,12 @@ private extension HomeViewController {
                                              target: self,
                                              action: #selector(rightBarButtonItemAction))
     navigationItem.rightBarButtonItem = rightBarButtonItem
+    
+    let leftBarButtonItem = UIBarButtonItem(title: "Menu",
+                                            style: .plain,
+                                            target: self,
+                                            action: #selector(leftBarButtonItemAction))
+    navigationItem.leftBarButtonItem = leftBarButtonItem
   }
   
   @objc
@@ -61,10 +73,19 @@ private extension HomeViewController {
       let room = RoomModel(name: textfield.text!)
       self?.addRoomToFirebase(room)
     }
+    let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
     
     alertController.addAction(action)
+    alertController.addAction(cancel)
     
     present(alertController, animated: true, completion: nil)
+  }
+  
+  @objc
+  func leftBarButtonItemAction() {
+    let menuViewController = viewControllerFactory.menuViewController(self.animator,
+                                                                      self)
+    present(menuViewController, animated: true, completion: nil)
   }
   
   func addRoomToFirebase(_ room: RoomModel) {
@@ -78,19 +99,9 @@ private extension HomeViewController {
     }
   }
   
-  func setUserInfo() {
-    FirebaseAuthManager.shared.getCurrentUserInfo { [weak self] (result) in
-      switch result {
-      case .success(let userInfo):
-        self?.user = userInfo
-      case .failure(let error):
-        print(error.localizedDescription)
-      }
-    }
-  }
-  
   func listenForRooms() {
-    listener = Firestore.firestore().collection("Rooms")
+    
+    roomListener = Firestore.firestore().collection("Rooms")
       .addSnapshotListener { (querySnapShot, error) in
         guard let querySnapShot = querySnapShot else {
           print(error!)
@@ -105,6 +116,25 @@ private extension HomeViewController {
         self.reloadTableView()
     }
   }
+  
+  func listenCurrentUser() {
+    DispatchQueue.global().async { [weak self] in
+      guard let self = self else {return}
+      guard let currentUserID = FirebaseAuthManager.shared.getCurrentUser() else { return }
+      self.userListener = Firestore.firestore().collection("Users")
+        .document(currentUserID.uid).addSnapshotListener({ (doc, error) in
+          guard error == nil else {
+            DispatchQueue.main.async {
+              print(error!.localizedDescription)
+            }
+            return
+          }
+          DispatchQueue.main.async {
+            print("home screen user fetched")
+            self.user = UserInfo.userInfo(from: doc!.data()!)
+          }
+        })
+    }  }
   
   func tableViewDelegates() {
     tableView.delegate = self

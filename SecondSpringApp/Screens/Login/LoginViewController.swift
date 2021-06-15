@@ -39,6 +39,7 @@ private extension LoginViewController {
   
   func loginActionElements() {
     viewModel.loginAction.elements
+      .subscribeOn(MainScheduler.instance)
       .filter { $0 }
       .take(1)
       .subscribe(onNext: { [weak self] _ in
@@ -90,6 +91,23 @@ private extension LoginViewController {
   func navigateToHome() {
     let homeViewController = viewControllerFactory.homeViewController(viewControllerFactory)
     UIApplication.changeRoot(with: homeViewController)
+  }
+  
+}
+
+extension LoginViewController: UITextFieldDelegate {
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    switch textField {
+    case emailTextField:
+      passwordTextField.becomeFirstResponder()
+    case passwordTextField:
+      textField.resignFirstResponder()
+    default:
+      textField.resignFirstResponder()
+    }
+    
+    return false
   }
   
 }

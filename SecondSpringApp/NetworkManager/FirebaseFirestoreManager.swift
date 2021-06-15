@@ -13,23 +13,20 @@ import FirebaseFirestore
 final class FirebaseFirestoreManager {
   
   private let firestore = Firestore.firestore()
-  private let userDefaults = UserDefaults.standard
   
   static let shared = FirebaseFirestoreManager()
   
   private init() { }
   
-  func addDocumentToUsers(_ authResult: AuthDataResult, _ nickname: String,
+  func addDocumentToUsers(_ authResult: AuthDataResult, _ email: String, _ nickname: String,
                    completion: @escaping(Error?) -> Void) {
-    firestore.collection("Users").addDocument(data: [
-      "uid": authResult.user.uid,
-      "username": nickname
-    ]) { error in
-      if let error = error {
-        completion(error)
-        return
-      }
-    }
+    firestore.collection("Users").document(authResult.user.uid)
+      .setData([
+        "uid" : authResult.user.uid,
+        "username" : nickname,
+        "email" : email,
+        "imageUrl" : ""
+      ])
   }
   
   func addDocumentToRooms(_ room: RoomModel, completion: @escaping(Error?) -> Void) {
@@ -37,6 +34,7 @@ final class FirebaseFirestoreManager {
     .setData([
       "id": "\(room.id.uuidString)",
       "name": room.name,
+      "imageUrl" : room.imageUrl,
       "messageHistory": room.messageHistory
     ]){ (error) in
       if let error = error {
@@ -55,15 +53,14 @@ final class FirebaseFirestoreManager {
     }
   }
   
-  func getUserDocument(where id: String, _ completion: @escaping(Result<QueryDocumentSnapshot, Error>) -> Void) {
-    firestore.collection("Users").whereField("uid", isEqualTo: id)
-      .getDocuments { (querySnapshot, error) in
-        guard let querySnapshot = querySnapshot else {
-          completion(.failure(error!))
-          return
-        }
-        
-        completion(.success(querySnapshot.documents.first!))
+  func getUserDocument(id: String, _ completion: @escaping(Result<DocumentSnapshot, Error>) -> Void) {
+    firestore.collection("Users").document(id).getDocument { (documentSnapShot, error) in
+      guard let error = error else {
+        completion(.success(documentSnapShot!))
+        return
+      }
+      
+      completion(.failure(error))
     }
   }
   

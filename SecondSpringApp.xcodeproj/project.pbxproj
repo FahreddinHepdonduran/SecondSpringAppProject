@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300C92768986C1A53C53223A /* Pods_SecondSpringAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CD25432346748C8A3AA1C7 /* Pods_SecondSpringAppTests.framework */; };
 		A2932D16FB8A491996372BC7 /* Pods_SecondSpringApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CADC7F43168CF21E8678401E /* Pods_SecondSpringApp.framework */; };
 		E50D5D2E2652B6CA009D2D92 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50D5D2D2652B6CA009D2D92 /* ViewControllerFactory.swift */; };
 		E50D5D302652BE98009D2D92 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50D5D2F2652BE98009D2D92 /* RegisterViewModel.swift */; };
@@ -24,12 +25,26 @@
 		E534190626488AAF0066072C /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534190526488AAF0066072C /* UIApplication+Extensions.swift */; };
 		E53FE5A626540DB000AEAE67 /* ChatTableViewDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53FE5A526540DB000AEAE67 /* ChatTableViewDelegateExtension.swift */; };
 		E53FE5A826540DC600AEAE67 /* ChatTableViewDataSourceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53FE5A726540DC600AEAE67 /* ChatTableViewDataSourceExtension.swift */; };
+		E548EF7526591EB600953FD0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E548EF7426591EB600953FD0 /* ProfileViewController.swift */; };
+		E548EF7726591EC500953FD0 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E548EF7626591EC500953FD0 /* Profile.storyboard */; };
+		E548EF7A2659227100953FD0 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E548EF792659227100953FD0 /* MenuViewController.swift */; };
+		E548EF7C265922A900953FD0 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E548EF7B265922A900953FD0 /* Menu.storyboard */; };
+		E548EF7F26592A3F00953FD0 /* MenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E548EF7E26592A3F00953FD0 /* MenuAnimator.swift */; };
+		E548EF812659493000953FD0 /* MenuType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E548EF802659493000953FD0 /* MenuType.swift */; };
+		E55194CB2677B84E00C0E1A9 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55194CA2677B84E00C0E1A9 /* SplashViewModel.swift */; };
+		E55A6FB9265D571800922DB4 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A6FB8265D571800922DB4 /* AsyncOperation.swift */; };
+		E55A6FBB265D574A00922DB4 /* UploadImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A6FBA265D574A00922DB4 /* UploadImageOperation.swift */; };
+		E55A6FBD265D578000922DB4 /* UpdateImageUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A6FBC265D578000922DB4 /* UpdateImageUrl.swift */; };
+		E573B0E3266699120062278C /* HomeMenuViewControllerDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573B0E2266699120062278C /* HomeMenuViewControllerDelegateExtension.swift */; };
+		E573B0E526669BAA0062278C /* HomeRoomTableViewCellDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573B0E426669BAA0062278C /* HomeRoomTableViewCellDelegateExtension.swift */; };
+		E573B0E726669D770062278C /* HomePickerViewDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573B0E626669D770062278C /* HomePickerViewDelegateExtension.swift */; };
 		E58830AA264D6ABE005EFB55 /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58830A9264D6ABE005EFB55 /* RoomTableViewCell.swift */; };
 		E58830AD264D7B59005EFB55 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58830AC264D7B59005EFB55 /* RoomModel.swift */; };
 		E5A1118F26516002007A0A46 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1118E26516002007A0A46 /* CustomTextField.swift */; };
 		E5A111912651676C007A0A46 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A111902651676C007A0A46 /* UITextField+Extensions.swift */; };
 		E5A111962651923D007A0A46 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A111952651923D007A0A46 /* LoginViewModel.swift */; };
 		E5D7BCB7264C09D600114998 /* FirebaseFirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7BCB6264C09D600114998 /* FirebaseFirestoreManager.swift */; };
+		E5DF80902678B81200712BE9 /* SecondSpringAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DF808F2678B81200712BE9 /* SecondSpringAppTests.swift */; };
 		E5EB915A264977D700C73FFF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EB9159264977D700C73FFF /* RegisterViewController.swift */; };
 		E5EB915C2649782300C73FFF /* RegisterScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5EB915B2649782300C73FFF /* RegisterScreen.storyboard */; };
 		E5EB915E2649783600C73FFF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EB915D2649783600C73FFF /* LoginViewController.swift */; };
@@ -44,8 +59,21 @@
 		E5FC4A71264AE9AC004F60AC /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FC4A70264AE9AC004F60AC /* FirebaseAuthManager.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E5DF808A2678B7C600712BE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5159AFE2647FF950031AEB0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5159B052647FF950031AEB0;
+			remoteInfo = SecondSpringApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		36BDAED324232F1E4E877342 /* Pods-SecondSpringApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondSpringApp.release.xcconfig"; path = "Target Support Files/Pods-SecondSpringApp/Pods-SecondSpringApp.release.xcconfig"; sourceTree = "<group>"; };
+		3CB756C178727636CA461858 /* Pods-SecondSpringAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondSpringAppTests.debug.xcconfig"; path = "Target Support Files/Pods-SecondSpringAppTests/Pods-SecondSpringAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AD78C9E443654B64DBA5B880 /* Pods-SecondSpringAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondSpringAppTests.release.xcconfig"; path = "Target Support Files/Pods-SecondSpringAppTests/Pods-SecondSpringAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		B2CD25432346748C8A3AA1C7 /* Pods_SecondSpringAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecondSpringAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8129B6BEC00EED6B6680908 /* Pods-SecondSpringApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondSpringApp.debug.xcconfig"; path = "Target Support Files/Pods-SecondSpringApp/Pods-SecondSpringApp.debug.xcconfig"; sourceTree = "<group>"; };
 		CADC7F43168CF21E8678401E /* Pods_SecondSpringApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecondSpringApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50D5D2D2652B6CA009D2D92 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -66,12 +94,28 @@
 		E534190526488AAF0066072C /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		E53FE5A526540DB000AEAE67 /* ChatTableViewDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewDelegateExtension.swift; sourceTree = "<group>"; };
 		E53FE5A726540DC600AEAE67 /* ChatTableViewDataSourceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewDataSourceExtension.swift; sourceTree = "<group>"; };
+		E548EF7426591EB600953FD0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E548EF7626591EC500953FD0 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		E548EF792659227100953FD0 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		E548EF7B265922A900953FD0 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		E548EF7E26592A3F00953FD0 /* MenuAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAnimator.swift; sourceTree = "<group>"; };
+		E548EF802659493000953FD0 /* MenuType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuType.swift; sourceTree = "<group>"; };
+		E55194CA2677B84E00C0E1A9 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		E55A6FB8265D571800922DB4 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		E55A6FBA265D574A00922DB4 /* UploadImageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageOperation.swift; sourceTree = "<group>"; };
+		E55A6FBC265D578000922DB4 /* UpdateImageUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateImageUrl.swift; sourceTree = "<group>"; };
+		E573B0E2266699120062278C /* HomeMenuViewControllerDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewControllerDelegateExtension.swift; sourceTree = "<group>"; };
+		E573B0E426669BAA0062278C /* HomeRoomTableViewCellDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoomTableViewCellDelegateExtension.swift; sourceTree = "<group>"; };
+		E573B0E626669D770062278C /* HomePickerViewDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePickerViewDelegateExtension.swift; sourceTree = "<group>"; };
 		E58830A9264D6ABE005EFB55 /* RoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; };
 		E58830AC264D7B59005EFB55 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
 		E5A1118E26516002007A0A46 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E5A111902651676C007A0A46 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		E5A111952651923D007A0A46 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E5D7BCB6264C09D600114998 /* FirebaseFirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreManager.swift; sourceTree = "<group>"; };
+		E5DF80852678B7C600712BE9 /* SecondSpringAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecondSpringAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5DF80892678B7C600712BE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5DF808F2678B81200712BE9 /* SecondSpringAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSpringAppTests.swift; sourceTree = SOURCE_ROOT; };
 		E5EB9159264977D700C73FFF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E5EB915B2649782300C73FFF /* RegisterScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterScreen.storyboard; sourceTree = "<group>"; };
 		E5EB915D2649783600C73FFF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +139,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E5DF80822678B7C600712BE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				300C92768986C1A53C53223A /* Pods_SecondSpringAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -103,6 +155,8 @@
 			children = (
 				B8129B6BEC00EED6B6680908 /* Pods-SecondSpringApp.debug.xcconfig */,
 				36BDAED324232F1E4E877342 /* Pods-SecondSpringApp.release.xcconfig */,
+				3CB756C178727636CA461858 /* Pods-SecondSpringAppTests.debug.xcconfig */,
+				AD78C9E443654B64DBA5B880 /* Pods-SecondSpringAppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -111,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				CADC7F43168CF21E8678401E /* Pods_SecondSpringApp.framework */,
+				B2CD25432346748C8A3AA1C7 /* Pods_SecondSpringAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -128,6 +183,9 @@
 			children = (
 				E50D5D3426530A9B009D2D92 /* HomeTableViewDelegateExtension.swift */,
 				E50D5D3626530AAF009D2D92 /* HomeTableViewDataSourceExtension.swift */,
+				E573B0E2266699120062278C /* HomeMenuViewControllerDelegateExtension.swift */,
+				E573B0E426669BAA0062278C /* HomeRoomTableViewCellDelegateExtension.swift */,
+				E573B0E626669D770062278C /* HomePickerViewDelegateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -136,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				E5159B082647FF950031AEB0 /* SecondSpringApp */,
+				E5DF80862678B7C600712BE9 /* SecondSpringAppTests */,
 				E5159B072647FF950031AEB0 /* Products */,
 				99D185E2568EE470086BAE8A /* Pods */,
 				DC125F7C9478E6252C7F7022 /* Frameworks */,
@@ -146,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				E5159B062647FF950031AEB0 /* SecondSpringApp.app */,
+				E5DF80852678B7C600712BE9 /* SecondSpringAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,6 +213,7 @@
 		E5159B082647FF950031AEB0 /* SecondSpringApp */ = {
 			isa = PBXGroup;
 			children = (
+				E548EF7D26592A2900953FD0 /* Animations */,
 				E5159B21264807310031AEB0 /* AppDelegate */,
 				E5159B122647FF990031AEB0 /* Assets.xcassets */,
 				E5A1118D26515FDD007A0A46 /* CustomTextFields */,
@@ -164,6 +225,7 @@
 				E5159B142647FF990031AEB0 /* LaunchScreen.storyboard */,
 				E58830AB264D7B3D005EFB55 /* Models */,
 				E5FC4A6F264AE975004F60AC /* NetworkManager */,
+				E55A6FB7265D570000922DB4 /* Operations */,
 				E5159B2F264810600031AEB0 /* Protocols */,
 				E5159B1D264806450031AEB0 /* Screens */,
 				E5A1119426519217007A0A46 /* ViewModels */,
@@ -174,6 +236,8 @@
 		E5159B1D264806450031AEB0 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E548EF782659223200953FD0 /* Menu */,
+				E548EF7326591E9000953FD0 /* Profile */,
 				E5F32C60264E947500EA3CD1 /* Chat */,
 				E5FC4A66264AB7C2004F60AC /* Home */,
 				E5EB9157264977A700C73FFF /* Login */,
@@ -214,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				E53418FE264881590066072C /* LoginState.swift */,
+				E548EF802659493000953FD0 /* MenuType.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -235,6 +300,42 @@
 				E53FE5A726540DC600AEAE67 /* ChatTableViewDataSourceExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E548EF7326591E9000953FD0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E548EF7426591EB600953FD0 /* ProfileViewController.swift */,
+				E548EF7626591EC500953FD0 /* Profile.storyboard */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		E548EF782659223200953FD0 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				E548EF792659227100953FD0 /* MenuViewController.swift */,
+				E548EF7B265922A900953FD0 /* Menu.storyboard */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		E548EF7D26592A2900953FD0 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				E548EF7E26592A3F00953FD0 /* MenuAnimator.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		E55A6FB7265D570000922DB4 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E55A6FB8265D571800922DB4 /* AsyncOperation.swift */,
+				E55A6FBA265D574A00922DB4 /* UploadImageOperation.swift */,
+				E55A6FBC265D578000922DB4 /* UpdateImageUrl.swift */,
+			);
+			path = Operations;
 			sourceTree = "<group>";
 		};
 		E58830A8264D6A79005EFB55 /* TableViewCells */ = {
@@ -268,8 +369,18 @@
 			children = (
 				E5A111952651923D007A0A46 /* LoginViewModel.swift */,
 				E50D5D2F2652BE98009D2D92 /* RegisterViewModel.swift */,
+				E55194CA2677B84E00C0E1A9 /* SplashViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E5DF80862678B7C600712BE9 /* SecondSpringAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				E5DF808F2678B81200712BE9 /* SecondSpringAppTests.swift */,
+				E5DF80892678B7C600712BE9 /* Info.plist */,
+			);
+			path = SecondSpringAppTests;
 			sourceTree = "<group>";
 		};
 		E5EB9157264977A700C73FFF /* Login */ = {
@@ -341,6 +452,26 @@
 			productReference = E5159B062647FF950031AEB0 /* SecondSpringApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E5DF80842678B7C600712BE9 /* SecondSpringAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5DF808C2678B7C600712BE9 /* Build configuration list for PBXNativeTarget "SecondSpringAppTests" */;
+			buildPhases = (
+				DA8C95C5898E7AD2C29C02BF /* [CP] Check Pods Manifest.lock */,
+				E5DF80812678B7C600712BE9 /* Sources */,
+				E5DF80822678B7C600712BE9 /* Frameworks */,
+				E5DF80832678B7C600712BE9 /* Resources */,
+				47AEE9B52878BEFFB979A230 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5DF808B2678B7C600712BE9 /* PBXTargetDependency */,
+			);
+			name = SecondSpringAppTests;
+			productName = SecondSpringAppTests;
+			productReference = E5DF80852678B7C600712BE9 /* SecondSpringAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -353,6 +484,11 @@
 				TargetAttributes = {
 					E5159B052647FF950031AEB0 = {
 						CreatedOnToolsVersion = 11.5;
+					};
+					E5DF80842678B7C600712BE9 = {
+						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
+						TestTargetID = E5159B052647FF950031AEB0;
 					};
 				};
 			};
@@ -370,6 +506,7 @@
 			projectRoot = "";
 			targets = (
 				E5159B052647FF950031AEB0 /* SecondSpringApp */,
+				E5DF80842678B7C600712BE9 /* SecondSpringAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -384,9 +521,18 @@
 				E5FC4A6C264ADF03004F60AC /* GoogleService-Info.plist in Resources */,
 				E5159B162647FF990031AEB0 /* LaunchScreen.storyboard in Resources */,
 				E5159B24264808710031AEB0 /* SplashScreen.storyboard in Resources */,
+				E548EF7C265922A900953FD0 /* Menu.storyboard in Resources */,
 				E5159B132647FF990031AEB0 /* Assets.xcassets in Resources */,
+				E548EF7726591EC500953FD0 /* Profile.storyboard in Resources */,
 				E5EB91602649785000C73FFF /* Login.storyboard in Resources */,
 				E5EB915C2649782300C73FFF /* RegisterScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5DF80832678B7C600712BE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +554,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SecondSpringApp/Pods-SecondSpringApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47AEE9B52878BEFFB979A230 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SecondSpringAppTests/Pods-SecondSpringAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SecondSpringAppTests/Pods-SecondSpringAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SecondSpringAppTests/Pods-SecondSpringAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A9D00D58EC977A93B278E828 /* [CP] Check Pods Manifest.lock */ = {
@@ -432,6 +595,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DA8C95C5898E7AD2C29C02BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SecondSpringAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -439,16 +624,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E548EF812659493000953FD0 /* MenuType.swift in Sources */,
+				E548EF7F26592A3F00953FD0 /* MenuAnimator.swift in Sources */,
 				E5FC4A71264AE9AC004F60AC /* FirebaseAuthManager.swift in Sources */,
+				E55A6FB9265D571800922DB4 /* AsyncOperation.swift in Sources */,
+				E55194CB2677B84E00C0E1A9 /* SplashViewModel.swift in Sources */,
 				E5EB915E2649783600C73FFF /* LoginViewController.swift in Sources */,
 				E5F32C62264E94F200EA3CD1 /* ChatViewController.swift in Sources */,
 				E58830AD264D7B59005EFB55 /* RoomModel.swift in Sources */,
+				E573B0E526669BAA0062278C /* HomeRoomTableViewCellDelegateExtension.swift in Sources */,
 				E5FC4A6E264AE3E5004F60AC /* String+Extensions.swift in Sources */,
 				E5159B0E2647FF960031AEB0 /* SplashScreenViewController.swift in Sources */,
+				E548EF7526591EB600953FD0 /* ProfileViewController.swift in Sources */,
 				E534190626488AAF0066072C /* UIApplication+Extensions.swift in Sources */,
+				E548EF7A2659227100953FD0 /* MenuViewController.swift in Sources */,
 				E53418FF264881590066072C /* LoginState.swift in Sources */,
+				E573B0E726669D770062278C /* HomePickerViewDelegateExtension.swift in Sources */,
 				E5A1118F26516002007A0A46 /* CustomTextField.swift in Sources */,
+				E55A6FBB265D574A00922DB4 /* UploadImageOperation.swift in Sources */,
 				E5A111912651676C007A0A46 /* UITextField+Extensions.swift in Sources */,
+				E55A6FBD265D578000922DB4 /* UpdateImageUrl.swift in Sources */,
 				E5EB915A264977D700C73FFF /* RegisterViewController.swift in Sources */,
 				E5FC4A68264AB7D5004F60AC /* HomeViewController.swift in Sources */,
 				E50D5D3726530AAF009D2D92 /* HomeTableViewDataSourceExtension.swift in Sources */,
@@ -461,6 +656,7 @@
 				E5D7BCB7264C09D600114998 /* FirebaseFirestoreManager.swift in Sources */,
 				E53FE5A826540DC600AEAE67 /* ChatTableViewDataSourceExtension.swift in Sources */,
 				E5159B0C2647FF960031AEB0 /* SceneDelegate.swift in Sources */,
+				E573B0E3266699120062278C /* HomeMenuViewControllerDelegateExtension.swift in Sources */,
 				E50D5D32265303BE009D2D92 /* User.swift in Sources */,
 				E5A111962651923D007A0A46 /* LoginViewModel.swift in Sources */,
 				E50D5D2E2652B6CA009D2D92 /* ViewControllerFactory.swift in Sources */,
@@ -468,7 +664,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E5DF80812678B7C600712BE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5DF80902678B81200712BE9 /* SecondSpringAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E5DF808B2678B7C600712BE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E5159B052647FF950031AEB0 /* SecondSpringApp */;
+			targetProxy = E5DF808A2678B7C600712BE9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E5159B142647FF990031AEB0 /* LaunchScreen.storyboard */ = {
@@ -636,6 +848,51 @@
 			};
 			name = Release;
 		};
+		E5DF808D2678B7C600712BE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CB756C178727636CA461858 /* Pods-SecondSpringAppTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6J3M2T865K;
+				INFOPLIST_FILE = SecondSpringAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ss.SecondSpringAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SecondSpringApp.app/SecondSpringApp";
+			};
+			name = Debug;
+		};
+		E5DF808E2678B7C600712BE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD78C9E443654B64DBA5B880 /* Pods-SecondSpringAppTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6J3M2T865K;
+				INFOPLIST_FILE = SecondSpringAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ss.SecondSpringAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SecondSpringApp.app/SecondSpringApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -653,6 +910,15 @@
 			buildConfigurations = (
 				E5159B1B2647FF990031AEB0 /* Debug */,
 				E5159B1C2647FF990031AEB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5DF808C2678B7C600712BE9 /* Build configuration list for PBXNativeTarget "SecondSpringAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5DF808D2678B7C600712BE9 /* Debug */,
+				E5DF808E2678B7C600712BE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

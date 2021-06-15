@@ -92,4 +92,23 @@ private extension RegisterScreenViewController {
   
 }
 
+extension RegisterScreenViewController: UITextFieldDelegate {
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    switch textField {
+    case nicknameTextField:
+      emailTextField.becomeFirstResponder()
+    case emailTextField:
+      passwordTextField.becomeFirstResponder()
+    case passwordTextField:
+      textField.resignFirstResponder()
+    default:
+      textField.resignFirstResponder()
+    }
+    
+    return false
+  }
+  
+}
+
 extension RegisterScreenViewController: StoryboardInstantiable { }

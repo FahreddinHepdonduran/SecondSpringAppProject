@@ -40,7 +40,7 @@ Account</string>
                                                 </constraints>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="person"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
@@ -54,6 +54,9 @@ Account</string>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="op3-Qa-DrM" id="ofq-fX-hdU"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9yw-6x-Ozx" customClass="CustomTextField" customModule="SecondSpringApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="80" width="374" height="50"/>
@@ -62,7 +65,7 @@ Account</string>
                                                     <constraint firstAttribute="height" constant="50" id="dNl-A2-6Ix"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="25"/>
@@ -74,7 +77,11 @@ Account</string>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
                                                         <real key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="email"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="op3-Qa-DrM" id="Zu2-oc-vWp"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2yo-BU-LYq" customClass="CustomTextField" customModule="SecondSpringApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="160" width="374" height="50"/>
@@ -83,7 +90,7 @@ Account</string>
                                                     <constraint firstAttribute="height" constant="50" id="U3z-Ca-EPh"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="25"/>
@@ -97,6 +104,9 @@ Account</string>
                                                         <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="op3-Qa-DrM" id="1SL-4n-pme"/>
+                                                </connections>
                                             </textField>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5QG-gu-3AA">
                                                 <rect key="frame" x="0.0" y="240" width="374" height="60"/>
@@ -171,6 +181,7 @@ Account</string>
         </scene>
     </scenes>
     <resources>
+        <image name="email" width="220" height="220"/>
         <image name="password" width="47" height="53"/>
         <image name="person" width="55.5" height="45"/>
     </resources>

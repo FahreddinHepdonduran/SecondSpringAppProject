@@ -36,16 +36,7 @@ final class ChatViewController: UIViewController {
     super.viewDidLoad()
     configureTableView()
     addNotification()
-    
-    sendButton.rx.tap
-      .withLatestFrom(messageEntryTextView.rx.text.orEmpty)
-      .subscribe(onNext: { (text) in
-        let message = [self.user.name : text]
-        self.docRef.updateData([
-          "messageHistory" : FieldValue.arrayUnion([message])
-        ])
-      })
-    .disposed(by: disposeBag)
+    sendMessage()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -107,9 +98,28 @@ private extension ChatViewController {
         return
       }
       
-      self.room.messageHistory = documentSnapshot.data()!["messageHistory"] as! [[String : String]]
+      self.room.messageHistory = documentSnapshot.data()!["messageHistory"] as! [[String : Any]]
       self.tableView.reloadData()
     }
+  }
+  
+  func sendMessage() {
+    sendButton.rx.tap
+      .withLatestFrom(messageEntryTextView.rx.text.orEmpty)
+      .subscribe(onNext: { (text) in
+        let message: [String : Any] = [
+          "senderID" : self.user.uid,
+          "senderName" : self.user.name,
+          "senderEmail" : self.user.email,
+          "senderImage" : self.user.imageUrl,
+          "message" : text,
+          "time" : Timestamp(date: Date())
+        ]
+        self.docRef.updateData([
+          "messageHistory" : FieldValue.arrayUnion([message])
+        ])
+      })
+    .disposed(by: disposeBag)
   }
   
   func configureTableView() {

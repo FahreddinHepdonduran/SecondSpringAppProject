@@ -13,6 +13,7 @@ final class ViewControllerFactory {
   func splashViewController(_ viewControllerFactory: ViewControllerFactory) -> SplashScreenViewController {
     let splashViewController = SplashScreenViewController.instanceFromStoryboard()
     splashViewController.viewControllerFactory = viewControllerFactory
+    splashViewController.viewModel = SplashViewModel()
     return splashViewController
   }
   
@@ -44,6 +45,20 @@ final class ViewControllerFactory {
     chatViewController.room = room
     chatViewController.user = user
     return chatViewController
+  }
+  
+  func menuViewController(_ transitionDelegate: UIViewControllerTransitioningDelegate,
+                          _ delegate: MenuViewControllerDelegate) -> MenuViewController {
+    let menuViewController = MenuViewController.instanceFromStoryboard()
+    menuViewController.transitioningDelegate = transitionDelegate
+    menuViewController.delegate = delegate
+    return menuViewController
+  }
+  
+  func profileViewController(_ user: UserInfo) -> ProfileViewController {
+    let profileViewController = ProfileViewController.instanceFromStoryboard()
+    profileViewController.user = user
+    return profileViewController
   }
   
 }

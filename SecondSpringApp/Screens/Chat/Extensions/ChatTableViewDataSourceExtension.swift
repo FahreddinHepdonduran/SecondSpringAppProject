@@ -16,6 +16,7 @@ extension ChatViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell") as! ChatTableViewCell
+    cell.currentUser = user
     cell.message = room.messageHistory[indexPath.row]
     return cell
   }

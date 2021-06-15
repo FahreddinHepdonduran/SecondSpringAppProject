@@ -8,19 +8,21 @@
 
 import Foundation
 
-struct RoomModel: Codable {
+struct RoomModel {
   var id = UUID()
   let name: String
-  var messageHistory: [[String:String]] = [[:]]
+  var imageUrl: String = ""
+  var messageHistory: [[String : Any]] = [[:]]
 }
 
 extension RoomModel {
   static func room(from data: [String:Any]) -> RoomModel {
     let id = data["id"] as! String
     let name = data["name"] as! String
-    let messageHistory = data["messageHistory"] as! [[String:String]]
- 
+    let imageUrl = data["imageUrl"] as? String ?? ""
+    let messageHistory = data["messageHistory"] as! [[String : Any]]
+    
     return RoomModel(id: UUID(uuidString: id)!,
-                     name: name, messageHistory: messageHistory)
+                     name: name, imageUrl: imageUrl, messageHistory: messageHistory)
   }
 }
