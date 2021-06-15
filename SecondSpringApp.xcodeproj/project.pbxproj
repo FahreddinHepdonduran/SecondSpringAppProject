@@ -56,6 +56,7 @@
 		E5FC4A6C264ADF03004F60AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5FC4A6B264ADF03004F60AC /* GoogleService-Info.plist */; };
 		E5FC4A6E264AE3E5004F60AC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FC4A6D264AE3E5004F60AC /* String+Extensions.swift */; };
 		E5FC4A71264AE9AC004F60AC /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FC4A70264AE9AC004F60AC /* FirebaseAuthManager.swift */; };
+		F953A10642052AE2E5CE1FDA /* Pods_SecondSpringAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CD25432346748C8A3AA1C7 /* Pods_SecondSpringAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,9 @@
 
 /* Begin PBXFileReference section */
 		36BDAED324232F1E4E877342 /* Pods-SecondSpringApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondSpringApp.release.xcconfig"; path = "Target Support Files/Pods-SecondSpringApp/Pods-SecondSpringApp.release.xcconfig"; sourceTree = "<group>"; };
+		3CB756C178727636CA461858 /* Pods-SecondSpringAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondSpringAppTests.debug.xcconfig"; path = "Target Support Files/Pods-SecondSpringAppTests/Pods-SecondSpringAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AD78C9E443654B64DBA5B880 /* Pods-SecondSpringAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondSpringAppTests.release.xcconfig"; path = "Target Support Files/Pods-SecondSpringAppTests/Pods-SecondSpringAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		B2CD25432346748C8A3AA1C7 /* Pods_SecondSpringAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecondSpringAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8129B6BEC00EED6B6680908 /* Pods-SecondSpringApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondSpringApp.debug.xcconfig"; path = "Target Support Files/Pods-SecondSpringApp/Pods-SecondSpringApp.debug.xcconfig"; sourceTree = "<group>"; };
 		CADC7F43168CF21E8678401E /* Pods_SecondSpringApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecondSpringApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50D5D2D2652B6CA009D2D92 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F953A10642052AE2E5CE1FDA /* Pods_SecondSpringAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +155,8 @@
 			children = (
 				B8129B6BEC00EED6B6680908 /* Pods-SecondSpringApp.debug.xcconfig */,
 				36BDAED324232F1E4E877342 /* Pods-SecondSpringApp.release.xcconfig */,
+				3CB756C178727636CA461858 /* Pods-SecondSpringAppTests.debug.xcconfig */,
+				AD78C9E443654B64DBA5B880 /* Pods-SecondSpringAppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -158,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				CADC7F43168CF21E8678401E /* Pods_SecondSpringApp.framework */,
+				B2CD25432346748C8A3AA1C7 /* Pods_SecondSpringAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -448,9 +456,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5D7B0002678AB510037A9D7 /* Build configuration list for PBXNativeTarget "SecondSpringAppTests" */;
 			buildPhases = (
+				00A1A3C5DBB27521922D8E25 /* [CP] Check Pods Manifest.lock */,
 				E5D7AFF52678AB510037A9D7 /* Sources */,
 				E5D7AFF62678AB510037A9D7 /* Frameworks */,
 				E5D7AFF72678AB510037A9D7 /* Resources */,
+				F83EEB7889DDE22708BA07A8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -528,6 +538,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		00A1A3C5DBB27521922D8E25 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SecondSpringAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		0F1E35293152DEC6B0BBC226 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -565,6 +597,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F83EEB7889DDE22708BA07A8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SecondSpringAppTests/Pods-SecondSpringAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SecondSpringAppTests/Pods-SecondSpringAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SecondSpringAppTests/Pods-SecondSpringAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -800,6 +849,7 @@
 		};
 		E5D7B0012678AB510037A9D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CB756C178727636CA461858 /* Pods-SecondSpringAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -820,6 +870,7 @@
 		};
 		E5D7B0022678AB510037A9D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD78C9E443654B64DBA5B880 /* Pods-SecondSpringAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

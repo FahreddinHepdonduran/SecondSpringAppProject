@@ -13,3 +13,16 @@ target 'SecondSpringApp' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
 end
+
+target 'SecondSpringAppTests' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for SecondSpringApp
+  pod 'RxSwift', '~>5.0'
+  pod 'RxCocoa', '~>5.0'
+  pod 'Action'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
+end
