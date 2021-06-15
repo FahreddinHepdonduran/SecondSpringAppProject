@@ -13,6 +13,7 @@ final class ViewControllerFactory {
   func splashViewController(_ viewControllerFactory: ViewControllerFactory) -> SplashScreenViewController {
     let splashViewController = SplashScreenViewController.instanceFromStoryboard()
     splashViewController.viewControllerFactory = viewControllerFactory
+    splashViewController.viewModel = SplashViewModel()
     return splashViewController
   }
   
